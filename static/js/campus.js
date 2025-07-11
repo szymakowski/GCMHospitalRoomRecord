@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const rooms = ["101", "102", "103"];
+    // Pobierz pokoje z API
+  let rooms = [];
+  fetch("/api/rooms")
+    .then(res => res.json())
+    .then(data => {
+      rooms = data;
+      renderList(rooms, "rooms-list");
+    })
+    .catch(err => console.error("Błąd ładowania pokojów:", err));
+
+  document.getElementById("search-rooms").addEventListener("input", e => {
+    const term = e.target.value.toLowerCase();
+    const filtered = rooms.filter(r => r.toLowerCase().includes(term));
+    renderList(filtered, "rooms-list");
+  });
 
   function renderList(items, containerId) {
     const container = document.getElementById(containerId);

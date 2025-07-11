@@ -11,8 +11,17 @@ def api_departments():
     cursor.execute("SELECT departmentName FROM department")
     departments = [row[0] for row in cursor.fetchall()]
     conn.close()
-    # departments = ["Kardiologia", "Ortopedia", "Pediatria"]
     return jsonify(departments)
+
+@app.route('/api/rooms')
+def api_rooms():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT roomNumber FROM room")
+    rooms = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return jsonify(rooms)
+
 
 @app.route('/')
 def campus():
