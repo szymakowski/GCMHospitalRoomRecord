@@ -254,3 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "/"; // w innych przypadkach przejdź
     }
   }
+
+  function goToStatistics() {
+      window.location.href = '/statystyki.html';
+  }

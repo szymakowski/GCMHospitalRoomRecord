@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nowoczesne Wykresy</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-7xl mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-8 text-center">Interaktywne Wykresy</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Wykres 1: Linia -->
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Wykres Liniowy</h2>
+        <canvas id="lineChart"></canvas>
+      </div>
+
+      <!-- Wykres 2: Słupki -->
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Wykres Słupkowy</h2>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <!-- Wykres 3: Kołowy -->
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Wykres Kołowy</h2>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dane testowe
+    const labels = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec"];
+
+    // Wykres liniowy
+    new Chart(document.getElementById("lineChart"), {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          label: "Sprzedaż",
+          data: [65, 59, 80, 81, 56, 55],
+          borderColor: "#3b82f6",
+          backgroundColor: "rgba(59, 130, 246, 0.2)",
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "top" },
+          title: { display: true, text: "Sprzedaż miesięczna" }
+        }
+      }
+    });
+
+    // Wykres słupkowy
+    new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [{
+          label: "Dochód",
+          data: [45, 75, 60, 90, 70, 100],
+          backgroundColor: "#10b981"
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "top" },
+          title: { display: true, text: "Dochód miesięczny" }
+        }
+      }
+    });
+
+    // Wykres kołowy
+    new Chart(document.getElementById("pieChart"), {
+      type: "pie",
+      data: {
+        labels: ["Produkt A", "Produkt B", "Produkt C"],
+        datasets: [{
+          label: "Udział w rynku",
+          data: [40, 30, 30],
+          backgroundColor: ["#facc15", "#6366f1", "#ef4444"]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "bottom" },
+          title: { display: true, text: "Udział produktów w rynku" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
