@@ -240,10 +240,3 @@ html, body {
   background-color: var(--primary);
   color: white;
 }
-
-/* Podświetlanie pokoi */
-.highlighted-room {
-  fill: #e53935 !important; /* czerwony */
-  stroke: #000;
-  stroke-width: 2;
-}

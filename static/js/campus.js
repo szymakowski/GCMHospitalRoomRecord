@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
     departments: new Set(),
     rooms: new Set()
   };
+  function updateHighlight(containerId) {
+    const container = document.getElementById(containerId);
+    container.querySelectorAll("label").forEach(label => {
+      const checkbox = label.querySelector("input[type='checkbox']");
+      if (checkbox.checked) {
+        label.classList.add("active");
+      } else {
+        label.classList.remove("active");
+      }
+    });
+  }
 
   function renderList(items, containerId, type) {
     const container = document.getElementById(containerId);
@@ -89,8 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
       selected[type].add(cb.value);
     });
     updateHighlight(`${type}-list`);
-    if (type === "departments") fetchRoomsForSelectedDepartments();
-    if (type === "rooms") highlightSelectedRooms();
+    if (type === "departments") {
+    fetchRoomsForSelectedDepartments();
+    }
+    if (type === "rooms") {
+    highlightSelectedRooms();
+    }
   };
 
   window.deselectAll = function(type) {
@@ -120,45 +135,43 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  function updateHighlight(containerId) {
-    const container = document.getElementById(containerId);
-    container.querySelectorAll("label").forEach(label => {
-      const checkbox = label.querySelector("input[type='checkbox']");
-      if (checkbox.checked) {
-        label.classList.add("active");
+  function highlightSelectedRooms() {
+    const selectedRoomNames = Array.from(selected.rooms); // np. ["GOK-PIĘTRO2-POKÓJ34", ...]
+
+    document.querySelectorAll("rect[id^='gok_room_'], rect[id^='ssw_room_']").forEach(rect => {
+      const rectId = rect.id; // np. gok_room_34_floor2
+
+      // Wyciągnij dane z rectId np. gok_room_34_floor2 → building=gok, room=34, floor=2
+      const match = rectId.match(/^([a-z]+)_room_(\d+)_floor(\d+)$/);
+      if (!match) return;
+
+      const [_, building, room, floor] = match;
+
+      const matched = selectedRoomNames.some(roomName => {
+        const parts = roomName.toUpperCase().split("-");
+        if (parts.length !== 3) return false;
+
+        const [selBuilding, selFloor, selRoom] = parts;
+
+        return (
+          selBuilding.toLowerCase() === building &&
+          selFloor.toLowerCase() === `piętro${floor}` &&
+          selRoom.toLowerCase() === `pokój${room}`
+        );
+      });
+
+      if (matched) {
+        rect.setAttribute("fill", "#f44336");
+        rect.setAttribute("stroke", "#000");
+        rect.setAttribute("stroke-width", "2");
+        rect.setAttribute("fill-opacity", "0.3");
       } else {
-        label.classList.remove("active");
+        rect.setAttribute("fill", "url(#roomGradBabyBlue)");
+        rect.setAttribute("stroke", "#ccc");
+        rect.setAttribute("stroke-width", "1.2");
       }
     });
   }
-
-    function highlightSelectedRooms() {
-      const selectedRoomNames = Array.from(selected.rooms); // np. ["GOK-37", "SSW-52"]
-
-      document.querySelectorAll("rect[id^='room_']").forEach(rect => {
-        const rectId = rect.id; // np. "room_37_floor1"
-
-        const match = rectId.match(/^room_(\d+)_floor\d+$/);
-        if (!match) return;
-
-        const roomNumber = match[1]; // np. "37"
-
-        const matched = selectedRoomNames.some(name => {
-          const parts = name.split("-");
-          return parts[1] === roomNumber; // porównuje tylko numer
-        });
-
-        if (matched) {
-          rect.setAttribute("fill", "#f44336");
-          rect.setAttribute("stroke", "#000");
-          rect.setAttribute("stroke-width", "2");
-        } else {
-          rect.setAttribute("fill", "url(#roomGradBabyBlue)");
-          rect.setAttribute("stroke", "#ccc");
-          rect.setAttribute("stroke-width", "1.2");
-        }
-      });
-    }
 
   function loadSVGMap(file) {
     const container = document.getElementById("svg-map-container");
@@ -233,3 +246,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initCustomTooltips("departments-list");
   initCustomTooltips("rooms-list");
 });
+
+  function goToHospitalMap() {
+    if (window.location.pathname === "/") {
+      window.location.reload(); // jesteśmy na campus → po prostu reload
+    } else {
+      window.location.href = "/"; // w innych przypadkach przejdź
+    }
+  }

@@ -168,13 +168,13 @@
 <!-- Pokoje -->
   <!-- Pokoje -> Badania Kliniczne -->
   <!-- Pokój 1 -->
-  <rect id="room_1_floor7"
+  <rect id="ssw_room_1_floor7"
         x="755" y="35" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_1_floor7"
+  <text id="label_ssw_room_1_floor7"
         x="785" y="55"
         text-anchor="middle">1</text>
   <rect id="door_1_floor7"
@@ -182,13 +182,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 2 -->
-  <rect id="room_2_floor7"
+  <rect id="ssw_room_2_floor7"
         x="755" y="66" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_2_floor7"
+  <text id="label_ssw_room_2_floor7"
         x="785" y="86"
         text-anchor="middle">2</text>
   <rect id="door_2_floor7"
@@ -196,13 +196,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 3 -->
-  <rect id="room_3_floor7"
+  <rect id="ssw_room_3_floor7"
         x="755" y="97" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_3_floor7"
+  <text id="label_ssw_room_3_floor7"
         x="785" y="117"
         text-anchor="middle">3</text>
   <rect id="door_3_floor7"
@@ -210,13 +210,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 4 -->
-  <rect id="room_4_floor7"
+  <rect id="ssw_room_4_floor7"
         x="755" y="127" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_4_floor7"
+  <text id="label_ssw_room_4_floor7"
         x="785" y="147"
         text-anchor="middle">4</text>
   <rect id="door_4_floor7"
@@ -224,13 +224,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 5 -->
-  <rect id="room_5_floor7"
+  <rect id="ssw_room_5_floor7"
         x="755" y="158" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_5_floor7"
+  <text id="label_ssw_room_5_floor7"
         x="785" y="178"
         text-anchor="middle">5</text>
   <rect id="door_5_floor7"
@@ -238,13 +238,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 6 -->
-  <rect id="room_6_floor7"
+  <rect id="ssw_room_6_floor7"
         x="755" y="189" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_6_floor7"
+  <text id="label_ssw_room_6_floor7"
         x="785" y="209"
         text-anchor="middle">6</text>
   <rect id="door_6_floor7"
@@ -252,13 +252,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 7 -->
-  <rect id="room_7_floor7"
+  <rect id="ssw_room_7_floor7"
         x="755" y="219" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_7_floor7"
+  <text id="label_ssw_room_7_floor7"
         x="785" y="239"
         text-anchor="middle">7</text>
   <rect id="door_7_floor7"
@@ -266,13 +266,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 8 -->
-  <rect id="room_8_floor7"
+  <rect id="ssw_room_8_floor7"
         x="755" y="250" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_8_floor7"
+  <text id="label_ssw_room_8_floor7"
         x="785" y="270"
         text-anchor="middle">8</text>
   <rect id="door_8_floor7"
@@ -280,13 +280,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 9 -->
-  <rect id="room_9_floor7"
+  <rect id="ssw_room_9_floor7"
         x="755" y="281" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_9_floor7"
+  <text id="label_ssw_room_9_floor7"
         x="785" y="301"
         text-anchor="middle">9</text>
   <rect id="door_9_floor7"
@@ -294,13 +294,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 10 -->
-  <rect id="room_10_floor7"
+  <rect id="ssw_room_10_floor7"
         x="755" y="311" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_10_floor7"
+  <text id="label_ssw_room_10_floor7"
         x="785" y="331"
         text-anchor="middle">10</text>
   <rect id="door_10_floor7"
@@ -308,13 +308,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 11 -->
-  <rect id="room_11_floor7"
+  <rect id="ssw_room_11_floor7"
         x="755" y="342" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_11_floor7"
+  <text id="label_ssw_room_11_floor7"
         x="785" y="362"
         text-anchor="middle">11</text>
   <rect id="door_11_floor7"
@@ -322,13 +322,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 12 -->
-  <rect id="room_12_floor7"
+  <rect id="ssw_room_12_floor7"
         x="755" y="373" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_12_floor7"
+  <text id="label_ssw_room_12_floor7"
         x="785" y="393"
         text-anchor="middle">12</text>
   <rect id="door_12_floor7"
@@ -336,13 +336,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 13 -->
-  <rect id="room_13_floor7"
+  <rect id="ssw_room_13_floor7"
         x="755" y="403" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_13_floor7"
+  <text id="label_ssw_room_13_floor7"
         x="785" y="423"
         text-anchor="middle">13</text>
   <rect id="door_13_floor7"
@@ -350,13 +350,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 14 -->
-  <rect id="room_14_floor7"
+  <rect id="ssw_room_14_floor7"
         x="755" y="434" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_14_floor7"
+  <text id="label_ssw_room_14_floor7"
         x="785" y="454"
         text-anchor="middle">14</text>
   <rect id="door_14_floor7"
@@ -364,13 +364,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 15 -->
-  <rect id="room_15_floor7"
+  <rect id="ssw_room_15_floor7"
         x="755" y="465" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_15_floor7"
+  <text id="label_ssw_room_15_floor7"
         x="785" y="485"
         text-anchor="middle">15</text>
   <rect id="door_15_floor7"
@@ -378,13 +378,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 16 -->
-  <rect id="room_16_floor7"
+  <rect id="ssw_room_16_floor7"
         x="755" y="495" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_16_floor7"
+  <text id="label_ssw_room_16_floor7"
         x="785" y="515"
         text-anchor="middle">16</text>
   <rect id="door_16_floor7"
@@ -392,13 +392,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 17 -->
-  <rect id="room_17_floor7"
+  <rect id="ssw_room_17_floor7"
         x="755" y="525" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_17_floor7"
+  <text id="label_ssw_room_17_floor7"
         x="785" y="545"
         text-anchor="middle">17</text>
   <rect id="door_17_floor7"
@@ -406,13 +406,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 18 -->
-  <rect id="room_18_floor7"
+  <rect id="ssw_room_18_floor7"
         x="755" y="555" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_18_floor7"
+  <text id="label_ssw_room_18_floor7"
         x="785" y="575"
         text-anchor="middle">18</text>
   <rect id="door_18_floor7"
@@ -420,13 +420,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 19 -->
-  <rect id="room_19_floor7"
+  <rect id="ssw_room_19_floor7"
         x="895" y="35" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_19_floor7"
+  <text id="label_ssw_room_19_floor7"
         x="925" y="55"
         text-anchor="middle">19</text>
   <rect id="door_19_floor7"
@@ -434,13 +434,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 20 -->
-  <rect id="room_20_floor7"
+  <rect id="ssw_room_20_floor7"
         x="895" y="66" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_20_floor7"
+  <text id="label_ssw_room_20_floor7"
         x="925" y="86"
         text-anchor="middle">20</text>
   <rect id="door_20_floor7"
@@ -448,13 +448,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 21 -->
-  <rect id="room_21_floor7"
+  <rect id="ssw_room_21_floor7"
         x="895" y="97" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_21_floor7"
+  <text id="label_ssw_room_21_floor7"
         x="925" y="117"
         text-anchor="middle">21</text>
   <rect id="door_21_floor7"
@@ -462,13 +462,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 22 -->
-  <rect id="room_22_floor7"
+  <rect id="ssw_room_22_floor7"
         x="895" y="128" width="60" height="62"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_22_floor7"
+  <text id="label_ssw_room_22_floor7"
         x="925" y="148"
         text-anchor="middle">22</text>
   <rect id="door_22_floor7"
@@ -476,13 +476,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 23 -->
-  <rect id="room_23_floor7"
+  <rect id="ssw_room_23_floor7"
         x="895" y="158" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_23_floor7"
+  <text id="label_ssw_room_23_floor7"
         x="925" y="178"
         text-anchor="middle">23</text>
   <rect id="door_23_floor7"
@@ -490,13 +490,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 24 -->
-  <rect id="room_24_floor7"
+  <rect id="ssw_room_24_floor7"
         x="895" y="189" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_24_floor7"
+  <text id="label_ssw_room_24_floor7"
         x="925" y="209"
         text-anchor="middle">24</text>
   <rect id="door_24_floor7"
@@ -504,13 +504,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 25 -->
-  <rect id="room_25_floor7"
+  <rect id="ssw_room_25_floor7"
         x="895" y="219" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_25_floor7"
+  <text id="label_ssw_room_25_floor7"
         x="925" y="239"
         text-anchor="middle">25</text>
   <rect id="door_25_floor7"
@@ -518,13 +518,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 26 -->
-  <rect id="room_26_floor7"
+  <rect id="ssw_room_26_floor7"
         x="895" y="250" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_26_floor7"
+  <text id="label_ssw_room_26_floor7"
         x="925" y="270"
         text-anchor="middle">26</text>
   <rect id="door_26_floor7"
@@ -532,13 +532,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 27 -->
-  <rect id="room_27_floor7"
+  <rect id="ssw_room_27_floor7"
         x="895" y="281" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_27_floor7"
+  <text id="label_ssw_room_27_floor7"
         x="925" y="301"
         text-anchor="middle">27</text>
   <rect id="door_27_floor7"
@@ -546,13 +546,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 28 -->
-  <rect id="room_28_floor7"
+  <rect id="ssw_room_28_floor7"
         x="895" y="311" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_28_floor7"
+  <text id="label_ssw_room_28_floor7"
         x="925" y="331"
         text-anchor="middle">28</text>
   <rect id="door_28_floor7"
@@ -560,13 +560,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 29 -->
-  <rect id="room_29_floor7"
+  <rect id="ssw_room_29_floor7"
         x="895" y="342" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_29_floor7"
+  <text id="label_ssw_room_29_floor7"
         x="925" y="362"
         text-anchor="middle">29</text>
   <rect id="door_29_floor7"
@@ -574,13 +574,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 30 -->
-  <rect id="room_30_floor7"
+  <rect id="ssw_room_30_floor7"
         x="895" y="373" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_30_floor7"
+  <text id="label_ssw_room_30_floor7"
         x="925" y="393"
         text-anchor="middle">30</text>
   <rect id="door_30_floor7"
@@ -588,13 +588,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 31 -->
-  <rect id="room_31_floor7"
+  <rect id="ssw_room_31_floor7"
         x="895" y="403" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_31_floor7"
+  <text id="label_ssw_room_31_floor7"
         x="925" y="423"
         text-anchor="middle">31</text>
   <rect id="door_31_floor7"
@@ -602,13 +602,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 32 -->
-  <rect id="room_32_floor7"
+  <rect id="ssw_room_32_floor7"
         x="895" y="434" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_32_floor7"
+  <text id="label_ssw_room_32_floor7"
         x="925" y="454"
         text-anchor="middle">32</text>
   <rect id="door_32_floor7"
@@ -616,13 +616,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 33 -->
-  <rect id="room_33_floor7"
+  <rect id="ssw_room_33_floor7"
         x="895" y="465" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_33_floor7"
+  <text id="label_ssw_room_33_floor7"
         x="925" y="485"
         text-anchor="middle">33</text>
   <rect id="door_33_floor7"
@@ -630,13 +630,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 34 -->
-  <rect id="room_34_floor7"
+  <rect id="ssw_room_34_floor7"
         x="895" y="495" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_34_floor7"
+  <text id="label_ssw_room_34_floor7"
         x="925" y="515"
         text-anchor="middle">34</text>
   <rect id="door_34_floor7"
@@ -644,13 +644,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 35 -->
-  <rect id="room_35_floor7"
+  <rect id="ssw_room_35_floor7"
         x="895" y="525" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_35_floor7"
+  <text id="label_ssw_room_35_floor7"
         x="925" y="545"
         text-anchor="middle">35</text>
   <rect id="door_35_floor7"
@@ -658,13 +658,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 36 -->
-  <rect id="room_36_floor7"
+  <rect id="ssw_room_36_floor7"
         x="895" y="555" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_36_floor7"
+  <text id="label_ssw_room_36_floor7"
         x="925" y="575"
         text-anchor="middle">36</text>
   <rect id="door_36_floor7"
@@ -674,13 +674,13 @@
 
   <!-- Pokoje Środkowe -->
   <!-- Pokój 37 -->
-  <rect id="room_37_floor7"
+  <rect id="ssw_room_37_floor7"
         x="835" y="176" width="40" height="22"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_37_floor7"
+  <text id="label_ssw_room_37_floor7"
         x="855" y="192"
         text-anchor="middle">37</text>
   <rect id="door_37_floor7"
@@ -688,13 +688,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 38 -->
-  <rect id="room_38_floor7"
+  <rect id="ssw_room_38_floor7"
         x="835" y="198" width="40" height="21"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_38_floor7"
+  <text id="label_ssw_room_38_floor7"
         x="855" y="212"
         text-anchor="middle">38</text>
   <rect id="door_38_floor7"
@@ -702,13 +702,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 39 -->
-  <rect id="room_39_floor7"
+  <rect id="ssw_room_39_floor7"
         x="835" y="219" width="20" height="22"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_39_floor7"
+  <text id="label_ssw_room_39_floor7"
         x="846" y="233"
         text-anchor="middle"
         style="font-size: 9px !important;">39</text>
@@ -717,13 +717,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 40 -->
-  <rect id="room_40_floor7"
+  <rect id="ssw_room_40_floor7"
         x="835" y="241" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_40_floor7"
+  <text id="label_ssw_room_40_floor7"
         x="846" y="253"
         text-anchor="middle"
         style="font-size: 9px !important;">40</text>
@@ -732,13 +732,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 41 -->
-  <rect id="room_41_floor7"
+  <rect id="ssw_room_41_floor7"
         x="835" y="259" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_41_floor7"
+  <text id="label_ssw_room_41_floor7"
         x="846" y="277"
         text-anchor="middle"
         style="font-size: 9px !important;">41</text>
@@ -747,13 +747,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 42 -->
-  <rect id="room_42_floor7"
+  <rect id="ssw_room_42_floor7"
         x="835" y="385" width="40" height="26"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_42_floor7"
+  <text id="label_ssw_room_42_floor7"
         x="855" y="402"
         text-anchor="middle">42</text>
   <rect id="door_42_floor7"
@@ -761,13 +761,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 43 -->
-  <rect id="room_43_floor7"
+  <rect id="ssw_room_43_floor7"
         x="835" y="411" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_43_floor7"
+  <text id="label_ssw_room_43_floor7"
         x="845" y="423"
         text-anchor="middle"
         style="font-size: 9px !important;">43</text>
@@ -776,13 +776,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 44 -->
-  <rect id="room_44_floor7"
+  <rect id="ssw_room_44_floor7"
         x="855" y="219" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_44_floor7"
+  <text id="label_ssw_room_44_floor7"
         x="865" y="238"
         text-anchor="middle"
         style="font-size: 9px !important;">44</text>
@@ -791,13 +791,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 45 -->
-  <rect id="room_45_floor7"
+  <rect id="ssw_room_45_floor7"
         x="855" y="249" width="20" height="50"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_45_floor7"
+  <text id="label_ssw_room_45_floor7"
         x="865" y="274"
         text-anchor="middle"
         style="font-size: 9px !important;">45</text>
@@ -806,13 +806,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 46 -->
-  <rect id="room_46_floor7"
+  <rect id="ssw_room_46_floor7"
         x="835" y="289" width="40" height="24"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_46_floor7"
+  <text id="label_ssw_room_46_floor7"
         x="855" y="305"
         text-anchor="middle">46</text>
   <rect id="door_46_floor7"
@@ -823,13 +823,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 47 -->
-  <rect id="room_47_floor7"
+  <rect id="ssw_room_47_floor7"
         x="835" y="313" width="40" height="24"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_47_floor7"
+  <text id="label_ssw_room_47_floor7"
         x="855" y="329"
         text-anchor="middle">47</text>
   <rect id="door_47_floor7"
@@ -840,13 +840,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 48 -->
-  <rect id="room_48_floor7"
+  <rect id="ssw_room_48_floor7"
         x="835" y="337" width="40" height="20"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_48_floor7"
+  <text id="label_ssw_room_48_floor7"
         x="855" y="351"
         text-anchor="middle">48</text>
   <rect id="door_48_floor7"
@@ -854,13 +854,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 49 -->
-  <rect id="room_49_floor7"
+  <rect id="ssw_room_49_floor7"
         x="835" y="357" width="40" height="28"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_49_floor7"
+  <text id="label_ssw_room_49_floor7"
         x="855" y="375"
         text-anchor="middle">49</text>
   <rect id="door_49_floor7"
@@ -868,13 +868,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 50 -->
-  <rect id="room_50_floor7"
+  <rect id="ssw_room_50_floor7"
         x="855" y="411" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_50_floor7"
+  <text id="label_ssw_room_50_floor7"
         x="865" y="423"
         text-anchor="middle"
         style="font-size: 9px !important;">50</text>

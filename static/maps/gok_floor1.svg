@@ -166,13 +166,13 @@
 <!-- Pokoje -->
   <!-- Pokoje -> Przychodnia Kardiologiczna -->
   <!-- Pokój 48 -->
-  <rect id="room_48_floor1" class="room"
+  <rect id="gok_room_48_floor1" class="room"
         x="490" y="495" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_48_floor1"
+  <text id="label_gok_room_48_floor1"
         x="520" y="512"
         text-anchor="middle">48</text>
   <rect id="door_48_floor1"
@@ -180,13 +180,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 50 -->
-  <rect id="room_50_floor1" class="room"
+  <rect id="gok_room_50_floor1" class="room"
         x="490" y="522" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_50_floor1"
+  <text id="label_gok_room_50_floor1"
         x="520" y="540"
         text-anchor="middle">50</text>
   <rect id="door_50_floor1"
@@ -194,13 +194,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 52 -->
-  <rect id="room_52_floor1" class="room"
+  <rect id="gok_room_52_floor1" class="room"
         x="490" y="550" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_52_floor1"
+  <text id="label_gok_room_52_floor1"
         x="520" y="567"
         text-anchor="middle">52</text>
   <rect id="door_52_floor1"
@@ -208,13 +208,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 54 -->
-  <rect id="room_54_floor1" class="room"
+  <rect id="gok_room_54_floor1" class="room"
         x="490" y="577" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_54_floor1"
+  <text id="label_gok_room_54_floor1"
         x="520" y="594"
         text-anchor="middle">54</text>
   <rect id="door_54_floor1"
@@ -222,13 +222,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 56 -->
-  <rect id="room_56_floor1" class="room"
+  <rect id="gok_room_56_floor1" class="room"
         x="490" y="605" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_56_floor1"
+  <text id="label_gok_room_56_floor1"
         x="520" y="623"
         text-anchor="middle">56</text>
   <rect id="door_56_floor1"
@@ -236,13 +236,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 58 -->
-  <rect id="room_58_floor1" class="room"
+  <rect id="gok_room_58_floor1" class="room"
         x="490" y="632" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_58_floor1"
+  <text id="label_gok_room_58_floor1"
         x="520" y="649"
         text-anchor="middle">58</text>
   <rect id="door_58_floor1"
@@ -250,13 +250,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 49 -->
-  <rect id="room_49_floor1" class="room"
+  <rect id="gok_room_49_floor1" class="room"
         x="590" y="495" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_49_floor1"
+  <text id="label_gok_room_49_floor1"
         x="620" y="512"
         text-anchor="middle">49</text>
   <rect id="door_49_floor1"
@@ -264,13 +264,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 51 -->
-  <rect id="room_51_floor1" class="room"
+  <rect id="gok_room_51_floor1" class="room"
         x="590" y="522" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_51_floor1"
+  <text id="label_gok_room_51_floor1"
         x="620" y="540"
         text-anchor="middle">51</text>
   <rect id="door_51_floor1"
@@ -278,13 +278,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 53 -->
-  <rect id="room_53_floor1" class="room"
+  <rect id="gok_room_53_floor1" class="room"
         x="590" y="550" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_53_floor1"
+  <text id="label_gok_room_53_floor1"
         x="620" y="567"
         text-anchor="middle">53</text>
   <rect id="door_53_floor1"
@@ -292,13 +292,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 55 -->
-  <rect id="room_55_floor1" class="room"
+  <rect id="gok_room_55_floor1" class="room"
         x="590" y="577" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_55_floor1"
+  <text id="label_gok_room_55_floor1"
         x="620" y="594"
         text-anchor="middle">55</text>
   <rect id="door_55_floor1"
@@ -306,13 +306,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 57 -->
-  <rect id="room_57_floor1" class="room"
+  <rect id="gok_room_57_floor1" class="room"
         x="590" y="605" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_57_floor1"
+  <text id="label_gok_room_57_floor1"
         x="620" y="623"
         text-anchor="middle">57</text>
   <rect id="door_57_floor1"
@@ -320,13 +320,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 59 -->
-  <rect id="room_59_floor1" class="room"
+  <rect id="gok_room_59_floor1" class="room"
         x="590" y="632" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_59_floor1"
+  <text id="label_gok_room_59_floor1"
         x="620" y="649"
         text-anchor="middle">59</text>
   <rect id="door_59_floor1"
@@ -334,13 +334,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 60 -->
-  <rect id="room_60_floor1" class="room"
+  <rect id="gok_room_60_floor1" class="room"
         x="178" y="690" width="34" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_60_floor1"
+  <text id="label_gok_room_60_floor1"
         x="196" y="722"
         text-anchor="middle">60</text>
   <rect id="door_60_floor1"
@@ -348,13 +348,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 61 -->
-  <rect id="room_61_floor1" class="room"
+  <rect id="gok_room_61_floor1" class="room"
         x="212" y="690" width="34" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_61_floor1"
+  <text id="label_gok_room_61_floor1"
         x="229" y="722"
         text-anchor="middle">61</text>
   <rect id="door_61_floor1"
@@ -362,13 +362,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 62 -->
-  <rect id="room_62_floor1" class="room"
+  <rect id="gok_room_62_floor1" class="room"
         x="356" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_62_floor1"
+  <text id="label_gok_room_62_floor1"
         x="371" y="722"
         text-anchor="middle">62</text>
   <rect id="door_62_floor1"
@@ -376,13 +376,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 63 -->
-  <rect id="room_63_floor1" class="room"
+  <rect id="gok_room_63_floor1" class="room"
         x="386" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_63_floor1"
+  <text id="label_gok_room_63_floor1"
         x="401" y="722"
         text-anchor="middle">63</text>
   <rect id="door_63_floor1"
@@ -390,13 +390,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 64 -->
-  <rect id="room_64_floor1" class="room"
+  <rect id="gok_room_64_floor1" class="room"
         x="416" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_64_floor1"
+  <text id="label_gok_room_64_floor1"
         x="431" y="722"
         text-anchor="middle">64</text>
   <rect id="door_64_floor1"
@@ -404,13 +404,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 65 -->
-  <rect id="room_65_floor1" class="room"
+  <rect id="gok_room_65_floor1" class="room"
         x="446" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_65_floor1"
+  <text id="label_gok_room_65_floor1"
         x="461" y="722"
         text-anchor="middle">65</text>
   <rect id="door_65_floor1"
@@ -418,13 +418,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 66 -->
-  <rect id="room_66_floor1" class="room"
+  <rect id="gok_room_66_floor1" class="room"
         x="476" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_66_floor1"
+  <text id="label_gok_room_66_floor1"
         x="491" y="722"
         text-anchor="middle">66</text>
   <rect id="door_66_floor1"
@@ -432,13 +432,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 67 -->
-  <rect id="room_67_floor1"
+  <rect id="gok_room_67_floor1"
         x="506" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_67_floor1"
+  <text id="label_gok_room_67_floor1"
         x="521" y="722"
         text-anchor="middle">67</text>
   <rect id="door_67_floor1"
@@ -446,13 +446,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 68 -->
-  <rect id="room_68_floor1"
+  <rect id="gok_room_68_floor1"
         x="536" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_68_floor1"
+  <text id="label_gok_room_68_floor1"
         x="551" y="722"
         text-anchor="middle">68</text>
   <rect id="door_68_floor1"
@@ -460,13 +460,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 69 -->
-  <rect id="room_69_floor1"
+  <rect id="gok_room_69_floor1"
         x="566" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_69_floor1"
+  <text id="label_gok_room_69_floor1"
         x="581" y="722"
         text-anchor="middle">69</text>
   <rect id="door_69_floor1"
@@ -474,13 +474,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 70 -->
-  <rect id="room_70_floor1"
+  <rect id="gok_room_70_floor1"
         x="596" y="690" width="54" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_70_floor1"
+  <text id="label_gok_room_70_floor1"
         x="623" y="722"
         text-anchor="middle">70</text>
   <rect id="door_70_floor1"
@@ -488,13 +488,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 71 -->
-  <rect id="room_71_floor1"
+  <rect id="gok_room_71_floor1"
         x="650" y="690" width="110" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_71_floor1"
+  <text id="label_gok_room_71_floor1"
         x="705" y="722"
         text-anchor="middle">Rejestracja</text>
   <rect id="door_71_floor1"
@@ -502,13 +502,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 34 -->
-  <rect id="room_34_floor1"
+  <rect id="gok_room_34_floor1"
         x="192" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_34_floor1"
+  <text id="label_gok_room_34_floor1"
         x="206" y="435"
         text-anchor="middle">34</text>
   <rect id="door_34_floor1"
@@ -516,13 +516,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 35 -->
-  <rect id="room_35_floor1"
+  <rect id="gok_room_35_floor1"
         x="220" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_35_floor1"
+  <text id="label_gok_room_35_floor1"
         x="233" y="435"
         text-anchor="middle">35</text>
   <rect id="door_35_floor1"
@@ -530,13 +530,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 36 -->
-  <rect id="room_36_floor1"
+  <rect id="gok_room_36_floor1"
         x="247" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_36_floor1"
+  <text id="label_gok_room_36_floor1"
         x="261" y="435"
         text-anchor="middle">36</text>
   <rect id="door_36_floor1"
@@ -544,13 +544,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 37 -->
-  <rect id="room_37_floor1"
+  <rect id="gok_room_37_floor1"
         x="275" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_37_floor1"
+  <text id="label_gok_room_37_floor1"
         x="289" y="435"
         text-anchor="middle">37</text>
   <rect id="door_37_floor1"
@@ -558,13 +558,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 38 -->
-  <rect id="room_38_floor1"
+  <rect id="gok_room_38_floor1"
         x="303" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_38_floor1"
+  <text id="label_gok_room_38_floor1"
         x="316" y="435"
         text-anchor="middle">38</text>
   <rect id="door_38_floor1"
@@ -572,13 +572,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 39 -->
-  <rect id="room_39_floor1"
+  <rect id="gok_room_39_floor1"
         x="330" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_39_floor1"
+  <text id="label_gok_room_39_floor1"
         x="343" y="435"
         text-anchor="middle">39</text>
   <rect id="door_39_floor1"
@@ -586,13 +586,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 40 -->
-  <rect id="room_40_floor1"
+  <rect id="gok_room_40_floor1"
         x="358" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_40_floor1"
+  <text id="label_gok_room_40_floor1"
         x="371" y="435"
         text-anchor="middle">40</text>
   <rect id="door_40_floor1"
@@ -600,13 +600,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 41 -->
-  <rect id="room_41_floor1"
+  <rect id="gok_room_41_floor1"
         x="423" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_41_floor1"
+  <text id="label_gok_room_41_floor1"
         x="436" y="435"
         text-anchor="middle">41</text>
   <rect id="door_41_floor1"
@@ -614,13 +614,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 42 -->
-  <rect id="room_42_floor1"
+  <rect id="gok_room_42_floor1"
         x="450" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_42_floor1"
+  <text id="label_gok_room_42_floor1"
         x="464" y="435"
         text-anchor="middle">42</text>
   <rect id="door_42_floor1"
@@ -628,13 +628,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 43 -->
-  <rect id="room_43_floor1"
+  <rect id="gok_room_43_floor1"
         x="478" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_43_floor1"
+  <text id="label_gok_room_43_floor1"
         x="491" y="435"
         text-anchor="middle">43</text>
   <rect id="door_43_floor1"
@@ -642,13 +642,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 44 -->
-  <rect id="room_44_floor1"
+  <rect id="gok_room_44_floor1"
         x="505" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_44_floor1"
+  <text id="label_gok_room_44_floor1"
         x="519" y="435"
         text-anchor="middle">44</text>
   <rect id="door_44_floor1"
@@ -656,13 +656,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 45 -->
-  <rect id="room_45_floor1"
+  <rect id="gok_room_45_floor1"
         x="533" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_45_floor1"
+  <text id="label_gok_room_45_floor1"
         x="547" y="435"
         text-anchor="middle">45</text>
   <rect id="door_45_floor1"
@@ -670,13 +670,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 46 -->
-  <rect id="room_46_floor1"
+  <rect id="gok_room_46_floor1"
         x="561" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_46_floor1"
+  <text id="label_gok_room_46_floor1"
         x="575" y="435"
         text-anchor="middle">46</text>
   <rect id="door_46_floor1"
@@ -684,13 +684,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 47 -->
-  <rect id="room_47_floor1"
+  <rect id="gok_room_47_floor1"
         x="589" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradRed)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_47_floor1"
+  <text id="label_gok_room_47_floor1"
         x="603" y="435"
         text-anchor="middle">47</text>
   <rect id="door_47_floor1"
@@ -700,13 +700,13 @@
 
   <!-- Pokoje -> Zakład Diagnostyki Obrazowej - Pracownia Tomografii Komputerowej -->
   <!-- Pokój 23 -->
-  <rect id="room_23_floor1"
+  <rect id="gok_room_23_floor1"
         x="230" y="570" width="20" height="25"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_23_floor1"
+  <text id="label_gok_room_23_floor1"
         x="241" y="586"
         text-anchor="middle"
         style="font-size: 10px !important;">23</text>
@@ -715,13 +715,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 24 -->
-  <rect id="room_24_floor1"
+  <rect id="gok_room_24_floor1"
         x="230" y="495" width="60" height="55"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_24_floor1"
+  <text id="label_gok_room_24_floor1"
         x="260" y="528"
         text-anchor="middle">24</text>
   <rect id="door_24_floor1"
@@ -729,13 +729,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 25 -->
-  <rect id="room_25_floor1"
+  <rect id="gok_room_25_floor1"
         x="250" y="570" width="40" height="25"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_25_floor1"
+  <text id="label_gok_room_25_floor1"
         x="270" y="588"
         text-anchor="middle">25</text>
   <rect id="door_25_floor1"
@@ -743,13 +743,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 26 -->
-  <rect id="room_26_floor1"
+  <rect id="gok_room_26_floor1"
         x="230" y="595" width="60" height="65"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_26_floor1"
+  <text id="label_gok_room_26_floor1"
         x="260" y="634"
         text-anchor="middle">26</text>
   <rect id="door_26_floor1"
@@ -757,13 +757,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 27 -->
-  <rect id="room_27_floor1"
+  <rect id="gok_room_27_floor1"
         x="290" y="495" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_27_floor1"
+  <text id="label_gok_room_27_floor1"
         x="305" y="528"
         text-anchor="middle">27</text>
   <rect id="door_27_floor1"
@@ -771,13 +771,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 179 -->
-  <rect id="room_179_floor1"
+  <rect id="gok_room_179_floor1"
         x="290" y="630" width="30" height="30"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_179_floor1"
+  <text id="label_gok_room_179_floor1"
         x="305" y="648"
         text-anchor="middle"
         style="font-size: 10px !important;">179</text>
@@ -786,13 +786,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 175 -->
-  <rect id="room_175_floor1"
+  <rect id="gok_room_175_floor1"
         x="320" y="495" width="20" height="35"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_175_floor1"
+  <text id="label_gok_room_175_floor1"
         x="329" y="518"
         text-anchor="middle"
         style="font-size: 10px !important;">175</text>
@@ -801,13 +801,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 176 -->
-  <rect id="room_176_floor1"
+  <rect id="gok_room_176_floor1"
         x="320" y="530" width="20" height="40"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_176_floor1"
+  <text id="label_gok_room_176_floor1"
         x="329" y="554"
         text-anchor="middle"
         style="font-size: 10px !important;">176</text>
@@ -816,13 +816,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 177 -->
-  <rect id="room_177_floor1"
+  <rect id="gok_room_177_floor1"
         x="320" y="582" width="20" height="38"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_177_floor1"
+  <text id="label_gok_room_177_floor1"
         x="329" y="605"
         text-anchor="middle"
         style="font-size: 10px !important;">177</text>
@@ -831,13 +831,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 178 -->
-  <rect id="room_178_floor1"
+  <rect id="gok_room_178_floor1"
         x="320" y="620" width="20" height="40"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_178_floor1"
+  <text id="label_gok_room_178_floor1"
         x="329" y="646"
         text-anchor="middle"
         style="font-size: 10px !important;">178</text>
@@ -846,13 +846,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 28 -->
-  <rect id="room_28_floor1"
+  <rect id="gok_room_28_floor1"
         x="355" y="495" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_28_floor1"
+  <text id="label_gok_room_28_floor1"
         x="385" y="512"
         text-anchor="middle">28</text>
   <rect id="door_28_floor1"
@@ -860,13 +860,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 29 -->
-  <rect id="room_29_floor1"
+  <rect id="gok_room_29_floor1"
         x="355" y="522" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_29_floor1"
+  <text id="label_gok_room_29_floor1"
         x="385" y="540"
         text-anchor="middle">29</text>
   <rect id="door_29_floor1"
@@ -874,13 +874,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 30 -->
-  <rect id="room_30_floor1"
+  <rect id="gok_room_30_floor1"
         x="355" y="550" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_30_floor1"
+  <text id="label_gok_room_30_floor1"
         x="385" y="567"
         text-anchor="middle">30</text>
   <rect id="door_30_floor1"
@@ -888,13 +888,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 31 -->
-  <rect id="room_31_floor1"
+  <rect id="gok_room_31_floor1"
         x="355" y="577" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_31_floor1"
+  <text id="label_gok_room_31_floor1"
         x="385" y="594"
         text-anchor="middle">31</text>
   <rect id="door_31_floor1"
@@ -902,13 +902,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 32 -->
-  <rect id="room_32_floor1"
+  <rect id="gok_room_32_floor1"
         x="355" y="605" width="60" height="27"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_32_floor1"
+  <text id="label_gok_room_32_floor1"
         x="385" y="623"
         text-anchor="middle">32</text>
   <rect id="door_32_floor1"
@@ -916,13 +916,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 33 -->
-  <rect id="room_33_floor1"
+  <rect id="gok_room_33_floor1"
         x="355" y="632" width="60" height="28"
         rx="3" ry="3"
         fill="url(#roomGradDarkGreen)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_33_floor1"
+  <text id="label_gok_room_33_floor1"
         x="385" y="650"
         text-anchor="middle">33</text>
   <rect id="door_33_floor1"
@@ -932,13 +932,13 @@
 
   <!-- Pokoje -> Badania Kliniczne -->
   <!-- Pokój 135 -->
-  <rect id="room_135_floor1"
+  <rect id="gok_room_135_floor1"
         x="755" y="35" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_135_floor1"
+  <text id="label_gok_room_135_floor1"
         x="785" y="55"
         text-anchor="middle">135</text>
   <rect id="door_135_floor1"
@@ -946,13 +946,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 136 -->
-  <rect id="room_136_floor1"
+  <rect id="gok_room_136_floor1"
         x="755" y="66" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_136_floor1"
+  <text id="label_gok_room_136_floor1"
         x="785" y="86"
         text-anchor="middle">136</text>
   <rect id="door_136_floor1"
@@ -960,13 +960,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 137 -->
-  <rect id="room_137_floor1"
+  <rect id="gok_room_137_floor1"
         x="755" y="97" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_137_floor1"
+  <text id="label_gok_room_137_floor1"
         x="785" y="117"
         text-anchor="middle">137</text>
   <rect id="door_137_floor1"
@@ -974,13 +974,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 138 -->
-  <rect id="room_138_floor1"
+  <rect id="gok_room_138_floor1"
         x="755" y="127" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_138_floor1"
+  <text id="label_gok_room_138_floor1"
         x="785" y="147"
         text-anchor="middle">138</text>
   <rect id="door_138_floor1"
@@ -988,13 +988,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 139 -->
-  <rect id="room_139_floor1"
+  <rect id="gok_room_139_floor1"
         x="755" y="158" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_139_floor1"
+  <text id="label_gok_room_139_floor1"
         x="785" y="178"
         text-anchor="middle">139</text>
   <rect id="door_139_floor1"
@@ -1002,13 +1002,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 140 -->
-  <rect id="room_140_floor1"
+  <rect id="gok_room_140_floor1"
         x="755" y="189" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_140_floor1"
+  <text id="label_gok_room_140_floor1"
         x="785" y="209"
         text-anchor="middle">140</text>
   <rect id="door_140_floor1"
@@ -1016,13 +1016,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 141 -->
-  <rect id="room_141_floor1"
+  <rect id="gok_room_141_floor1"
         x="755" y="219" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_141_floor1"
+  <text id="label_gok_room_141_floor1"
         x="785" y="239"
         text-anchor="middle">141</text>
   <rect id="door_141_floor1"
@@ -1030,13 +1030,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 142 -->
-  <rect id="room_142_floor1"
+  <rect id="gok_room_142_floor1"
         x="755" y="250" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_142_floor1"
+  <text id="label_gok_room_142_floor1"
         x="785" y="270"
         text-anchor="middle">142</text>
   <rect id="door_142_floor1"
@@ -1044,13 +1044,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 143 -->
-  <rect id="room_143_floor1"
+  <rect id="gok_room_143_floor1"
         x="755" y="281" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_143_floor1"
+  <text id="label_gok_room_143_floor1"
         x="785" y="301"
         text-anchor="middle">143</text>
   <rect id="door_143_floor1"
@@ -1058,13 +1058,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 144 -->
-  <rect id="room_144_floor1"
+  <rect id="gok_room_144_floor1"
         x="755" y="311" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_144_floor1"
+  <text id="label_gok_room_144_floor1"
         x="785" y="331"
         text-anchor="middle">144</text>
   <rect id="door_144_floor1"
@@ -1072,13 +1072,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 145 -->
-  <rect id="room_145_floor1"
+  <rect id="gok_room_145_floor1"
         x="755" y="342" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_145_floor1"
+  <text id="label_gok_room_145_floor1"
         x="785" y="362"
         text-anchor="middle">145</text>
   <rect id="door_145_floor1"
@@ -1086,13 +1086,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 146 -->
-  <rect id="room_146_floor1"
+  <rect id="gok_room_146_floor1"
         x="755" y="373" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_146_floor1"
+  <text id="label_gok_room_146_floor1"
         x="785" y="393"
         text-anchor="middle">146</text>
   <rect id="door_146_floor1"
@@ -1100,13 +1100,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 147 -->
-  <rect id="room_147_floor1"
+  <rect id="gok_room_147_floor1"
         x="755" y="403" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_147_floor1"
+  <text id="label_gok_room_147_floor1"
         x="785" y="423"
         text-anchor="middle">147</text>
   <rect id="door_147_floor1"
@@ -1114,13 +1114,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 148 -->
-  <rect id="room_148_floor1"
+  <rect id="gok_room_148_floor1"
         x="755" y="434" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_148_floor1"
+  <text id="label_gok_room_148_floor1"
         x="785" y="454"
         text-anchor="middle">148</text>
   <rect id="door_148_floor1"
@@ -1128,13 +1128,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 161 -->
-  <rect id="room_161_floor1"
+  <rect id="gok_room_161_floor1"
         x="835" y="176" width="40" height="22"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_161_floor1"
+  <text id="label_gok_room_161_floor1"
         x="855" y="192"
         text-anchor="middle">161</text>
   <rect id="door_161_floor1"
@@ -1142,13 +1142,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 162 -->
-  <rect id="room_162_floor1"
+  <rect id="gok_room_162_floor1"
         x="835" y="198" width="40" height="21"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_162_floor1"
+  <text id="label_gok_room_162_floor1"
         x="855" y="212"
         text-anchor="middle">162</text>
   <rect id="door_162_floor1"
@@ -1156,13 +1156,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 163 -->
-  <rect id="room_163_floor1"
+  <rect id="gok_room_163_floor1"
         x="835" y="219" width="20" height="22"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_163_floor1"
+  <text id="label_gok_room_163_floor1"
         x="846" y="233"
         text-anchor="middle"
         style="font-size: 9px !important;">163</text>
@@ -1171,13 +1171,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 165 -->
-  <rect id="room_165_floor1"
+  <rect id="gok_room_165_floor1"
         x="835" y="241" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_165_floor1"
+  <text id="label_gok_room_165_floor1"
         x="846" y="253"
         text-anchor="middle"
         style="font-size: 9px !important;">165</text>
@@ -1186,13 +1186,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 166 -->
-  <rect id="room_166_floor1"
+  <rect id="gok_room_166_floor1"
         x="835" y="259" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_166_floor1"
+  <text id="label_gok_room_166_floor1"
         x="846" y="277"
         text-anchor="middle"
         style="font-size: 9px !important;">166</text>
@@ -1201,13 +1201,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 172 -->
-  <rect id="room_172_floor1"
+  <rect id="gok_room_172_floor1"
         x="835" y="385" width="40" height="26"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_172_floor1"
+  <text id="label_gok_room_172_floor1"
         x="855" y="402"
         text-anchor="middle">172</text>
   <rect id="door_172_floor1"
@@ -1215,13 +1215,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 173 -->
-  <rect id="room_173_floor1"
+  <rect id="gok_room_173_floor1"
         x="835" y="411" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradOrange)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_173_floor1"
+  <text id="label_gok_room_173_floor1"
         x="845" y="423"
         text-anchor="middle"
         style="font-size: 9px !important;">173</text>
@@ -1232,13 +1232,13 @@
 
   <!-- Pokoje -> Oddział Elektrokardiologii -->
   <!-- Pokój 149 -->
-  <rect id="room_149_floor1"
+  <rect id="gok_room_149_floor1"
         x="895" y="35" width="60" height="62"
         rx="3" ry="3"
         fill="url(#roomGradBronze)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_149_floor1"
+  <text id="label_gok_room_149_floor1"
         x="925" y="71"
         text-anchor="middle">149</text>
   <rect id="door_149_floor1"
@@ -1246,13 +1246,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 150 -->
-  <rect id="room_150_floor1"
+  <rect id="gok_room_150_floor1"
         x="895" y="97" width="60" height="62"
         rx="3" ry="3"
         fill="url(#roomGradBronze)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_150_floor1"
+  <text id="label_gok_room_150_floor1"
         x="925" y="132"
         text-anchor="middle">150</text>
   <rect id="door_150_floor1"
@@ -1262,13 +1262,13 @@
 
   <!-- Pokoje -> Oddział Intensywnego Nadzoru Kardiologicznego -->
   <!-- Pokój 151 -->
-  <rect id="room_151_floor1"
+  <rect id="gok_room_151_floor1"
         x="895" y="158" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_151_floor1"
+  <text id="label_gok_room_151_floor1"
         x="925" y="178"
         text-anchor="middle">151</text>
   <rect id="door_151_floor1"
@@ -1276,13 +1276,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 152 -->
-  <rect id="room_152_floor1"
+  <rect id="gok_room_152_floor1"
         x="895" y="189" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_152_floor1"
+  <text id="label_gok_room_152_floor1"
         x="925" y="209"
         text-anchor="middle">152</text>
   <rect id="door_152_floor1"
@@ -1290,13 +1290,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 153 -->
-  <rect id="room_153_floor1"
+  <rect id="gok_room_153_floor1"
         x="895" y="219" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_153_floor1"
+  <text id="label_gok_room_153_floor1"
         x="925" y="239"
         text-anchor="middle">153</text>
   <rect id="door_153_floor1"
@@ -1304,13 +1304,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 154 -->
-  <rect id="room_154_floor1"
+  <rect id="gok_room_154_floor1"
         x="895" y="250" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_154_floor1"
+  <text id="label_gok_room_154_floor1"
         x="925" y="270"
         text-anchor="middle">154</text>
   <rect id="door_154_floor1"
@@ -1318,13 +1318,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 155 -->
-  <rect id="room_155_floor1"
+  <rect id="gok_room_155_floor1"
         x="895" y="281" width="60" height="61"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_155_floor1"
+  <text id="label_gok_room_155_floor1"
         x="925" y="316"
         text-anchor="middle">155</text>
   <rect id="door_155_floor1"
@@ -1332,13 +1332,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 156 -->
-  <rect id="room_156_floor1"
+  <rect id="gok_room_156_floor1"
         x="895" y="342" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_156_floor1"
+  <text id="label_gok_room_156_floor1"
         x="925" y="362"
         text-anchor="middle">156</text>
   <rect id="door_156_floor1"
@@ -1346,13 +1346,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 157 -->
-  <rect id="room_157_floor1"
+  <rect id="gok_room_157_floor1"
         x="895" y="373" width="60" height="30"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_157_floor1"
+  <text id="label_gok_room_157_floor1"
         x="925" y="393"
         text-anchor="middle">157</text>
   <rect id="door_157_floor1"
@@ -1360,13 +1360,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 158 -->
-  <rect id="room_158_floor1"
+  <rect id="gok_room_158_floor1"
         x="895" y="403" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_158_floor1"
+  <text id="label_gok_room_158_floor1"
         x="925" y="423"
         text-anchor="middle">158</text>
   <rect id="door_158_floor1"
@@ -1374,13 +1374,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 159 -->
-  <rect id="room_159_floor1"
+  <rect id="gok_room_159_floor1"
         x="895" y="434" width="60" height="31"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_159_floor1"
+  <text id="label_gok_room_159_floor1"
         x="925" y="454"
         text-anchor="middle">159</text>
   <rect id="door_159_floor1"
@@ -1388,13 +1388,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 160 -->
-  <rect id="room_160_floor1"
+  <rect id="gok_room_160_floor1"
         x="855" y="158" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_160_floor1"
+  <text id="label_gok_room_160_floor1"
         x="856" y="171"
         style="font-size: 9px !important;">160</text>
   <rect id="door_160_floor1"
@@ -1402,13 +1402,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 164 -->
-  <rect id="room_164_floor1"
+  <rect id="gok_room_164_floor1"
         x="855" y="219" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_164_floor1"
+  <text id="label_gok_room_164_floor1"
         x="865" y="238"
         text-anchor="middle"
         style="font-size: 9px !important;">164</text>
@@ -1417,13 +1417,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 167 -->
-  <rect id="room_167_floor1"
+  <rect id="gok_room_167_floor1"
         x="855" y="249" width="20" height="50"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_167_floor1"
+  <text id="label_gok_room_167_floor1"
         x="865" y="274"
         text-anchor="middle"
         style="font-size: 9px !important;">167</text>
@@ -1432,13 +1432,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 168 -->
-  <rect id="room_168_floor1"
+  <rect id="gok_room_168_floor1"
         x="835" y="289" width="40" height="24"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_168_floor1"
+  <text id="label_gok_room_168_floor1"
         x="855" y="305"
         text-anchor="middle">168</text>
   <rect id="door_168_floor1"
@@ -1449,13 +1449,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 169 -->
-  <rect id="room_169_floor1"
+  <rect id="gok_room_169_floor1"
         x="835" y="313" width="40" height="24"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_169_floor1"
+  <text id="label_gok_room_169_floor1"
         x="855" y="329"
         text-anchor="middle">169</text>
   <rect id="door_169_floor1"
@@ -1466,13 +1466,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 170 -->
-  <rect id="room_170_floor1"
+  <rect id="gok_room_170_floor1"
         x="835" y="337" width="40" height="20"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_170_floor1"
+  <text id="label_gok_room_170_floor1"
         x="855" y="351"
         text-anchor="middle">170</text>
   <rect id="door_170_floor1"
@@ -1480,13 +1480,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 171 -->
-  <rect id="room_171_floor1"
+  <rect id="gok_room_171_floor1"
         x="835" y="357" width="40" height="28"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_171_floor1"
+  <text id="label_gok_room_171_floor1"
         x="855" y="375"
         text-anchor="middle">171</text>
   <rect id="door_171_floor1"
@@ -1494,13 +1494,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 174 -->
-  <rect id="room_174_floor1"
+  <rect id="gok_room_174_floor1"
         x="855" y="411" width="20" height="18"
         rx="3" ry="3"
         fill="url(#roomGradViolet)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_174_floor1"
+  <text id="label_gok_room_174_floor1"
         x="865" y="423"
         text-anchor="middle"
         style="font-size: 9px !important;">174</text>
@@ -1511,13 +1511,13 @@
 
   <!-- Pokoje -> Oddział Elektrokardiologii -->
   <!-- Pokój 17 -->
-  <rect id="room_17_floor1"
+  <rect id="gok_room_17_floor1"
         x="20" y="465" width="20" height="33"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_17_floor1"
+  <text id="label_gok_room_17_floor1"
         x="30" y="484"
         text-anchor="middle">17</text>
   <rect id="door_17_floor1"
@@ -1525,13 +1525,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 18 -->
-  <rect id="room_18_floor1"
+  <rect id="gok_room_18_floor1"
         x="55" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_18_floor1"
+  <text id="label_gok_room_18_floor1"
         x="68" y="435"
         text-anchor="middle">18</text>
   <rect id="door_18_floor1"
@@ -1539,13 +1539,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 19 -->
-  <rect id="room_19_floor1"
+  <rect id="gok_room_19_floor1"
         x="82" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_19_floor1"
+  <text id="label_gok_room_19_floor1"
         x="96" y="435"
         text-anchor="middle">19</text>
   <rect id="door_19_floor1"
@@ -1553,13 +1553,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 20 -->
-  <rect id="room_20_floor1"
+  <rect id="gok_room_20_floor1"
         x="110" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_20_floor1"
+  <text id="label_gok_room_20_floor1"
         x="123" y="435"
         text-anchor="middle">20</text>
   <rect id="door_20_floor1"
@@ -1567,13 +1567,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 21 -->
-  <rect id="room_21_floor1"
+  <rect id="gok_room_21_floor1"
         x="137" y="405" width="28" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_21_floor1"
+  <text id="label_gok_room_21_floor1"
         x="151" y="435"
         text-anchor="middle">21</text>
   <rect id="door_21_floor1"
@@ -1581,13 +1581,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 22 -->
-  <rect id="room_22_floor1"
+  <rect id="gok_room_22_floor1"
         x="165" y="405" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_22_floor1"
+  <text id="label_gok_room_22_floor1"
         x="178" y="435"
         text-anchor="middle">22</text>
   <rect id="door_22_floor1"
@@ -1597,13 +1597,13 @@
 
   <!-- Pokoje -> Poradnia Lekarza Rodzinnego -->
   <!-- Pokój 1 -->
-  <rect id="room_1_floor1"
+  <rect id="gok_room_1_floor1"
         x="20" y="690" width="26" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_1_floor1"
+  <text id="label_gok_room_1_floor1"
         x="32" y="722"
         text-anchor="middle">1</text>
   <rect id="door_1_floor1"
@@ -1611,13 +1611,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 2 -->
-  <rect id="room_2_floor1"
+  <rect id="gok_room_2_floor1"
         x="46" y="690" width="26" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_2_floor1"
+  <text id="label_gok_room_2_floor1"
         x="58" y="722"
         text-anchor="middle">2</text>
   <rect id="door_2_floor1"
@@ -1625,13 +1625,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 3 -->
-  <rect id="room_3_floor1"
+  <rect id="gok_room_3_floor1"
         x="72" y="690" width="26" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_3_floor1"
+  <text id="label_gok_room_3_floor1"
         x="84" y="722"
         text-anchor="middle">3</text>
   <rect id="door_3_floor1"
@@ -1639,13 +1639,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 4 -->
-  <rect id="room_3_floor1"
+  <rect id="gok_room_3_floor1"
         x="98" y="690" width="26" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_4_floor1"
+  <text id="label_gok_room_4_floor1"
         x="110" y="722"
         text-anchor="middle">4</text>
   <rect id="door_4_floor1"
@@ -1653,13 +1653,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 5 -->
-  <rect id="room_5_floor1"
+  <rect id="gok_room_5_floor1"
         x="124" y="690" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_5_floor1"
+  <text id="label_gok_room_5_floor1"
         x="138" y="722"
         text-anchor="middle">5</text>
   <rect id="door_5_floor1"
@@ -1667,13 +1667,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 6 -->
-  <rect id="room_6_floor1"
+  <rect id="gok_room_6_floor1"
         x="151" y="690" width="27" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_6_floor1"
+  <text id="label_gok_room_6_floor1"
         x="164" y="722"
         text-anchor="middle">6</text>
   <rect id="door_6_floor1"
@@ -1681,13 +1681,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 7 -->
-  <rect id="room_7_floor1"
+  <rect id="gok_room_7_floor1"
         x="30" y="632" width="45" height="28"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_7_floor1"
+  <text id="label_gok_room_7_floor1"
         x="48" y="650"
         text-anchor="middle">7</text>
   <rect id="door_7_floor1"
@@ -1695,13 +1695,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 8 -->
-  <rect id="room_8_floor1"
+  <rect id="gok_room_8_floor1"
         x="30" y="577" width="45" height="56"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_8_floor1"
+  <text id="label_gok_room_8_floor1"
         x="48" y="608"
         text-anchor="middle">8</text>
   <rect id="door_8_floor1"
@@ -1709,13 +1709,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 9 -->
-  <rect id="room_9_floor1"
+  <rect id="gok_room_9_floor1"
         x="30" y="550" width="45" height="27"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_9_floor1"
+  <text id="label_gok_room_9_floor1"
         x="48" y="567"
         text-anchor="middle">9</text>
   <rect id="door_9_floor1"
@@ -1723,13 +1723,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 10 -->
-  <rect id="room_10_floor1"
+  <rect id="gok_room_10_floor1"
         x="30" y="522" width="45" height="28"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_10_floor1"
+  <text id="label_gok_room_10_floor1"
         x="48" y="540"
         text-anchor="middle">10</text>
   <rect id="door_10_floor1"
@@ -1737,13 +1737,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 11 -->
-  <rect id="room_11_floor1"
+  <rect id="gok_room_11_floor1"
         x="30" y="495" width="105" height="27"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_11_floor1"
+  <text id="label_gok_room_11_floor1"
         x="78" y="512"
         text-anchor="middle">11</text>
   <rect id="door_11_floor1"
@@ -1751,13 +1751,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 13 -->
-  <rect id="room_13_floor1"
+  <rect id="gok_room_13_floor1"
         x="95" y="562" width="40" height="30"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_13_floor1"
+  <text id="label_gok_room_13_floor1"
         x="115" y="582"
         text-anchor="middle">13</text>
   <rect id="door_13_floor1"
@@ -1765,13 +1765,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 14 -->
-  <rect id="room_14_floor1"
+  <rect id="gok_room_14_floor1"
         x="95" y="592" width="40" height="20"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_14_floor1"
+  <text id="label_gok_room_14_floor1"
         x="115" y="607"
         text-anchor="middle">14</text>
   <rect id="door_14_floor1"
@@ -1779,13 +1779,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 15 -->
-  <rect id="room_15_floor1"
+  <rect id="gok_room_15_floor1"
         x="95" y="612" width="40" height="28"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_15_floor1"
+  <text id="label_gok_room_15_floor1"
         x="115" y="631"
         text-anchor="middle">15</text>
   <rect id="door_15_floor1"
@@ -1793,13 +1793,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 16 -->
-  <rect id="room_16_floor1"
+  <rect id="gok_room_16_floor1"
         x="95" y="640" width="40" height="20"
         rx="3" ry="3"
         fill="url(#roomGradPeach)"
         stroke="#bbb" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_16_floor1"
+  <text id="label_gok_room_16_floor1"
         x="115" y="655"
         text-anchor="middle">16</text>
   <rect id="door_16_floor1"
@@ -1809,13 +1809,13 @@
 
   <!-- Pokoje Wejście Główne -->
   <!-- Pokój 129 -->
-  <rect id="room_129_floor1"
+  <rect id="gok_room_129_floor1"
         x="760" y="527" width="55" height="26"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_129_floor1"
+  <text id="label_gok_room_129_floor1"
         x="785" y="546"
         text-anchor="middle">129</text>
   <rect id="door_129_floor1"
@@ -1823,13 +1823,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 128 -->
-  <rect id="room_128_floor1"
+  <rect id="gok_room_128_floor1"
         x="760" y="553" width="55" height="26"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_128_floor1"
+  <text id="label_gok_room_128_floor1"
         x="785" y="572"
         text-anchor="middle">128</text>
   <rect id="door_128_floor1"
@@ -1837,13 +1837,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 132 -->
-  <rect id="room_132_floor1"
+  <rect id="gok_room_132_floor1"
         x="895" y="495" width="60" height="24"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_132_floor1"
+  <text id="label_gok_room_132_floor1"
         x="925" y="512"
         text-anchor="middle">132</text>
   <rect id="door_132_floor1"
@@ -1851,13 +1851,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 133 -->
-  <rect id="room_133_floor1"
+  <rect id="gok_room_133_floor1"
         x="895" y="519" width="60" height="24"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_133_floor1"
+  <text id="label_gok_room_133_floor1"
         x="925" y="536"
         text-anchor="middle">133</text>
   <rect id="door_133_floor1"
@@ -1865,13 +1865,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 134 -->
-  <rect id="room_134_floor1"
+  <rect id="gok_room_134_floor1"
         x="895" y="543" width="60" height="24"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_134_floor1"
+  <text id="label_gok_room_134_floor1"
         x="925" y="560"
         text-anchor="middle">134</text>
   <rect id="door_134_floor1"
@@ -1879,13 +1879,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 76 -->
-  <rect id="room_76_floor1"
+  <rect id="gok_room_76_floor1"
         x="895" y="567" width="60" height="24"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_76_floor1"
+  <text id="label_gok_room_76_floor1"
         x="925" y="584"
         text-anchor="middle">76</text>
   <rect id="door_76_floor1"
@@ -1893,13 +1893,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 77 -->
-  <rect id="room_77_floor1"
+  <rect id="gok_room_77_floor1"
         x="895" y="591" width="60" height="24"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_77_floor1"
+  <text id="label_gok_room_77_floor1"
         x="925" y="608"
         text-anchor="middle">77</text>
   <rect id="door_77_floor1"
@@ -1907,13 +1907,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 75 -->
-  <rect id="room_75_floor1"
+  <rect id="gok_room_75_floor1"
         x="840" y="580" width="30" height="90"
         rx="3" ry="3"
         fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_75_floor1"
+  <text id="label_gok_room_75_floor1"
         x="895" y="599"
         text-anchor="middle"
         transform="rotate(90, 860, 590)">szatnia</text>
@@ -1924,13 +1924,13 @@
 
   <!-- Pokoje -> Oddział Anestezji i Intensywnej Terapii z Nadzorem Kardiologicznym -->
   <!-- Pokój 110 -->
-  <rect id="room_110_floor1"
+  <rect id="gok_room_110_floor1"
         x="1070" y="405" width="155" height="60"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_110_floor1"
+  <text id="label_gok_room_110_floor1"
         x="1152" y="440"
         text-anchor="middle">110</text>
   <rect id="door_110_floor1"
@@ -1938,13 +1938,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 115 -->
-  <rect id="room_115_floor1"
+  <rect id="gok_room_115_floor1"
         x="1225" y="405" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_115_floor1"
+  <text id="label_gok_room_115_floor1"
         x="1238" y="440"
         text-anchor="middle">115</text>
   <rect id="door_115_floor1"
@@ -1952,13 +1952,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 116 -->
-  <rect id="room_116_floor1"
+  <rect id="gok_room_116_floor1"
         x="1255" y="405" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_116_floor1"
+  <text id="label_gok_room_116_floor1"
         x="1270" y="440"
         text-anchor="middle">116</text>
   <rect id="door_116_floor1"
@@ -1966,13 +1966,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 119 -->
-  <rect id="room_119_floor1"
+  <rect id="gok_room_119_floor1"
         x="1285" y="445" width="30" height="20"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_119_floor1"
+  <text id="label_gok_room_119_floor1"
         x="1300" y="458"
         text-anchor="middle"
         style="font-size: 9px !important;">119</text>
@@ -1981,13 +1981,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 122 -->
-  <rect id="room_122_floor1"
+  <rect id="gok_room_122_floor1"
         x="1285" y="405" width="30" height="40"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_122_floor1"
+  <text id="label_gok_room_122_floor1"
         x="1300" y="432"
         text-anchor="middle">122</text>
   <rect id="door_122_floor1"
@@ -1995,13 +1995,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
     <!-- Pokój 123 -->
-  <rect id="room_123_floor1"
+  <rect id="gok_room_123_floor1"
         x="1315" y="405" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_123_floor1"
+  <text id="label_gok_room_123_floor1"
         x="1327" y="426"
         text-anchor="middle">123</text>
   <rect id="door_123_floor1"
@@ -2009,13 +2009,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 124 -->
-  <rect id="room_124_floor1"
+  <rect id="gok_room_124_floor1"
         x="1340" y="445" width="30" height="20"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_124_floor1"
+  <text id="label_gok_room_124_floor1"
         x="1354" y="458"
         text-anchor="middle"
         style="font-size: 9px !important;">124</text>
@@ -2024,13 +2024,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 127 -->
-  <rect id="room_127_floor1"
+  <rect id="gok_room_127_floor1"
         x="1340" y="405" width="30" height="40"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_127_floor1"
+  <text id="label_gok_room_127_floor1"
         x="1354" y="432"
         text-anchor="middle">127</text>
   <rect id="door_127_floor1"
@@ -2038,13 +2038,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 111 -->
-  <rect id="room_111_floor1"
+  <rect id="gok_room_111_floor1"
         x="1070" y="495" width="30" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_111_floor1"
+  <text id="label_gok_room_111_floor1"
         x="1085" y="518"
         text-anchor="middle">111</text>
   <rect id="door_111_floor1"
@@ -2052,13 +2052,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 112 -->
-  <rect id="room_112_floor1"
+  <rect id="gok_room_112_floor1"
         x="1100" y="495" width="50" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_112_floor1"
+  <text id="label_gok_room_112_floor1"
         x="1126" y="518"
         text-anchor="middle">112</text>
   <rect id="door_112_floor1"
@@ -2066,13 +2066,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 113 -->
-  <rect id="room_113_floor1"
+  <rect id="gok_room_113_floor1"
         x="1150" y="495" width="70" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_113_floor1"
+  <text id="label_gok_room_113_floor1"
         x="1186" y="518"
         text-anchor="middle">113</text>
   <rect id="door_113_floor1"
@@ -2080,13 +2080,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 114 -->
-  <rect id="room_114_floor1"
+  <rect id="gok_room_114_floor1"
         x="1220" y="495" width="30" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_114_floor1"
+  <text id="label_gok_room_114_floor1"
         x="1235" y="518"
         text-anchor="middle">114</text>
   <rect id="door_114_floor1"
@@ -2094,13 +2094,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 117 -->
-  <rect id="room_117_floor1"
+  <rect id="gok_room_117_floor1"
         x="1250" y="495" width="60" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_117_floor1"
+  <text id="label_gok_room_117_floor1"
         x="1280" y="518"
         text-anchor="middle">117</text>
   <rect id="door_117_floor1"
@@ -2108,13 +2108,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 120 -->
-  <rect id="room_120_floor1"
+  <rect id="gok_room_120_floor1"
         x="1310" y="495" width="40" height="35"
         rx="3" ry="3"
         fill="url(#roomGradGreen)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_120_floor1"
+  <text id="label_gok_room_120_floor1"
         x="1330" y="518"
         text-anchor="middle">120</text>
   <rect id="door_120_floor1"
@@ -2124,13 +2124,13 @@
 
   <!-- Pokoje -> Szpitalny Oddział Ratunkowy - budynek GOK -->
   <!-- Pokój 107 -->
-  <rect id="room_107_floor1"
+  <rect id="gok_room_107_floor1"
         x="1325" y="640" width="75" height="55"
         rx="3" ry="3"
         fill="url(#roomGradYellow)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_107_floor1"
+  <text id="label_gok_room_107_floor1"
         x="1360" y="672"
         text-anchor="middle">107</text>
   <rect id="door_107_floor1"
@@ -2138,13 +2138,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 108 -->
-  <rect id="room_108_floor1"
+  <rect id="gok_room_108_floor1"
         x="1310" y="580" width="40" height="35"
         rx="3" ry="3"
         fill="url(#roomGradYellow)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_108_floor1"
+  <text id="label_gok_room_108_floor1"
         x="1330" y="602"
         text-anchor="middle">108</text>
   <rect id="door_108_floor1"
@@ -2152,13 +2152,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 109 -->
-  <rect id="room_109_floor1"
+  <rect id="gok_room_109_floor1"
         x="1370" y="530" width="30" height="110"
         rx="3" ry="3"
         fill="url(#roomGradYellow)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_109_floor1"
+  <text id="label_gok_room_109_floor1"
         x="1318" y="510"
         text-anchor="middle"
         transform="rotate(90, 1310, 580)">Rejestracja</text>
@@ -2169,13 +2169,13 @@
 
   <!-- Pokoje -> Oddział Dzienny Rehabilitacji Kardiologicznej -->
   <!-- Pokój 83 -->
-  <rect id="room_83_floor1"
+  <rect id="gok_room_83_floor1"
         x="895" y="690" width="60" height="50"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_83_floor1"
+  <text id="label_gok_room_83_floor1"
         x="925" y="724"
         text-anchor="middle">83</text>
   <rect id="door_83_floor1"
@@ -2183,13 +2183,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 85 -->
-  <rect id="room_85_floor1"
+  <rect id="gok_room_85_floor1"
         x="955" y="690" width="30" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_85_floor1"
+  <text id="label_gok_room_85_floor1"
         x="970" y="724"
         text-anchor="middle">85</text>
   <rect id="door_85_floor1"
@@ -2197,13 +2197,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 88 -->
-  <rect id="room_88_floor1"
+  <rect id="gok_room_88_floor1"
         x="985" y="690" width="50" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_88_floor1"
+  <text id="label_gok_room_88_floor1"
         x="1010" y="724"
         text-anchor="middle">88</text>
   <rect id="door_88_floor1"
@@ -2211,13 +2211,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 93 -->
-  <rect id="room_93_floor1"
+  <rect id="gok_room_93_floor1"
         x="1035" y="690" width="50" height="60"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_93_floor1"
+  <text id="label_gok_room_93_floor1"
         x="1060" y="724"
         text-anchor="middle">93</text>
   <rect id="door_93_floor1"
@@ -2225,13 +2225,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 78 -->
-  <rect id="room_78_floor1"
+  <rect id="gok_room_78_floor1"
         x="895" y="640" width="30" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_78_floor1"
+  <text id="label_gok_room_78_floor1"
         x="910" y="660"
         text-anchor="middle">78</text>
   <rect id="door_78_floor1"
@@ -2239,13 +2239,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 79 -->
-  <rect id="room_79_floor1"
+  <rect id="gok_room_79_floor1"
         x="925" y="640" width="30" height="15"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_79_floor1"
+  <text id="label_gok_room_79_floor1"
         x="940" y="654"
         text-anchor="middle">79</text>
   <rect id="door_79_floor1"
@@ -2253,13 +2253,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 80 -->
-  <rect id="room_80_floor1"
+  <rect id="gok_room_80_floor1"
         x="925" y="655" width="30" height="15"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_80_floor1"
+  <text id="label_gok_room_80_floor1"
         x="940" y="666"
         text-anchor="middle">80</text>
   <rect id="door_80_floor1"
@@ -2267,13 +2267,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 84 -->
-  <rect id="room_84_floor1"
+  <rect id="gok_room_84_floor1"
         x="955" y="640" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_84_floor1"
+  <text id="label_gok_room_84_floor1"
         x="964" y="660"
         text-anchor="middle">84</text>
   <rect id="door_84_floor1"
@@ -2281,13 +2281,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 86 -->
-  <rect id="room_86_floor1"
+  <rect id="gok_room_86_floor1"
         x="975" y="640" width="20" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_86_floor1"
+  <text id="label_gok_room_86_floor1"
         x="984" y="660"
         text-anchor="middle">86</text>
   <rect id="door_86_floor1"
@@ -2295,13 +2295,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 87 -->
-  <rect id="room_87_floor1"
+  <rect id="gok_room_87_floor1"
         x="995" y="640" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_87_floor1"
+  <text id="label_gok_room_87_floor1"
         x="1008" y="660"
         text-anchor="middle">87</text>
   <rect id="door_87_floor1"
@@ -2309,13 +2309,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 89 -->
-  <rect id="room_89_floor1"
+  <rect id="gok_room_89_floor1"
         x="1020" y="640" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_89_floor1"
+  <text id="label_gok_room_89_floor1"
         x="1033" y="660"
         text-anchor="middle">89</text>
   <rect id="door_89_floor1"
@@ -2323,13 +2323,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 91 -->
-  <rect id="room_91_floor1"
+  <rect id="gok_room_91_floor1"
         x="1045" y="640" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_91_floor1"
+  <text id="label_gok_room_91_floor1"
         x="1058" y="660"
         text-anchor="middle">91</text>
   <rect id="door_91_floor1"
@@ -2337,13 +2337,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 92 -->
-  <rect id="room_92_floor1"
+  <rect id="gok_room_92_floor1"
         x="1070" y="640" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradBabyBlue)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_92_floor1"
+  <text id="label_gok_room_92_floor1"
         x="1083" y="660"
         text-anchor="middle">92</text>
   <rect id="door_92_floor1"
@@ -2353,13 +2353,13 @@
 
   <!-- Pokoje -> Punkt Przyjęć Planowych do Oddziałów Kardiologicznych -->
   <!-- Pokój 94 -->
-  <rect id="room_94_floor1"
+  <rect id="gok_room_94_floor1"
         x="1095" y="640" width="25" height="30"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_94_floor1"
+  <text id="label_gok_room_94_floor1"
         x="1108" y="660"
         text-anchor="middle">94</text>
   <rect id="door_94_floor1"
@@ -2370,13 +2370,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 95 -->
-  <rect id="room_95_floor1"
+  <rect id="gok_room_95_floor1"
         x="1085" y="690" width="35" height="60"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_95_floor1"
+  <text id="label_gok_room_95_floor1"
         x="1104" y="724"
         text-anchor="middle">95</text>
   <rect id="door_95_floor1"
@@ -2384,13 +2384,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 96 -->
-  <rect id="room_96_floor1"
+  <rect id="gok_room_96_floor1"
         x="1120" y="715" width="30" height="35"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_96_floor1"
+  <text id="label_gok_room_96_floor1"
         x="1135" y="736"
         text-anchor="middle">96</text>
   <rect id="door_96_floor1"
@@ -2398,13 +2398,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 97 -->
-  <rect id="room_97_floor1"
+  <rect id="gok_room_97_floor1"
         x="1145" y="640" width="30" height="25"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_97_floor1"
+  <text id="label_gok_room_97_floor1"
         x="1160" y="657"
         text-anchor="middle">97</text>
   <rect id="door_97_floor1"
@@ -2412,13 +2412,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 98 -->
-  <rect id="room_98_floor1"
+  <rect id="gok_room_98_floor1"
         x="1145" y="665" width="30" height="30"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_98_floor1"
+  <text id="label_gok_room_98_floor1"
         x="1160" y="684"
         text-anchor="middle">98</text>
   <rect id="door_98_floor1"
@@ -2426,13 +2426,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 99 -->
-  <rect id="room_99_floor1"
+  <rect id="gok_room_99_floor1"
         x="1150" y="715" width="30" height="35"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_99_floor1"
+  <text id="label_gok_room_99_floor1"
         x="1165" y="736"
         text-anchor="middle">99</text>
   <rect id="door_99_floor1"
@@ -2440,13 +2440,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 100 -->
-  <rect id="room_100_floor1"
+  <rect id="gok_room_100_floor1"
         x="1175" y="640" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_100_floor1"
+  <text id="label_gok_room_100_floor1"
         x="1190" y="672"
         text-anchor="middle">100</text>
   <rect id="door_100_floor1"
@@ -2457,13 +2457,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 101 -->
-  <rect id="room_101_floor1"
+  <rect id="gok_room_101_floor1"
         x="1180" y="715" width="30" height="35"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_101_floor1"
+  <text id="label_gok_room_101_floor1"
         x="1195" y="736"
         text-anchor="middle">101</text>
   <rect id="door_101_floor1"
@@ -2471,13 +2471,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 102 -->
-  <rect id="room_102_floor1"
+  <rect id="gok_room_102_floor1"
         x="1205" y="640" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_102_floor1"
+  <text id="label_gok_room_102_floor1"
         x="1220" y="672"
         text-anchor="middle">102</text>
   <rect id="door_102_floor1"
@@ -2485,13 +2485,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 103 -->
-  <rect id="room_103_floor1"
+  <rect id="gok_room_103_floor1"
         x="1235" y="640" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_103_floor1"
+  <text id="label_gok_room_103_floor1"
         x="1250" y="672"
         text-anchor="middle">103</text>
   <rect id="door_103_floor1"
@@ -2502,13 +2502,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 104 -->
-  <rect id="room_104_floor1"
+  <rect id="gok_room_104_floor1"
         x="1265" y="640" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_104_floor1"
+  <text id="label_gok_room_104_floor1"
         x="1280" y="672"
         text-anchor="middle">104</text>
   <rect id="door_104_floor1"
@@ -2519,13 +2519,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 105 -->
-  <rect id="room_105_floor1"
+  <rect id="gok_room_105_floor1"
         x="1295" y="640" width="30" height="55"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_105_floor1"
+  <text id="label_gok_room_105_floor1"
         x="1310" y="672"
         text-anchor="middle">105</text>
   <rect id="door_105_floor1"
@@ -2533,13 +2533,13 @@
         fill="black" stroke="black" stroke-width="1"/>
 
   <!-- Pokój 106 -->
-  <rect id="room_106_floor1"
+  <rect id="gok_room_106_floor1"
         x="1325" y="715" width="75" height="35"
         rx="3" ry="3"
         fill="url(#roomGradPink)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
-  <text id="label_room_106_floor1"
+  <text id="label_gok_room_106_floor1"
         x="1362" y="736"
         text-anchor="middle">Rejestracja</text>
   <rect id="door_106_floor1"

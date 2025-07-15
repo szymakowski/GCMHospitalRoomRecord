@@ -42,6 +42,8 @@ class SQLiteManager:
                 CREATE TABLE IF NOT EXISTS room (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     roomNumber TEXT,
+                    roomFloor TEXT,
+                    roomBuilding TEXT,
                     department TEXT,
                     roomType TEXT,
                     localization TEXT,
@@ -88,6 +90,8 @@ class SQLiteManager:
 
     def add_room(self,
                    roomNumber:str,
+                   roomFloor:str,
+                   roomBuilding:str,
                    department:str,
                    roomType:str,
                    localization:str,
@@ -99,13 +103,14 @@ class SQLiteManager:
                    notes:str) -> bool:
         try:
             sql_query = ("INSERT INTO room"
-                         "(roomNumber, department, roomType, localization, "
+                         "(roomNumber, roomFloor, roomBuilding, department, roomType, localization, "
                          "area, numberOfSeats, isForPatient, isGas, isWindow, notes) "
-                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
 
             self.cursor.execute(sql_query,
-                                [roomNumber, department, roomType, localization,
-                                 area, numberOfSeats, isForPatient, isGas, isWindow, notes])
+                                [roomNumber, roomFloor, roomBuilding, department,
+                                 roomType, localization, area, numberOfSeats, isForPatient,
+                                 isGas, isWindow, notes])
             self.connection.commit()
             return True
 
@@ -227,16 +232,21 @@ class SQLiteManager:
 
 if __name__ == '__main__':
     db_manager = SQLiteManager()
-    # db_manager.create_department_table()
-    db_manager.add_room('GOK-40',
-                        'Dział Informatyki',
-                        'Pokój Administracji',
+    # db_manager.connection.cursor().execute("DROP TABLE IF EXISTS room")
+    # db_manager.connection.commit()
+
+    # db_manager.create_room_table()
+    db_manager.add_room('16',
+                        '1',
+                        'GOK',
+                        'Zakład Bakteriologii',
+                        'Przychodnia',
                         'GOK-1',
-                        '20',
+                        '10',
                         '3',
                         'False',
                         'False',
                         'True',
-                        'Pokój Sprzętowców')
+                        'przychodnia kardiologiczna')
     # db_manager.delete_department(str('Ambulatorium Badań Klinicznych'))
     # db_manager.add_department('LCZ', 'Śląskie Centrum Chorób Zakaźnych - Część Ambulatoryjna')

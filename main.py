@@ -13,6 +13,7 @@ def mapa(filename):
     return render_template('building_map.html',
                            svg_file=filename)
 
+
 @app.route('/statystyki.html')
 def stats_page():
     return render_template('statistics.html')
@@ -43,12 +44,19 @@ def api_rooms():
 
     if selected_departments:
         placeholders = ','.join('?' for _ in selected_departments)
-        query = f"SELECT roomNumber FROM room WHERE department IN ({placeholders})"
+        query = f"""
+            SELECT roomNumber, roomFloor, roomBuilding
+            FROM room
+            WHERE department IN ({placeholders})
+        """
         cursor.execute(query, selected_departments)
     else:
-        cursor.execute("SELECT roomNumber FROM room")
+        cursor.execute("SELECT roomNumber, roomFloor, roomBuilding FROM room")
 
-    rooms = [row[0] for row in cursor.fetchall()]
+    rooms = [
+        f"{row[2].upper()}-PIĘTRO{row[1]}-POKÓJ{row[0]}"
+        for row in cursor.fetchall()
+    ]
     conn.close()
     return jsonify(rooms)
 
