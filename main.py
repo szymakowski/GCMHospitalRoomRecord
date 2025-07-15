@@ -1,27 +1,8 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import sqlite3
 
 
 app = Flask(__name__)
-
-@app.route('/api/departments')
-def api_departments():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT departmentName FROM department")
-    departments = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return jsonify(departments)
-
-@app.route('/api/rooms')
-def api_rooms():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT roomNumber FROM room")
-    rooms = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return jsonify(rooms)
-
 
 @app.route('/')
 def campus():
@@ -44,7 +25,33 @@ def room_reservation_page():
 def database_page():
     return render_template('database_page.html')
 
+@app.route('/api/departments')
+def api_departments():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT departmentName FROM department")
+    departments = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return jsonify(departments)
+
+@app.route('/api/rooms')
+def api_rooms():
+    selected_departments = request.args.getlist('departments')
+
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+
+    if selected_departments:
+        placeholders = ','.join('?' for _ in selected_departments)
+        query = f"SELECT roomNumber FROM room WHERE department IN ({placeholders})"
+        cursor.execute(query, selected_departments)
+    else:
+        cursor.execute("SELECT roomNumber FROM room")
+
+    rooms = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return jsonify(rooms)
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)

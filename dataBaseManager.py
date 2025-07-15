@@ -31,6 +31,7 @@ class SQLiteManager:
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS department (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    departmentAbbreviation TEXT,
                     departmentName TEXT)
                 ''')
             self.connection.commit()
@@ -52,6 +53,11 @@ class SQLiteManager:
                     notes TEXT)
                 ''')
         self.connection.commit()
+
+    def drop_department_table(self):
+        with sqlite3.connect(self.db_name):
+            self.cursor.execute("DROP TABLE IF EXISTS department")
+            self.connection.commit()
 
     def add_worker(self,
                    domainName:str,
@@ -112,14 +118,14 @@ class SQLiteManager:
             return False
 
     def add_department(self,
-                   departmentName:str) -> bool:
+                   departmentAbbreviation:str, departmentName:str) -> bool:
         try:
             sql_query = ("INSERT INTO department"
-                         "(departmentName) "
-                         "VALUES (?)")
+                         "(departmentAbbreviation, departmentName) "
+                         "VALUES (?, ?)")
 
             self.cursor.execute(sql_query,
-                                [departmentName])
+                                [departmentAbbreviation, departmentName])
             self.connection.commit()
             return True
 
@@ -152,6 +158,26 @@ class SQLiteManager:
             print(f'Error during deleting user {domainName}, : {e}')
             return False
 
+    def delete_department(self, departmentName):
+        try:
+            sql_query = ("DELETE FROM department WHERE departmentName = ?")
+            self.cursor.execute(sql_query, (departmentName,))
+            self.connection.commit()
+
+            if self.cursor.rowcount() == 0:
+                print(f"Brak działu: {departmentName} w bazie danych")
+                return False
+
+            print(f"Dział '{departmentName}' został usunięty")
+            return True
+
+        except sqlite3.Error as e:
+            print(f'Wrror: sqlite3 during deleting department {departmentName}, : {e}')
+            return False
+
+        except Exception as e:
+            print(f'Error during deleting department {departmentName}, : {e}')
+            return False
 
     def get_all_workers(self):
         self.cursor.execute('SELECT * FROM worker')
@@ -201,4 +227,16 @@ class SQLiteManager:
 
 if __name__ == '__main__':
     db_manager = SQLiteManager()
-
+    # db_manager.create_department_table()
+    db_manager.add_room('GOK-40',
+                        'Dział Informatyki',
+                        'Pokój Administracji',
+                        'GOK-1',
+                        '20',
+                        '3',
+                        'False',
+                        'False',
+                        'True',
+                        'Pokój Sprzętowców')
+    # db_manager.delete_department(str('Ambulatorium Badań Klinicznych'))
+    # db_manager.add_department('LCZ', 'Śląskie Centrum Chorób Zakaźnych - Część Ambulatoryjna')

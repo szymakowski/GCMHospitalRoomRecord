@@ -5,202 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Panel Główny Szpitala</title>
 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
-    :root {
-      --bg: #f9f9f9;
-      --fg: #111;
-      --card: #fff;
-      --primary: #1976d2;
-      --hover: #e3f2fd;
-      --border: #ccc;
-    }
-
-    [data-theme="dark"] {
-      --bg: #121212;
-      --fg: #f0f0f0;
-      --card: #1e1e1e;
-      --primary: #90caf9;
-      --hover: #2c2c2c;
-      --border: #444;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      overflow: hidden;
-    }
-
-    .top-bar {
-      background-color: var(--primary);
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      gap: 15px;
-      justify-content: space-between;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .nav-btn {
-      background-color: rgba(255, 255, 255, 0.15);
-      border: none;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    .main-container {
-      display: flex;
-      height: calc(100vh - 50px);
-    }
-
-    .sidebar {
-      width: 20%;
-      min-width: 220px;
-      background-color: var(--card);
-      padding: 15px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      height: 100%;
-      overflow-y: auto;
-      border-right: 1px solid var(--border);
-    }
-
-    .search-section {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .search-section h3 {
-      margin: 5px 0;
-    }
-
-    .search-section input {
-      padding: 6px;
-      margin-bottom: 6px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: var(--bg);
-      color: var(--fg);
-    }
-
-    .checkbox-list {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 5px;
-      background: var(--card);
-      overflow-y: auto;
-      max-height: 320px;
-    }
-
-    .checkbox-list label {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 4px;
-      position: relative;
-    }
-
-    .checkbox-list label:hover::after {
-      content: attr(data-fulltext);
-      position: absolute;
-      background: #333;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 4px;
-      left: 100%;
-      margin-left: 10px;
-      font-size: 12px;
-      z-index: 100;
-      opacity: 0;
-      animation: fadeIn 0.3s forwards 0.6s;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    .map-section {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .floor-selector {
-      padding: 10px 15px;
-      background-color: var(--hover);
-      border-bottom: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    #svg-map-container {
-      flex: 1;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--card);
-    }
-
-    #svg-map {
-      max-width: 100%;
-      max-height: 100%;
-      height: auto;
-      width: auto;
-      display: block;
-    }
-
-    #svg-map polygon {
-      fill: transparent;
-      cursor: pointer;
-      transition: fill 0.2s;
-    }
-
-    #svg-map polygon:hover {
-      fill: rgba(255, 235, 59, 0.5);
-    }
-
-    @media (max-width: 768px) {
-      .main-container {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="top-bar">
@@ -218,12 +25,20 @@
       <div class="search-section">
         <h3>Działy</h3>
         <input type="text" id="search-departments" placeholder="Szukaj działu...">
+        <div class="checkbox-controls">
+          <button class="mini-btn" onclick="selectAll('departments')">Zaznacz wszystkie</button>
+          <button class="mini-btn" onclick="deselectAll('departments')">Odznacz wszystkie</button>
+        </div>
         <div id="departments-list" class="checkbox-list"></div>
       </div>
 
       <div class="search-section">
         <h3>Pokoje</h3>
         <input type="text" id="search-rooms" placeholder="Szukaj pokoju...">
+        <div class="checkbox-controls">
+          <button class="mini-btn" onclick="selectAll('rooms')">Zaznacz wszystkie</button>
+          <button class="mini-btn" onclick="deselectAll('rooms')">Odznacz wszystkie</button>
+        </div>
         <div id="rooms-list" class="checkbox-list"></div>
       </div>
     </aside>
