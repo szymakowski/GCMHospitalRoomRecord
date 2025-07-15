@@ -111,7 +111,7 @@ html, body {
 
 .checkbox-list label {
   white-space: nowrap;
-  height: 20px; /* Stała wysokość - dostosuj do potrzeb */
+  height: 21px; /* Stała wysokość - dostosuj do potrzeb */
   padding: 4px 8px;
   box-sizing: border-box;
   display: flex;
@@ -239,4 +239,11 @@ html, body {
 .mini-btn:hover {
   background-color: var(--primary);
   color: white;
+}
+
+/* Podświetlanie pokoi */
+.highlighted-room {
+  fill: #e53935 !important; /* czerwony */
+  stroke: #000;
+  stroke-width: 2;
 }

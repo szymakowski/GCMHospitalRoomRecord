@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  loadSVGMap("campus.png");
+
   const selected = {
     departments: new Set(),
     rooms: new Set()
@@ -26,10 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
           selected[type].delete(name);
         }
         updateHighlight(containerId);
-        // Jeśli zmieniany jest dział → przeładuj pokoje
-        if (type === "departments") {
-          fetchRoomsForSelectedDepartments();
-          }
+
+        if (type === "departments") fetchRoomsForSelectedDepartments();
+        if (type === "rooms") highlightSelectedRooms(); // kluczowe
       });
 
       label.setAttribute("data-fulltext", name);
@@ -38,10 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
       container.appendChild(label);
     });
 
-    updateHighlight(containerId); // <- kluczowy krok!
+    updateHighlight(containerId);
   }
 
-  // API - pobieranie
   let departments = [];
   fetch("/api/departments")
     .then(res => res.json())
@@ -54,49 +54,34 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/api/rooms")
     .then(res => res.json())
     .then(data => {
-    rooms = data;
-    const term = document.getElementById("search-rooms").value.toLowerCase();
-    const filtered = rooms.filter(r => r.toLowerCase().includes(term));
-    renderList(filtered, "rooms-list", "rooms");
+      rooms = data;
+      const term = document.getElementById("search-rooms").value.toLowerCase();
+      const filtered = rooms.filter(r => r.toLowerCase().includes(term));
+      renderList(filtered, "rooms-list", "rooms");
     });
 
-  // Filtrowanie działów
   document.getElementById("search-departments").addEventListener("input", e => {
     const term = e.target.value.toLowerCase();
     const filtered = departments.filter(d => d.toLowerCase().includes(term));
     renderList(filtered, "departments-list", "departments");
   });
 
-  // Filtrowanie pokoi
   document.getElementById("search-rooms").addEventListener("input", e => {
     const term = e.target.value.toLowerCase();
     const filtered = rooms.filter(r => r.toLowerCase().includes(term));
     renderList(filtered, "rooms-list", "rooms");
   });
 
-  // Zmiana piętra
   document.getElementById("floor-select").addEventListener("change", (e) => {
     console.log("Wybrano piętro:", e.target.value);
   });
 
-  // Zmiana motywu
   lucide.createIcons();
   document.getElementById('toggle-theme').addEventListener('click', () => {
     const html = document.documentElement;
     html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  // Kliknięcie na obszar mapy
-  document.querySelectorAll("#svg-map polygon").forEach(polygon => {
-    polygon.addEventListener("click", () => {
-      const file = polygon.getAttribute("data-file");
-      if (file) {
-        window.location.href = `/plan_szpitala/${file}`;
-      }
-    });
-  });
-
-  // Publiczne funkcje
   window.selectAll = function(type) {
     const list = document.getElementById(`${type}-list`);
     list.querySelectorAll("input[type='checkbox']").forEach(cb => {
@@ -105,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     updateHighlight(`${type}-list`);
     if (type === "departments") fetchRoomsForSelectedDepartments();
+    if (type === "rooms") highlightSelectedRooms();
   };
 
   window.deselectAll = function(type) {
@@ -115,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     updateHighlight(`${type}-list`);
     if (type === "departments") fetchRoomsForSelectedDepartments();
+    if (type === "rooms") highlightSelectedRooms();
   };
 
   function fetchRoomsForSelectedDepartments() {
@@ -129,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const term = document.getElementById("search-rooms").value.toLowerCase();
         const filtered = rooms.filter(r => r.toLowerCase().includes(term));
         renderList(filtered, "rooms-list", "rooms");
+        highlightSelectedRooms(); // odśwież po renderze
       });
   }
 
@@ -142,6 +130,75 @@ document.addEventListener("DOMContentLoaded", () => {
         label.classList.remove("active");
       }
     });
+  }
+
+    function highlightSelectedRooms() {
+      const selectedRoomNames = Array.from(selected.rooms); // np. ["GOK-37", "SSW-52"]
+
+      document.querySelectorAll("rect[id^='room_']").forEach(rect => {
+        const rectId = rect.id; // np. "room_37_floor1"
+
+        const match = rectId.match(/^room_(\d+)_floor\d+$/);
+        if (!match) return;
+
+        const roomNumber = match[1]; // np. "37"
+
+        const matched = selectedRoomNames.some(name => {
+          const parts = name.split("-");
+          return parts[1] === roomNumber; // porównuje tylko numer
+        });
+
+        if (matched) {
+          rect.setAttribute("fill", "#f44336");
+          rect.setAttribute("stroke", "#000");
+          rect.setAttribute("stroke-width", "2");
+        } else {
+          rect.setAttribute("fill", "url(#roomGradBabyBlue)");
+          rect.setAttribute("stroke", "#ccc");
+          rect.setAttribute("stroke-width", "1.2");
+        }
+      });
+    }
+
+  function loadSVGMap(file) {
+    const container = document.getElementById("svg-map-container");
+
+    if (file === "campus.png") {
+      container.innerHTML = `
+        <svg id="svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 850" preserveAspectRatio="none">
+          <image href="/static/img/campus.png" x="0" y="0" width="1450" height="850"/>
+          <polygon id="ssw" data-file="ssw_floor1.svg" points="152,175 210,134 284,160 230,200" fill="transparent" stroke="black"/>
+          <polygon id="gok" data-file="gok_floor1.svg" points="388,216 553,277 524,300 358,240" fill="transparent" stroke="black"/>
+        </svg>
+      `;
+      container.querySelectorAll("polygon").forEach(polygon => {
+        polygon.addEventListener("click", () => {
+          const target = polygon.getAttribute("data-file");
+          if (target) loadSVGMap(target);
+        });
+      });
+    } else {
+      fetch(`/static/maps/${file}`)
+        .then(res => {
+          if (!res.ok) throw new Error(`Nie można załadować: ${file}`);
+          return res.text();
+        })
+        .then(svgContent => {
+          container.innerHTML = svgContent;
+
+          container.querySelectorAll("polygon").forEach(polygon => {
+            polygon.addEventListener("click", () => {
+              const next = polygon.getAttribute("data-file");
+              if (next) loadSVGMap(next);
+            });
+          });
+
+          highlightSelectedRooms(); // bardzo ważne
+        })
+        .catch(err => {
+          console.error("Błąd ładowania mapy:", err);
+        });
+    }
   }
 
   function initCustomTooltips(containerId) {
@@ -164,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tooltip.style.left = rect.right + 12 + "px";
         tooltip.style.top = rect.top + "px";
         tooltip.classList.add("visible");
-      }, 1000);
+      }, 500);
     });
 
     container.addEventListener("mouseout", () => {
@@ -173,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Włącz tooltipy dla działów i pokoi
   initCustomTooltips("departments-list");
-//  initCustomTooltips("rooms-list");
+  initCustomTooltips("rooms-list");
 });

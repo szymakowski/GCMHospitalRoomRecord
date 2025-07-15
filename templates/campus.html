@@ -52,15 +52,9 @@
           <option value="2">2 piętro</option>
         </select>
       </div>
-      <div id="svg-map-container">
-        <svg id="svg-map" xmlns="http://www.w3.org/2000/svg"
-             viewBox="0 0 1450 850" preserveAspectRatio="none">
-          <image href="{{ url_for('static', filename='img/campus.png') }}"
-                 x="0" y="0" width="1450" height="850"/>
-          <polygon id="ssw" data-file="ssw_floor1.svg" points="152,175 210,134 284,160 230,200"/>
-          <polygon id="gok" data-file="gok_floor1.svg" points="388,216 553,277 524,300 358,240"/>
-        </svg>
-      </div>
+    <div id="svg-map-container">
+      <img src="{{ url_for('static', filename='img/campus.png') }}" id="initial-campus-img" alt="Plan kampusu" style="width: 100%; height: auto;">
+    </div>
     </section>
   </div>
 

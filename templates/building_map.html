@@ -1,17 +1,73 @@
-<!doctype html>
-<html lang="pl">
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <title>Mapa Szczegółowa</title>
-  <style>
-    html, body { margin: 0; height: 100%; }
-    object { width: 100vw; height: 100vh; border: none; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Główny Szpitala</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
 <body>
-<object type="image/svg+xml"
-        data="{{ url_for('static', filename='plans/' + svg_file) }}">
-</object>
+  <header class="top-bar">
+    <div class="nav-buttons">
+      <button class="nav-btn"><i data-lucide="map"></i> Plan Szpitala</button>
+      <button class="nav-btn"><i data-lucide="bar-chart-3"></i> Statystyki</button>
+      <button class="nav-btn"><i data-lucide="database"></i> Bazy Danych</button>
+      <button class="nav-btn"><i data-lucide="calendar"></i> Rezerwacja Sal</button>
+    </div>
+    <button class="theme-toggle" id="toggle-theme"><i data-lucide="moon"></i></button>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="search-section">
+        <h3>Działy</h3>
+        <input type="text" id="search-departments" placeholder="Szukaj działu...">
+        <div class="checkbox-controls">
+          <button class="mini-btn" onclick="selectAll('departments')">Zaznacz wszystkie</button>
+          <button class="mini-btn" onclick="deselectAll('departments')">Odznacz wszystkie</button>
+        </div>
+        <div id="departments-list" class="checkbox-list"></div>
+      </div>
+
+      <div class="search-section">
+        <h3>Pokoje</h3>
+        <input type="text" id="search-rooms" placeholder="Szukaj pokoju...">
+        <div class="checkbox-controls">
+          <button class="mini-btn" onclick="selectAll('rooms')">Zaznacz wszystkie</button>
+          <button class="mini-btn" onclick="deselectAll('rooms')">Odznacz wszystkie</button>
+        </div>
+        <div id="rooms-list" class="checkbox-list"></div>
+      </div>
+    </aside>
+
+    <section class="map-section">
+      <div class="floor-selector">
+        <label for="floor-select">Piętro:</label>
+        <select id="floor-select">
+          <option value="0">Parter</option>
+          <option value="1">1 piętro</option>
+          <option value="2">2 piętro</option>
+        </select>
+      </div>
+      <div id="svg-map-container">
+        <object type="image/svg+xml"
+                data="{{ url_for('static', filename='plans/' + svg_file) }}">
+        </object>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('toggle-theme').addEventListener('click', () => {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+  <script src="{{ url_for('static', filename='js/campus.js') }}"></script>
 </body>
 </html>
 
