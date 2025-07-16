@@ -173,6 +173,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function initSVGRoomTooltips() {
+    let tooltip = document.createElement("div");
+    tooltip.className = "custom-tooltip";
+    document.body.appendChild(tooltip);
+    let timeout;
+
+    document.querySelectorAll("rect[id^='gok_room_'], rect[id^='ssw_room_']").forEach(rect => {
+      rect.style.pointerEvents = 'all';
+      rect.addEventListener("mouseenter", () => {
+        timeout = setTimeout(() => {
+          const id = rect.id; // np. gok_room_23_floor1
+          const match = id.match(/^([a-z]+)_room_(\d+)_floor(\d+)$/);
+          if (!match) return;
+
+          const [_, building, number, floor] = match;
+
+          fetch(`/api/room_info?number=${number}&floor=${floor}&building=${building.toUpperCase()}`)
+            .then(res => res.json())
+            .then(data => {
+              tooltip.innerHTML = `
+                <strong>Numer pokoju:</strong> ${data.roomNumber || ''}<br>
+                <strong>Dział:</strong> ${data.department || ''}<br>
+                <strong>Typ:</strong> ${data.roomType || ''}<br>
+                <strong>Liczba stanowisk:</strong> ${data.numberOfSeats || ''}<br>
+                <strong>Dla pacjentów:</strong> ${data.isForPatient || ''}<br>
+                <strong>Gaz:</strong> ${data.isGas || ''}<br>
+                <strong>Okno:</strong> ${data.isWindow || ''}
+              `;
+
+              const rectBox = rect.getBoundingClientRect();
+              tooltip.style.left = (rectBox.right + 10) + "px";
+              tooltip.style.top = (rectBox.top) + "px";
+              tooltip.classList.add("visible");
+            });
+        }, 1000); // 1 sekunda
+      });
+
+      rect.addEventListener("mouseleave", () => {
+        clearTimeout(timeout);
+        tooltip.classList.remove("visible");
+      });
+    });
+  }
+
   function loadSVGMap(file) {
     const container = document.getElementById("svg-map-container");
 
@@ -206,7 +250,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           });
 
-          highlightSelectedRooms(); // bardzo ważne
+          container.querySelectorAll("text").forEach(text => {
+            text.style.pointerEvents = 'none';
+          });
+
+          highlightSelectedRooms();
+          initSVGRoomTooltips();
         })
         .catch(err => {
           console.error("Błąd ładowania mapy:", err);

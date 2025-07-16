@@ -60,6 +60,49 @@ def api_rooms():
     conn.close()
     return jsonify(rooms)
 
+@app.route('/api/room_info')
+def api_room_info():
+    room_number = request.args.get('number')
+    room_floor = request.args.get('floor')
+    room_building = request.args.get('building')
+
+    if not all([room_number, room_floor, room_building]):
+        return jsonify({"error": "Brak wymaganych parametrów do wyświetlenia informacji o pokoju"}), 400
+
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    query = """
+        SELECT roomNumber, department, roomType, numberOfSeats, isForPatient, isGas, isWindow 
+        FROM room
+        WHERE roomNumber = ? AND roomFloor = ? AND roomBuilding = ?
+    """
+    cursor.execute(query, (room_number, room_floor, room_building))
+    result = cursor.fetchone()
+    print(result)
+    conn.close()
+
+    if result:
+        roomNumber, department, roomType, numberOfSeats, isForPatient, isGas, isWindow = result
+        return jsonify({
+            "roomNumber": roomNumber if roomNumber is not None else "",
+            "department": department if department is not None else "",
+            "roomType": roomType if roomType is not None else "",
+            "numberOfSeats": numberOfSeats if numberOfSeats is not None else "",
+            "isForPatient": isForPatient if isForPatient is not None else "",
+            "isGas": isGas if isGas is not None else "",
+            "isWindow": isWindow if isWindow is not None else ""
+        })
+    else:
+        return jsonify({
+            "roomNumber": '',
+            "department": '',
+            "roomType": '',
+            "numberOfSeats": '',
+            "isForPatient": '',
+            "isGas": '',
+            "isWindow": ''
+        })
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)

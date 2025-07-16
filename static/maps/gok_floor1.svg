@@ -1005,7 +1005,7 @@
   <rect id="gok_room_140_floor1"
         x="755" y="189" width="60" height="30"
         rx="3" ry="3"
-        fill="url(#roomGradOrange)"
+        fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
   <text id="label_gok_room_140_floor1"
@@ -1019,7 +1019,7 @@
   <rect id="gok_room_141_floor1"
         x="755" y="219" width="60" height="31"
         rx="3" ry="3"
-        fill="url(#roomGradOrange)"
+        fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
   <text id="label_gok_room_141_floor1"
@@ -1033,7 +1033,7 @@
   <rect id="gok_room_142_floor1"
         x="755" y="250" width="60" height="31"
         rx="3" ry="3"
-        fill="url(#roomGradOrange)"
+        fill="url(#roomGradGrey)"
         stroke="#ccc" stroke-width="1.2"
         filter="url(#shadow)"/>
   <text id="label_gok_room_142_floor1"
