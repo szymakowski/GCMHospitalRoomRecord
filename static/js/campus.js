@@ -195,10 +195,10 @@ document.addEventListener("DOMContentLoaded", () => {
               tooltip.innerHTML = `
                 <strong>Numer pokoju:</strong> ${data.roomNumber || ''}<br>
                 <strong>Dział:</strong> ${data.department || ''}<br>
-                <strong>Typ:</strong> ${data.roomType || ''}<br>
+                <strong>Typ pokoju:</strong> ${data.roomType || ''}<br>
                 <strong>Liczba stanowisk:</strong> ${data.numberOfSeats || ''}<br>
                 <strong>Dla pacjentów:</strong> ${data.isForPatient || ''}<br>
-                <strong>Gaz:</strong> ${data.isGas || ''}<br>
+                <strong>Doprowadzony gaz:</strong> ${data.isGas || ''}<br>
                 <strong>Okno:</strong> ${data.isWindow || ''}
               `;
 
@@ -224,8 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = `
         <svg id="svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 850" preserveAspectRatio="none">
           <image href="/static/img/campus.png" x="0" y="0" width="1450" height="850"/>
-          <polygon id="ssw" data-file="ssw_floor1.svg" points="152,175 210,134 284,160 230,200" fill="transparent" stroke="black"/>
-          <polygon id="gok" data-file="gok_floor1.svg" points="388,216 553,277 524,300 358,240" fill="transparent" stroke="black"/>
+          <polygon id="ssw" data-file="ssw_floor1.svg" points="220,98 305,42 411,76 327,136" fill="transparent" stroke="none"/>
+          <polygon id="gok" data-file="gok_floor1.svg" points="388,216 553,277 524,300 358,240" fill="transparent" stroke="none"/>
         </svg>
       `;
       container.querySelectorAll("polygon").forEach(polygon => {

@@ -236,17 +236,17 @@ if __name__ == '__main__':
     # db_manager.connection.commit()
 
     # db_manager.create_room_table()
-    db_manager.add_room('16',
+    db_manager.add_room('43',
+                        '7',
+                        'SSW',
+                        'Dział Aparatury Medycznej',
+                        'Pokój biurowy',
+                        'SSW-7',
+                        '9',
                         '1',
-                        'GOK',
-                        'Zakład Bakteriologii',
-                        'Przychodnia',
-                        'GOK-1',
-                        '10',
-                        '3',
-                        'False',
-                        'False',
-                        'True',
-                        'przychodnia kardiologiczna')
+                        'Tak',
+                        'Nie',
+                        'Nie',
+                        '')
     # db_manager.delete_department(str('Ambulatorium Badań Klinicznych'))
     # db_manager.add_department('LCZ', 'Śląskie Centrum Chorób Zakaźnych - Część Ambulatoryjna')
