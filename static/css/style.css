@@ -24,7 +24,8 @@ html, body {
   font-family: "Segoe UI", Roboto, sans-serif;
   background: var(--bg);
   color: var(--fg);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .top-bar {
@@ -262,3 +263,123 @@ html, body {
   transform: translateY(0);
 }
 
+/* Podstrona ze statystykami */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.dashboard-tile {
+  background-color: var(--tile-bg, #ffffff);
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  background-color: #f9f9f9;
+}
+
+.dashboard-tile i {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.6;
+  margin-bottom: 1.2rem;
+  color: #007bff;
+}
+
+.dashboard-tile span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Sekcja z wyświetlaniem tabeli z bazy danych */
+/* Tylko dla strony z tabelą */
+body.page-rooms-table {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.page-rooms-table main {
+  width: 95%;
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+#rooms-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 1200px; /* wymusza scroll przy małych ekranach */
+}
+
+/* === Kolumny i równa wysokość wierszy === */
+#rooms-table th,
+#rooms-table td {
+  text-align: center;
+  padding: 8px 12px;
+  height: 36px;
+  border-right: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+#rooms-table th:last-child,
+#rooms-table td:last-child {
+  border-right: none;
+}
+
+/* === Wiersze naprzemiennie kolorowane === */
+#rooms-table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+#rooms-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+#rooms-table tbody tr:hover {
+  background-color: #e6f0ff;
+  cursor: pointer;
+}
+
+/* === Styl wyszukiwarki DataTables === */
+.dataTables_filter {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.dataTables_filter label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.dataTables_filter input {
+  padding: 8px 14px;
+  font-size: 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+.dataTables_filter input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}

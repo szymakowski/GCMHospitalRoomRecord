@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baza danych – Pomieszczenia</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="page-rooms-table">
+  <header class="top-bar">
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="goToHospitalMap()"> <i data-lucide="map"></i> Plan Szpitala</button>
+      <button class="nav-btn" onclick="goToStatistics()"> <i data-lucide="bar-chart-3"></i> Statystyki</button>
+      <button class="nav-btn" onclick="goToDataBases()"><i data-lucide="database"></i> Bazy Danych</button>
+      <button class="nav-btn"><i data-lucide="calendar"></i> Rezerwacja Pokoju</button>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align: center; margin-bottom: 1rem;">Baza danych – Pomieszczenia</h1>
+    <table id="rooms-table" class="display">
+      <thead>
+        <tr>
+          <th>Budynek</th>
+          <th>Numer pokoju</th>
+          <th>Piętro</th>
+          <th>Dział</th>
+          <th>Typ pokoju</th>
+          <th>Liczba stanowisk</th>
+          <th>Dostępność dla pacjentów</th>
+          <th>Dostępność gazu</th>
+          <th>Czy posiada okno</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- JS: jQuery + DataTables -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- Ikony i skrypt lokalny -->
+  <script src="{{ url_for('static', filename='js/campus.js') }}"></script>
+  <script>
+    lucide.createIcons();
+
+    $(document).ready(function () {
+      $('#rooms-table').DataTable({
+        ajax: {
+          url: '/api/rooms_all',
+          dataSrc: function (data) {
+            return data;
+          }
+        },
+        columns: [
+          { data: 'Budynek' },
+          { data: 'Numer pokoju' },
+          { data: 'Piętro' },
+          { data: 'Dział' },
+          { data: 'Typ pokoju' },
+          { data: 'Liczba stanowisk' },
+          { data: 'Dostępność dla pacjentów' },
+          { data: 'Dostępność gazu' },
+          { data: 'Czy posiada okno' }
+        ],
+        language: {
+          url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pl.json'
+        }
+      });
+    });
+
+    function goToHospitalMap() {
+      window.location.href = "/";
+    }
+
+    function goToStatistics() {
+      window.location.href = "/statystyki.html";
+    }
+
+    function goToDataBases() {
+      window.location.href = "/bazy_danych.html";
+    }
+  </script>
+</body>
+</html>

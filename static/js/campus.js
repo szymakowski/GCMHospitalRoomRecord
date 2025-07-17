@@ -51,6 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateHighlight(containerId);
+
+    // obsługa przycisków zaznaczenia i doznaczenia wszsytkich
+    lucide.createIcons();
+    document.getElementById('toggle-theme').addEventListener('click', () => {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
   }
 
   let departments = [];
@@ -85,12 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("floor-select").addEventListener("change", (e) => {
     console.log("Wybrano piętro:", e.target.value);
-  });
-
-  lucide.createIcons();
-  document.getElementById('toggle-theme').addEventListener('click', () => {
-    const html = document.documentElement;
-    html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
   window.selectAll = function(type) {
@@ -219,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadSVGMap(file) {
     const container = document.getElementById("svg-map-container");
-
+    if (!container) return; // sprawdzenie czy kontener na mapę istnieje na stronie
     if (file === "campus.png") {
       container.innerHTML = `
         <svg id="svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 850" preserveAspectRatio="none">
@@ -306,4 +307,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function goToStatistics() {
       window.location.href = '/statystyki.html';
+  }
+
+  function goToDataBases() {
+      window.location.href = '/bazy_danych.html';
   }

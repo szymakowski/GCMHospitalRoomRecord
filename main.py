@@ -24,7 +24,11 @@ def room_reservation_page():
 
 @app.route('/bazy_danych.html')
 def database_page():
-    return render_template('database_page.html')
+    return render_template('databases.html')
+
+@app.route('/baza_danych_pomieszczenia.html')
+def database_rooms():
+    return render_template('rooms_table.html')
 
 @app.route('/api/departments')
 def api_departments():
@@ -60,6 +64,36 @@ def api_rooms():
     conn.close()
     return jsonify(rooms)
 
+@app.route('/api/rooms_all')
+def api_rooms_all():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    query = """
+        SELECT roomNumber, roomBuilding, roomFloor, department, roomType,
+        numberOfSeats, isForPatient, isGas, isWindow 
+        FROM room
+    """
+    cursor.execute(query)
+    rooms = cursor.fetchall()
+    conn.close()
+
+    result = [
+        {
+            "Budynek": room[1],
+            "Numer pokoju": room[0],
+            "Piętro": room[2],
+            "Dział": room[3],
+            "Typ pokoju": room[4],
+            "Liczba stanowisk": room[5],
+            "Dostępność dla pacjentów": room[6],
+            "Dostępność gazu": room[7],
+            "Czy posiada okno": room[8],
+        }
+        for room in rooms
+    ]
+    return jsonify(result)
+
+
 @app.route('/api/room_info')
 def api_room_info():
     room_number = request.args.get('number')
@@ -78,7 +112,6 @@ def api_room_info():
     """
     cursor.execute(query, (room_number, room_floor, room_building))
     result = cursor.fetchone()
-    print(result)
     conn.close()
 
     if result:
