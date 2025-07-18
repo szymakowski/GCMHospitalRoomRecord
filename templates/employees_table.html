@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baza danych – Pomieszczenia</title>
+  <title>Baza danych – Pracownicy</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
@@ -20,19 +20,16 @@
   </header>
 
   <main>
-    <h1 style="text-align: center; margin-bottom: 1rem;">Baza danych – Pomieszczenia</h1>
+    <h1 style="text-align: center; margin-bottom: 1rem;">Baza danych – Pracownicy</h1>
     <table id="db-table" class="display">
       <thead>
         <tr>
-          <th>Budynek</th>
-          <th>Numer pokoju</th>
-          <th>Piętro</th>
-          <th>Dział</th>
-          <th>Typ pokoju</th>
-          <th>Liczba stanowisk</th>
-          <th>Dostępność dla pacjentów</th>
-          <th>Dostępność gazu</th>
-          <th>Czy posiada okno</th>
+          <th>Nazwa domenowa</th>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>e-mail</th>
+          <th>Przypisany dział</th>
+          <th>Przypisany pokój</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -51,21 +48,18 @@
     $(document).ready(function () {
       $('#db-table').DataTable({
         ajax: {
-          url: '/api/rooms_all',
+          url: '/api/employees_all',
           dataSrc: function (data) {
             return data;
           }
         },
         columns: [
-          { data: 'Budynek' },
-          { data: 'Numer pokoju' },
-          { data: 'Piętro' },
-          { data: 'Dział' },
-          { data: 'Typ pokoju' },
-          { data: 'Liczba stanowisk' },
-          { data: 'Dostępność dla pacjentów' },
-          { data: 'Dostępność gazu' },
-          { data: 'Czy posiada okno' }
+          { data: 'domainName' },
+          { data: 'name' },
+          { data: 'surname' },
+          { data: 'email' },
+          { data: 'department' },
+          { data: 'roomId' }
         ],
         pageLength: 15,
         lengthMenu: [ [15, 50, 200, 500], [15, 50, 200, 500] ],

@@ -30,6 +30,14 @@ def database_page():
 def database_rooms():
     return render_template('rooms_table.html')
 
+@app.route('/baza_danych_pracownicy.html')
+def database_employees():
+    return render_template('employees_table.html')
+
+@app.route('/baza_danych_działy.html')
+def database_departments():
+    return render_template('departments_table.html')
+
 @app.route('/api/departments')
 def api_departments():
     conn = sqlite3.connect('GCMDataBase.db')
@@ -52,7 +60,7 @@ def api_rooms():
             SELECT roomNumber, roomFloor, roomBuilding
             FROM room
             WHERE department IN ({placeholders})
-        """
+            """
         cursor.execute(query, selected_departments)
     else:
         cursor.execute("SELECT roomNumber, roomFloor, roomBuilding FROM room")
@@ -88,9 +96,69 @@ def api_rooms_all():
             "Dostępność dla pacjentów": room[6],
             "Dostępność gazu": room[7],
             "Czy posiada okno": room[8],
-        }
-        for room in rooms
-    ]
+        } for room in rooms]
+
+    return jsonify(result)
+
+@app.route('/api/employees_all')
+def api_employee_info():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    query = """
+            SELECT domainName,name, surname, email, department, roomId
+            FROM worker
+    """
+    cursor.execute(query)
+    employees = cursor.fetchall()
+
+    result = [{
+        "domainName":employee[0],
+        "name":employee[1],
+        "surname":employee[2],
+        "email":employee[3],
+        "department":employee[4],
+        "roomId":employee[5]
+    } for employee in employees]
+
+    return jsonify(result)
+
+@app.route('/api/departments_all')
+def api_departments_all():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    query = """
+    SELECT departmentAbbreviation, departmentName FROM department
+    """
+
+    query_department_rooms = """
+    SELECT department FROM room
+    """
+
+    query_department_employees = """
+    SELECT department FROM worker
+    """
+
+    cursor.execute(query)
+    departments = cursor.fetchall()
+
+    cursor.execute(query_department_rooms)
+    rooms = cursor.fetchall()
+
+    cursor.execute(query_department_employees)
+    employees = cursor.fetchall()
+
+    number_of_rooms_by_department = {room: rooms.count(room)
+                                     for room in set(rooms)}
+
+    number_of_employees_by_department ={employee: employees.count(employee)
+                                        for employee in set(employees)}
+
+    result = [{"departmentAbbreviation":department[0],
+               "departmentName":department[1],
+               "numberOfRooms": number_of_rooms_by_department.get((department[1],),0),
+               "numberOfEmployees": number_of_employees_by_department.get((department[1],),0),
+               } for department in departments]
+
     return jsonify(result)
 
 

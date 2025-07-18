@@ -313,20 +313,22 @@ html, body {
 
 /* Sekcja z wyświetlaniem tabeli z bazy danych */
 /* Tylko dla strony z tabelą */
-body.page-rooms-table {
+body.page-table {
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-body.page-rooms-table main {
-  width: 95%;
+body.page-table main {
+  width: 98%;
   padding: 2rem;
+  margin-top: 0;
+  padding-top: 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 
-#rooms-table {
+#db-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
@@ -334,28 +336,28 @@ body.page-rooms-table main {
 }
 
 /* === Kolumny i równa wysokość wierszy === */
-#rooms-table th,
-#rooms-table td {
+#db-table th,
+#db-table td {
   text-align: center;
-  padding: 8px 12px;
+  padding: 1px 1px;
   height: 36px;
   border-right: 1px solid #ddd;
   white-space: nowrap;
 }
 
-#rooms-table th:last-child,
-#rooms-table td:last-child {
+#db-table th:last-child,
+#db-table td:last-child {
   border-right: none;
 }
 
 /* === Wiersze naprzemiennie kolorowane === */
-#rooms-table tbody tr:nth-child(even) {
+#db-table tbody tr:nth-child(even) {
   background-color: #f4f4f4;
 }
-#rooms-table tbody tr:nth-child(odd) {
+#db-table tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
-#rooms-table tbody tr:hover {
+#db-table tbody tr:hover {
   background-color: #e6f0ff;
   cursor: pointer;
 }

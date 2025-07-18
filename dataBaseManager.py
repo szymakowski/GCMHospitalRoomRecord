@@ -220,15 +220,6 @@ class SQLiteManager:
 
         return results
 
-    def is_worker_in_database(self, domainName):
-        try:
-            self.cursor.execute('SELECT 1 FROM worker WHERE domainName = ?',
-                                (domainName,))
-            result = self.cursor.fetchone()
-            return result is not None
-        except Exception as e:
-            print('Error to find {} user'.format(domainName))
-            return False
 
 if __name__ == '__main__':
     db_manager = SQLiteManager()
@@ -236,17 +227,8 @@ if __name__ == '__main__':
     # db_manager.connection.commit()
 
     # db_manager.create_room_table()
-    db_manager.add_room('43',
-                        '7',
-                        'SSW',
-                        'Dział Aparatury Medycznej',
-                        'Pokój biurowy',
-                        'SSW-7',
-                        '9',
-                        '1',
-                        'Tak',
-                        'Nie',
-                        'Nie',
-                        '')
+
+    # db_manager.cursor.execute("DELETE FROM room")
+    # db_manager.connection.commit()
     # db_manager.delete_department(str('Ambulatorium Badań Klinicznych'))
     # db_manager.add_department('LCZ', 'Śląskie Centrum Chorób Zakaźnych - Część Ambulatoryjna')
