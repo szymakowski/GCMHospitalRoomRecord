@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/api/rooms")
     .then(res => res.json())
     .then(data => {
-      rooms = data;
+      const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+      rooms = data.sort((a, b) => collator.compare(a, b));     // sortowanie pokojów, nie alfabetycznie np 1-2-3, a nie 1-10-100
       const term = document.getElementById("search-rooms").value.toLowerCase();
       const filtered = rooms.filter(r => r.toLowerCase().includes(term));
       renderList(filtered, "rooms-list", "rooms");
@@ -208,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
               tooltip.style.top = (rectBox.top) + "px";
               tooltip.classList.add("visible");
             });
-        }, 1000); // 1 sekunda
+        }, 700); // 600ms
       });
 
       rect.addEventListener("mouseleave", () => {

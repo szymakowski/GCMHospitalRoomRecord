@@ -13,7 +13,6 @@ def mapa(filename):
     return render_template('building_map.html',
                            svg_file=filename)
 
-
 @app.route('/statystyki.html')
 def stats_page():
     return render_template('statistics.html')
@@ -37,6 +36,10 @@ def database_employees():
 @app.route('/baza_danych_działy.html')
 def database_departments():
     return render_template('departments_table.html')
+
+@app.route('/wolne_miejsca.html')
+def free_rooms_page():
+    return render_template('free_rooms.html')
 
 @app.route('/api/departments')
 def api_departments():
@@ -204,6 +207,34 @@ def api_room_info():
             "isWindow": ''
         })
 
+@app.route('/api/free_rooms')
+def api_free_rooms():
+    conn = sqlite3.connect('GCMDataBase.db')
+    cursor = conn.cursor()
+    query = """
+        SELECT roomNumber, roomBuilding, roomFloor, department, roomType,
+        numberOfSeats, isForPatient, isGas, isWindow 
+        FROM room
+        WHERE department IS NULL OR department = ''
+    """
+    cursor.execute(query)
+    free_rooms = cursor.fetchall()
+    conn.close()
+
+    result = [
+        {
+            "Budynek": room[1],
+            "Numer pokoju": room[0],
+            "Piętro": room[2],
+            "Dział": room[3],
+            "Typ pokoju": room[4],
+            "Liczba stanowisk": room[5],
+            "Dostępność dla pacjentów": room[6],
+            "Dostępność gazu": room[7],
+            "Czy posiada okno": room[8],
+        } for room in free_rooms
+    ]
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)

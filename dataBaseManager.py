@@ -225,10 +225,22 @@ if __name__ == '__main__':
     db_manager = SQLiteManager()
     # db_manager.connection.cursor().execute("DROP TABLE IF EXISTS room")
     # db_manager.connection.commit()
-
     # db_manager.create_room_table()
 
     # db_manager.cursor.execute("DELETE FROM room")
     # db_manager.connection.commit()
     # db_manager.delete_department(str('Ambulatorium Badań Klinicznych'))
     # db_manager.add_department('LCZ', 'Śląskie Centrum Chorób Zakaźnych - Część Ambulatoryjna')
+    db_manager.add_room(
+                   roomNumber='175',
+                   roomFloor='1',
+                   roomBuilding='GOK',
+                   department='',
+                   roomType='',
+                   localization='GOK-1',
+                   area='7',
+                   numberOfSeats='1',
+                   isForPatient='Nie',
+                   isGas='Nie',
+                   isWindow='Nie',
+                   notes='')
