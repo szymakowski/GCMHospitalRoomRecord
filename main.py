@@ -1,8 +1,10 @@
 from flask import Flask, render_template, jsonify, request
 import sqlite3
-
+import pandas as pd
+from excelManager import load_excel_sheet
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def campus():
@@ -43,198 +45,148 @@ def free_rooms_page():
 
 @app.route('/api/departments')
 def api_departments():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT departmentName FROM department")
-    departments = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return jsonify(departments)
+    df = load_excel_sheet('departments')
+    result = df.to_dict(orient='records')
+    result = [entity['departmentName'] for entity in result]
+    return jsonify(result)
 
 @app.route('/api/rooms')
 def api_rooms():
     selected_departments = request.args.getlist('departments')
-
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
+    df = load_excel_sheet('rooms')
 
     if selected_departments:
-        placeholders = ','.join('?' for _ in selected_departments)
-        query = f"""
-            SELECT roomNumber, roomFloor, roomBuilding
-            FROM room
-            WHERE department IN ({placeholders})
-            """
-        cursor.execute(query, selected_departments)
-    else:
-        cursor.execute("SELECT roomNumber, roomFloor, roomBuilding FROM room")
+        df = df[df['department'].isin(selected_departments)]
 
-    rooms = [
-        f"{row[2].upper()}-PIĘTRO{row[1]}-POKÓJ{row[0]}"
-        for row in cursor.fetchall()
+    room_labels = [
+        f"{row['roomBuilding'].upper()}-PIĘTRO{row['roomFloor']}-POKÓJ{row['roomNumber']}"
+        for _, row in df.iterrows()
     ]
-    conn.close()
-    return jsonify(rooms)
+    print(room_labels)
+    return jsonify(room_labels)
+
 
 @app.route('/api/rooms_all')
 def api_rooms_all():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    query = """
-        SELECT roomNumber, roomBuilding, roomFloor, department, roomType,
-        numberOfSeats, isForPatient, isGas, isWindow 
-        FROM room
-    """
-    cursor.execute(query)
-    rooms = cursor.fetchall()
-    conn.close()
+    df = load_excel_sheet("rooms")
 
-    result = [
-        {
-            "Budynek": room[1],
-            "Numer pokoju": room[0],
-            "Piętro": room[2],
-            "Dział": room[3],
-            "Typ pokoju": room[4],
-            "Liczba stanowisk": room[5],
-            "Dostępność dla pacjentów": room[6],
-            "Dostępność gazu": room[7],
-            "Czy posiada okno": room[8],
-        } for room in rooms]
+    result = []
+    for _, row in df.iterrows():
+        result.append({
+            "Budynek": str(row.get("roomBuilding", "") or ""),
+            "Numer pokoju": str(row.get("roomNumber", "") or ""),
+            "Piętro": str(row.get("roomFloor", "") or ""),
+            "Dział": str(row.get("department", "") or ""),
+            "Typ pokoju": str(row.get("roomType", "") or ""),
+            "Liczba stanowisk": str(row.get("numberOfSeats", "") or ""),
+            "Dostępność dla pacjentów": str(row.get("isForPatient", "") or ""),
+            "Dostępność gazu": str(row.get("isGas", "") or ""),
+            "Czy posiada okno": str(row.get("isWindow", "") or ""),
+        })
 
     return jsonify(result)
 
 @app.route('/api/employees_all')
 def api_employee_info():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    query = """
-            SELECT domainName,name, surname, email, department, roomId
-            FROM worker
-    """
-    cursor.execute(query)
-    employees = cursor.fetchall()
+    df = load_excel_sheet('workers')
 
     result = [{
-        "domainName":employee[0],
-        "name":employee[1],
-        "surname":employee[2],
-        "email":employee[3],
-        "department":employee[4],
-        "roomId":employee[5]
-    } for employee in employees]
-
+        "domainName":employee['domainName'],
+        "name":employee['name'],
+        "surname":employee['surname'],
+        "email":employee['email'],
+        "department":employee['department'],
+        "roomId":employee['roomId']
+    } for _,employee in df.iterrows()]
     return jsonify(result)
 
 @app.route('/api/departments_all')
 def api_departments_all():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    query = """
-    SELECT departmentAbbreviation, departmentName FROM department
-    """
+    departments_df = load_excel_sheet("departments")
+    rooms_df = load_excel_sheet("rooms")
+    employees_df = load_excel_sheet("workers")
 
-    query_department_rooms = """
-    SELECT department FROM room
-    """
+    # Liczenie pokoi i pracowników dla każdego działu
+    room_counts = rooms_df['department'].value_counts()
+    employee_counts = employees_df['department'].value_counts()
 
-    query_department_employees = """
-    SELECT department FROM worker
-    """
+    result = []
 
-    cursor.execute(query)
-    departments = cursor.fetchall()
-
-    cursor.execute(query_department_rooms)
-    rooms = cursor.fetchall()
-
-    cursor.execute(query_department_employees)
-    employees = cursor.fetchall()
-
-    number_of_rooms_by_department = {room: rooms.count(room)
-                                     for room in set(rooms)}
-
-    number_of_employees_by_department ={employee: employees.count(employee)
-                                        for employee in set(employees)}
-
-    result = [{"departmentAbbreviation":department[0],
-               "departmentName":department[1],
-               "numberOfRooms": number_of_rooms_by_department.get((department[1],),0),
-               "numberOfEmployees": number_of_employees_by_department.get((department[1],),0),
-               } for department in departments]
+    for _, row in departments_df.iterrows():
+        dept_name = row['departmentName']
+        result.append({
+            "departmentAbbreviation": row['departmentAbbreviation'],
+            "departmentName": dept_name,
+            "numberOfRooms": int(room_counts.get(dept_name, 0)),
+            "numberOfEmployees": int(employee_counts.get(dept_name, 0))
+        })
 
     return jsonify(result)
 
 
 @app.route('/api/room_info')
 def api_room_info():
-    room_number = request.args.get('number')
-    room_floor = request.args.get('floor')
-    room_building = request.args.get('building')
+    number = request.args.get("number")
+    floor = request.args.get("floor")
+    building = request.args.get("building")
 
-    if not all([room_number, room_floor, room_building]):
-        return jsonify({"error": "Brak wymaganych parametrów do wyświetlenia informacji o pokoju"}), 400
+    if not all([number, floor, building]):
+        return jsonify({"error": "Brak wymaganych parametrów"}), 400
 
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    query = """
-        SELECT roomNumber, department, roomType, numberOfSeats, isForPatient, isGas, isWindow 
-        FROM room
-        WHERE roomNumber = ? AND roomFloor = ? AND roomBuilding = ?
-    """
-    cursor.execute(query, (room_number, room_floor, room_building))
-    result = cursor.fetchone()
-    conn.close()
+    df = load_excel_sheet("rooms")
 
-    if result:
-        roomNumber, department, roomType, numberOfSeats, isForPatient, isGas, isWindow = result
-        return jsonify({
-            "roomNumber": roomNumber if roomNumber is not None else "",
-            "department": department if department is not None else "",
-            "roomType": roomType if roomType is not None else "",
-            "numberOfSeats": numberOfSeats if numberOfSeats is not None else "",
-            "isForPatient": isForPatient if isForPatient is not None else "",
-            "isGas": isGas if isGas is not None else "",
-            "isWindow": isWindow if isWindow is not None else ""
-        })
-    else:
+    filtered = df[
+        (df["roomNumber"] == int(number)) &
+        (df["roomFloor"] == int(floor)) &
+        (df["roomBuilding"].str.upper() == building.upper())
+    ]
+
+    if filtered.empty:
         return jsonify({
             "roomNumber": '',
             "department": '',
             "roomType": '',
             "numberOfSeats": '',
-            "isForPatient": '',
-            "isGas": '',
-            "isWindow": ''
+            "isForPatient": False,
+            "isGas": False,
+            "isWindow": False
         })
+
+    room = filtered.iloc[0]
+    return jsonify({
+        "roomNumber": int(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
+        "department": str(room["department"]) if pd.notna(room["department"]) else "",
+        "roomType": str(room["roomType"]) if pd.notna(room["roomType"]) else "",
+        "numberOfSeats": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
+        "isForPatient": bool(room["isForPatient"]) if pd.notna(room["isForPatient"]) else False,
+        "isGas": bool(room["isGas"]) if pd.notna(room["isGas"]) else False,
+        "isWindow": bool(room["isWindow"]) if pd.notna(room["isWindow"]) else False,
+    })
 
 @app.route('/api/free_rooms')
 def api_free_rooms():
-    conn = sqlite3.connect('GCMDataBase.db')
-    cursor = conn.cursor()
-    query = """
-        SELECT roomNumber, roomBuilding, roomFloor, department, roomType,
-        numberOfSeats, isForPatient, isGas, isWindow 
-        FROM room
-        WHERE department IS NULL OR department = ''
-    """
-    cursor.execute(query)
-    free_rooms = cursor.fetchall()
-    conn.close()
+    df = load_excel_sheet("rooms")
 
-    result = [
-        {
-            "Budynek": room[1],
-            "Numer pokoju": room[0],
-            "Piętro": room[2],
-            "Dział": room[3],
-            "Typ pokoju": room[4],
-            "Liczba stanowisk": room[5],
-            "Dostępność dla pacjentów": room[6],
-            "Dostępność gazu": room[7],
-            "Czy posiada okno": room[8],
-        } for room in free_rooms
-    ]
+    # Filtracja pokoi bez przypisanego działu
+    free_rooms_df = df[(df["department"].isnull()) | (df["department"] == "")]
+
+    result = []
+    for _, room in free_rooms_df.iterrows():
+        result.append({
+            "Budynek": str(room.get("roomBuilding", "") or ""),
+            "Numer pokoju": int(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
+            "Piętro": int(room["roomFloor"]) if pd.notna(room["roomFloor"]) else "",
+            "Dział": str(room.get("department", "") or ""),
+            "Typ pokoju": str(room.get("roomType", "") or ""),
+            "Liczba stanowisk": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
+            "Dostępność dla pacjentów": bool(room.get("isForPatient", False)),
+            "Dostępność gazu": bool(room.get("isGas", False)),
+            "Czy posiada okno": bool(room.get("isWindow", False)),
+        })
+    import json
+    print(json.dumps(result, indent=2, ensure_ascii=False))
     return jsonify(result)
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=False, use_reloader=False)
