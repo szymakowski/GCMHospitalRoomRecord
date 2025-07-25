@@ -45,16 +45,36 @@
 
   <!-- Ikony i skrypt lokalny -->
   <script src="{{ url_for('static', filename='js/campus.js') }}"></script>
-  <script>
-    lucide.createIcons();
 
-    $(document).ready(function () {
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <script>
+      lucide.createIcons();
+
       $('#db-table').DataTable({
+        dom: '<"custom-wrapper d-flex justify-content-between align-items-start mb-2"<"export-buttons"B><"search-tools d-flex flex-column align-items-end"lf>>rtip',
+
+        buttons: [
+          {
+            extend: 'excelHtml5',
+            text: 'Eksport do Excela',
+            className: 'btn-export'
+          },
+          {
+            extend: 'pdfHtml5',
+            text: 'Eksport do PDF',
+            className: 'btn-export'
+          }
+        ],
         ajax: {
           url: '/api/rooms_all',
-          dataSrc: function (data) {
-            return data;
-          }
+          dataSrc: data => data
         },
         columns: [
           { data: 'Budynek' },
@@ -68,24 +88,25 @@
           { data: 'Czy posiada okno' }
         ],
         pageLength: 15,
-        lengthMenu: [ [15, 50, 200, 500], [15, 50, 200, 500] ],
+        lengthMenu: [[15, 100, -1], [15, 100, "Wszystkie"]],
         language: {
           url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pl.json'
         }
       });
-    });
 
-    function goToHospitalMap() {
-      window.location.href = "/";
-    }
 
-    function goToStatistics() {
-      window.location.href = "/statystyki.html";
-    }
+      function goToHospitalMap() {
+        window.location.href = "/";
+      }
 
-    function goToDataBases() {
-      window.location.href = "/bazy_danych.html";
-    }
-  </script>
+      function goToStatistics() {
+        window.location.href = "/statystyki.html";
+      }
+
+      function goToDataBases() {
+        window.location.href = "/bazy_danych.html";
+      }
+    </script>
+
 </body>
 </html>
