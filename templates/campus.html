@@ -7,7 +7,8 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="https://unpkg.com/lucide@latest"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 </head>
 <body>
   <header class="top-bar">
@@ -50,13 +51,51 @@
           <option value="1">1 piętro</option>
           <option value="2">2 piętro</option>
         </select>
+        <button onclick="exportMapToPDF()" class="mini-btn" style="margin-bottom: 1rem; float: right;">Eksportuj mapę do PDF</button>
       </div>
-    <div id="svg-map-container">
+      <div id="svg-map-container">
       <img src="{{ url_for('static', filename='img/campus.png') }}" id="initial-campus-img" alt="Plan kampusu" style="width: 100%; height: auto;">
     </div>
     </section>
   </div>
 
   <script src="{{ url_for('static', filename='js/campus.js') }}"></script>
+  <script>function exportMapToPDF() {
+     const svgElement = document.querySelector("#svg-map-container svg");
+     if (!svgElement) {
+       alert("Mapa SVG nie została jeszcze załadowana.");
+       return;
+     }
+
+     const svgData = new XMLSerializer().serializeToString(svgElement);
+     const canvas = document.createElement("canvas");
+     const ctx = canvas.getContext("2d");
+
+     const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+     const url = URL.createObjectURL(svgBlob);
+
+     const img = new Image();
+     img.onload = function () {
+       canvas.width = img.width;
+       canvas.height = img.height;
+       ctx.drawImage(img, 0, 0);
+
+       const imgData = canvas.toDataURL("image/png");
+
+       const docDefinition = {
+         pageOrientation: 'landscape',
+         content: [
+           {
+             image: imgData,
+             width: 780  // dopasuj do szerokości A4 poziomej (w px)
+           }
+         ]
+       };
+       pdfMake.createPdf(docDefinition).download("mapa_szpitala.pdf");
+       URL.revokeObjectURL(url);
+     };
+     img.src = url;
+   }
+  </script>
 </body>
 </html>
