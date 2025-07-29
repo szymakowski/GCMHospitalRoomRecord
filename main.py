@@ -27,6 +27,10 @@ def room_reservation_page():
 def database_page():
     return render_template('databases.html')
 
+@app.route('/harmonogram_pokoi.html')
+def calendar_page():
+    return render_template('reservation_page.html')
+
 @app.route('/baza_danych_pomieszczenia.html')
 def database_rooms():
     return render_template('rooms_table.html')
@@ -183,8 +187,6 @@ def api_free_rooms():
             "Dostępność gazu": bool(room.get("isGas", False)),
             "Czy posiada okno": bool(room.get("isWindow", False)),
         })
-    import json
-    print(json.dumps(result, indent=2, ensure_ascii=False))
     return jsonify(result)
 
 

@@ -306,10 +306,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function goToStatistics() {
-      window.location.href = '/statystyki.html';
-  }
-
   function goToDataBases() {
       window.location.href = '/bazy_danych.html';
+  }
+
+  function goToDataCalendar() {
+      window.location.href = '/harmonogram_pokoi.html';
   }
