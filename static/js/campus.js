@@ -1,10 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const FLOOR_OPTIONS = {
+  "campus.png": ["powierzchnia", "podziemia"],
+  "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro",
+                    "5 piętro", "6 piętro","7 piętro","8 piętro",],
+  "ssw_floor1.svg": ["1 piętro", "2 piętro"]
+  }
   loadSVGMap("campus.png");
 
   const selected = {
     departments: new Set(),
     rooms: new Set()
   };
+
+  function updateFloorSelectOptions(filename) {
+    const select = document.getElementById("floor-select");
+    select.innerHTML = ""; // Wyczyść
+
+    const options = FLOOR_OPTIONS[filename] || [];
+    for (let value of options) {
+      const label = isNaN(value)
+        ? value.charAt(0).toUpperCase() + value.slice(1)
+        : `${value} piętro`;
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = label;
+      select.appendChild(opt);
+    }
+  }
+
   function updateHighlight(containerId) {
     const container = document.getElementById(containerId);
     container.querySelectorAll("label").forEach(label => {
@@ -226,10 +249,11 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = `
         <svg id="svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 850" preserveAspectRatio="none">
           <image href="/static/img/campus.png" x="0" y="0" width="1450" height="850"/>
-          <polygon id="ssw" data-file="ssw_floor1.svg" points="220,98 305,42 411,76 327,136" fill="transparent" stroke="none"/>
-          <polygon id="gok" data-file="gok_floor1.svg" points="388,216 553,277 524,300 358,240" fill="transparent" stroke="none"/>
+          <polygon id="gok" data-file="gok_floor1.svg" points="384,265 558,328 527,354 348,290" fill="transparent" stroke="none"/>
+          <polygon id="ssw" data-file="ssw_floor1.svg" points="541,284 554,274 546,270 562,256 573,260 656,195 728,219 615,310" fill="transparent" stroke="none"/>
         </svg>
       `;
+      updateFloorSelectOptions(file);
       container.querySelectorAll("polygon").forEach(polygon => {
         polygon.addEventListener("click", () => {
           const target = polygon.getAttribute("data-file");
@@ -244,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(svgContent => {
           container.innerHTML = svgContent;
-
+          updateFloorSelectOptions(file);
           container.querySelectorAll("polygon").forEach(polygon => {
             polygon.addEventListener("click", () => {
               const next = polygon.getAttribute("data-file");
