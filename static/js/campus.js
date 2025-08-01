@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   "campus.png": ["powierzchnia", "podziemia"],
   "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro",
                     "5 piętro", "6 piętro","7 piętro","8 piętro",],
-  "ssw_floor1.svg": ["1 piętro", "2 piętro"]
+  "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"]
   }
+
   loadSVGMap("campus.png");
 
   const selected = {
