@@ -229,8 +229,28 @@ document.addEventListener("DOMContentLoaded", () => {
               `;
 
               const rectBox = rect.getBoundingClientRect();
-              tooltip.style.left = (rectBox.right + 10) + "px";
-              tooltip.style.top = (rectBox.top) + "px";
+              const tooltipWidth = tooltip.offsetWidth;
+              const tooltipHeight = tooltip.offsetHeight;
+              const viewportWidth = window.innerWidth;
+              const viewportHeight = window.innerHeight;
+
+              let top = rectBox.top;
+              let left = rectBox.right + 10;
+
+              // Jeśli tooltip wychodzi poza dół ekranu – przesuń go wyżej
+              if (top + tooltipHeight > viewportHeight) {
+                top = viewportHeight - tooltipHeight - 10;
+                if (top < 0) top = 0;
+              }
+
+              // Jeśli tooltip wychodzi poza prawą krawędź – przesuń go w lewo od elementu
+              if (left + tooltipWidth > viewportWidth) {
+                left = rectBox.left - tooltipWidth - 10;
+                if (left < 0) left = 0;
+              }
+
+              tooltip.style.left = `${left}px`;
+              tooltip.style.top = `${top}px`;
               tooltip.classList.add("visible");
             });
         }, 700); // 600ms
