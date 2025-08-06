@@ -348,41 +348,6 @@ body.page-table main {
   overflow-y: auto;
 }
 
-
-#db-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  min-width: 1200px; /* wymusza scroll przy małych ekranach */
-}
-
-/* === Kolumny i równa wysokość wierszy === */
-#db-table th,
-#db-table td {
-  text-align: center;
-  padding: 1px 1px;
-  height: 36px;
-  border-right: 1px solid #ddd;
-  white-space: nowrap;
-}
-
-#db-table th:last-child,
-#db-table td:last-child {
-  border-right: none;
-}
-
-/* === Wiersze naprzemiennie kolorowane === */
-#db-table tbody tr:nth-child(even) {
-  background-color: #f4f4f4;
-}
-#db-table tbody tr:nth-child(odd) {
-  background-color: #ffffff;
-}
-#db-table tbody tr:hover {
-  background-color: #e6f0ff;
-  cursor: pointer;
-}
-
 /* === Styl wyszukiwarki DataTables === */
 .dataTables_filter {
   text-align: center;

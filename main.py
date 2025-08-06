@@ -162,9 +162,9 @@ def api_room_info():
         "department": str(room["department"]) if pd.notna(room["department"]) else "",
         "roomType": str(room["roomType"]) if pd.notna(room["roomType"]) else "",
         "numberOfSeats": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
-        "isForPatient": bool(room["isForPatient"]) if pd.notna(room["isForPatient"]) else False,
-        "isGas": bool(room["isGas"]) if pd.notna(room["isGas"]) else False,
-        "isWindow": bool(room["isWindow"]) if pd.notna(room["isWindow"]) else False,
+        "isForPatient": str(room["isForPatient"]) if pd.notna(room["isForPatient"]) else "",
+        "isGas": str(room["isGas"]) if pd.notna(room["isGas"]) else "",
+        "isWindow": str(room["isWindow"]) if pd.notna(room["isWindow"]) else "",
     })
 
 @app.route('/api/free_rooms')
@@ -183,9 +183,9 @@ def api_free_rooms():
             "Dział": str(room.get("department", "") or ""),
             "Typ pokoju": str(room.get("roomType", "") or ""),
             "Liczba stanowisk": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
-            "Dostępność dla pacjentów": bool(room.get("isForPatient", False)),
-            "Dostępność gazu": bool(room.get("isGas", False)),
-            "Czy posiada okno": bool(room.get("isWindow", False)),
+            "Dostępność dla pacjentów": str(room.get("isForPatient", "") or ""),
+            "Dostępność gazu": str(room.get("isGas", "") or ""),
+            "Czy posiada okno": str(room.get("isWindow", "") or ""),
         })
     return jsonify(result)
 
