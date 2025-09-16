@@ -63,7 +63,7 @@ def api_rooms():
         df = df[df['department'].isin(selected_departments)]
 
     room_labels = [
-        f"{row['roomBuilding'].upper()}-PIĘTRO{row['roomFloor']}-POKÓJ{row['roomNumber']}"
+        f"{row['roomBuilding'].upper()}.{row['roomFloor']}.{int(row['roomNumber']):02d}"
         for _, row in df.iterrows()
     ]
     print(room_labels)
@@ -83,6 +83,7 @@ def api_rooms_all():
             "Dział": str(row.get("department", "") or ""),
             "Typ pokoju": str(row.get("roomType", "") or ""),
             "Liczba stanowisk": str(row.get("numberOfSeats", "") or ""),
+            "Powierzchnia pokoju": str(row.get("area", "") or ""),
             "Dostępność dla pacjentów": str(row.get("isForPatient", "") or ""),
             "Dostępność gazu": str(row.get("isGas", "") or ""),
             "Czy posiada okno": str(row.get("isWindow", "") or ""),
@@ -131,6 +132,7 @@ def api_departments_all():
 @app.route('/api/room_info')
 def api_room_info():
     number = request.args.get("number")
+    print(number)
     floor = request.args.get("floor")
     building = request.args.get("building")
 
@@ -138,14 +140,18 @@ def api_room_info():
         return jsonify({"error": "Brak wymaganych parametrów"}), 400
 
     df = load_excel_sheet("rooms")
+    filtered = []
+    for temprow in df.iterrows():
 
-    filtered = df[
-        (df["roomNumber"] == int(number)) &
-        (df["roomFloor"] == int(floor)) &
-        (df["roomBuilding"].str.upper() == building.upper())
-    ]
+        row = temprow[1]
+        if (int(row["roomNumber"]) == int(number) and
+            str(row["roomFloor"]) == str(floor) and
+            str(row["roomBuilding"]) == str(building)):
+            filtered.append(row)
+    print(filtered)
 
-    if filtered.empty:
+
+    if not filtered:
         return jsonify({
             "roomNumber": '',
             "department": '',
@@ -156,9 +162,9 @@ def api_room_info():
             "isWindow": False
         })
 
-    room = filtered.iloc[0]
+    room = filtered[0]
     return jsonify({
-        "roomNumber": int(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
+        "roomNumber": str(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
         "department": str(room["department"]) if pd.notna(room["department"]) else "",
         "roomType": str(room["roomType"]) if pd.notna(room["roomType"]) else "",
         "numberOfSeats": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
@@ -173,16 +179,17 @@ def api_free_rooms():
 
     # Filtracja pokoi bez przypisanego działu
     free_rooms_df = df[(df["department"].isnull()) | (df["department"] == "")]
-
+    [load_excel_sheet("rooms")["department"].isnull() | load_excel_sheet("rooms")["department"] == ""]
     result = []
     for _, room in free_rooms_df.iterrows():
         result.append({
             "Budynek": str(room.get("roomBuilding", "") or ""),
-            "Numer pokoju": int(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
+            "Numer pokoju": str(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
             "Piętro": int(room["roomFloor"]) if pd.notna(room["roomFloor"]) else "",
             "Dział": str(room.get("department", "") or ""),
             "Typ pokoju": str(room.get("roomType", "") or ""),
             "Liczba stanowisk": int(room["numberOfSeats"]) if pd.notna(room["numberOfSeats"]) else "",
+            "Powierzchnia pokoju": str(room.get("area", "") or ""),
             "Dostępność dla pacjentów": str(room.get("isForPatient", "") or ""),
             "Dostępność gazu": str(room.get("isGas", "") or ""),
             "Czy posiada okno": str(room.get("isWindow", "") or ""),

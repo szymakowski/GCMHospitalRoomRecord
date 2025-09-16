@@ -1,27 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const FLOOR_OPTIONS = {
-  "campus.png": ["powierzchnia", "podziemia"],
-  "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro",
-                    "5 piętro", "6 piętro","7 piętro","8 piętro",],
-  "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"]
-  }
+// app.js — jedna scena SVG: PNG jako <image> + wektory z pliku SVG (1:1 do viewBox)
 
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Konfiguracja pięter ---
+  const FLOOR_OPTIONS = {
+    "campus.png": ["powierzchnia", "podziemia"],
+    "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"],
+    "c3_1.svg": ["1 piętro"]
+  };
+
+  // Start: kampus
   loadSVGMap("campus.png");
 
+  // --- Selekcje użytkownika ---
   const selected = {
     departments: new Set(),
     rooms: new Set()
   };
 
+  // --- UI list ---
+
   function updateFloorSelectOptions(filename) {
     const select = document.getElementById("floor-select");
-    select.innerHTML = ""; // Wyczyść
+    if (!select) return;
+    select.innerHTML = "";
 
     const options = FLOOR_OPTIONS[filename] || [];
     for (let value of options) {
-      const label = isNaN(value)
-        ? value.charAt(0).toUpperCase() + value.slice(1)
-        : `${value} piętro`;
+      const label = isNaN(value) ? value.charAt(0).toUpperCase() + value.slice(1) : `${value} piętro`;
       const opt = document.createElement("option");
       opt.value = value;
       opt.textContent = label;
@@ -31,18 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateHighlight(containerId) {
     const container = document.getElementById(containerId);
+    if (!container) return;
     container.querySelectorAll("label").forEach(label => {
       const checkbox = label.querySelector("input[type='checkbox']");
-      if (checkbox.checked) {
-        label.classList.add("active");
-      } else {
-        label.classList.remove("active");
-      }
+      if (checkbox && checkbox.checked) label.classList.add("active");
+      else label.classList.remove("active");
     });
   }
 
   function renderList(items, containerId, type) {
     const container = document.getElementById(containerId);
+    if (!container) return;
     container.innerHTML = "";
 
     items.forEach(name => {
@@ -57,15 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-          selected[type].add(name);
-        } else {
-          selected[type].delete(name);
-        }
+        if (checkbox.checked) selected[type].add(name);
+        else selected[type].delete(name);
         updateHighlight(containerId);
 
         if (type === "departments") fetchRoomsForSelectedDepartments();
-        if (type === "rooms") highlightSelectedRooms(); // kluczowe
+        if (type === "rooms") highlightSelectedRooms();
       });
 
       label.setAttribute("data-fulltext", name);
@@ -76,19 +78,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateHighlight(containerId);
 
-    // obsługa przycisków zaznaczenia i doznaczenia wszsytkich
-    lucide.createIcons();
-    document.getElementById('toggle-theme').addEventListener('click', () => {
-      const html = document.documentElement;
-      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-    });
+    if (window.lucide?.createIcons) lucide.createIcons();
+    const toggle = document.getElementById("toggle-theme");
+    if (toggle && !toggle.dataset.bound) {
+      toggle.dataset.bound = "1";
+      toggle.addEventListener("click", () => {
+        const html = document.documentElement;
+        html.setAttribute("data-theme", html.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      });
+    }
   }
+
+  // --- Dane: działy i pokoje ---
 
   let departments = [];
   fetch("/api/departments")
     .then(res => res.json())
     .then(data => {
-      departments = data;
+      departments = data || [];
       renderList(departments, "departments-list", "departments");
     });
 
@@ -96,46 +103,46 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/api/rooms")
     .then(res => res.json())
     .then(data => {
-      const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
-      rooms = data.sort((a, b) => collator.compare(a, b));     // sortowanie pokojów, nie alfabetycznie np 1-2-3, a nie 1-10-100
-      const term = document.getElementById("search-rooms").value.toLowerCase();
+      const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
+      rooms = (data || []).sort((a, b) => collator.compare(a, b));
+      const term = (document.getElementById("search-rooms")?.value || "").toLowerCase();
       const filtered = rooms.filter(r => r.toLowerCase().includes(term));
       renderList(filtered, "rooms-list", "rooms");
     });
 
-  document.getElementById("search-departments").addEventListener("input", e => {
+  document.getElementById("search-departments")?.addEventListener("input", e => {
     const term = e.target.value.toLowerCase();
     const filtered = departments.filter(d => d.toLowerCase().includes(term));
     renderList(filtered, "departments-list", "departments");
   });
 
-  document.getElementById("search-rooms").addEventListener("input", e => {
+  document.getElementById("search-rooms")?.addEventListener("input", e => {
     const term = e.target.value.toLowerCase();
     const filtered = rooms.filter(r => r.toLowerCase().includes(term));
     renderList(filtered, "rooms-list", "rooms");
   });
 
-  document.getElementById("floor-select").addEventListener("change", (e) => {
+  document.getElementById("floor-select")?.addEventListener("change", (e) => {
     console.log("Wybrano piętro:", e.target.value);
   });
 
+  // --- Zaznacz/odznacz wszystko ---
+
   window.selectAll = function(type) {
     const list = document.getElementById(`${type}-list`);
+    if (!list) return;
     list.querySelectorAll("input[type='checkbox']").forEach(cb => {
       cb.checked = true;
       selected[type].add(cb.value);
     });
     updateHighlight(`${type}-list`);
-    if (type === "departments") {
-    fetchRoomsForSelectedDepartments();
-    }
-    if (type === "rooms") {
-    highlightSelectedRooms();
-    }
+    if (type === "departments") fetchRoomsForSelectedDepartments();
+    if (type === "rooms") highlightSelectedRooms();
   };
 
   window.deselectAll = function(type) {
     const list = document.getElementById(`${type}-list`);
+    if (!list) return;
     list.querySelectorAll("input[type='checkbox']").forEach(cb => {
       cb.checked = false;
       selected[type].delete(cb.value);
@@ -153,69 +160,132 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`/api/rooms?${params}`)
       .then(res => res.json())
       .then(data => {
-        rooms = data;
-        const term = document.getElementById("search-rooms").value.toLowerCase();
+        rooms = data || [];
+        const term = (document.getElementById("search-rooms")?.value || "").toLowerCase();
         const filtered = rooms.filter(r => r.toLowerCase().includes(term));
         renderList(filtered, "rooms-list", "rooms");
-        highlightSelectedRooms(); // odśwież po renderze
+        highlightSelectedRooms();
       });
   }
 
+  // --- Parsowanie ID pokoi ---
+
+  function parseRoomId(id) {
+    // nowy format: room_<building>_<floor>_<room>  (np. room_c3_1_01)
+    let m = id?.match(/^room_([^_]+)_([^_]+)_([^_]+)$/i);
+    if (m) return { building: m[1], floor: m[2], room: m[3].padStart(2,"0") };
+
+
+    // fallback: stary format: <building>_room_<room>_floor<floor>
+    m = id?.match(/^([a-z]+)_room_(\d+)_floor(\d+)$/i);
+    if (m) return { building: m[1], floor: m[3], room: m[2].padStart(2, "0") };
+
+    return null;
+  }
+
+  // pomocniczo: usunięcie polskich znaków i normalizacja
+  function normalizeBasic(s) {
+    return (s ?? "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase()
+      .replace(/\s+/g, "")
+      .replace(/[._]/g, "-")
+      .replace(/-+/g, "-")
+      .trim();
+  }
+
+  // wyciągnij liczby z fragmentu typu "PIETRO1" -> "1", "POKOJ07" -> "07"
+  function extractNumber(part) {
+    const m = String(part).match(/\d+/);
+    return m ? m[0] : "";
+  }
+
+  // dwucyfrowe (01..99); jeżeli brak liczby, zwróć pusty string
+  function to2(nStr) {
+    if (!nStr) return "";
+    const n = parseInt(nStr, 10);
+    if (Number.isNaN(n)) return "";
+    return String(n).padStart(2, "0");
+  }
+
+  function roomMatchesSelection(parsed, selectedRoomNames) {
+    if (!parsed || !Array.isArray(selectedRoomNames)) return false;
+
+    // znormalizuj wartości z 'parsed'
+    const building = normalizeBasic(parsed.building);
+    const floor    = extractNumber(normalizeBasic(parsed.floor)); // "1"
+    const room     = to2(extractNumber(normalizeBasic(parsed.room))); // "01"
+
+    return selectedRoomNames.some(roomNameRaw => {
+      const norm = normalizeBasic(roomNameRaw);
+      // oczekujemy formatu z trzema częściami po myślnikach,
+      // np. "C3-PIETRO1-POKOJ01" lub "C3-1-01"
+      const parts = norm.split("-");
+      if (parts.length !== 3) return false;
+
+      const selBuilding = parts[0];                       // "C3"
+      const selFloor    = extractNumber(parts[1]);        // "1" z "PIETRO1" lub "1"
+      const selRoom     = to2(extractNumber(parts[2]));   // "01" z "POKOJ01" lub "01"
+
+      return (
+        selBuilding === building &&
+        selFloor    === floor &&
+        selRoom     === room
+      );
+    });
+  }
+
+  // --- Podświetlanie pokoi ---
+
   function highlightSelectedRooms() {
-    const selectedRoomNames = Array.from(selected.rooms); // np. ["GOK-PIĘTRO2-POKÓJ34", ...]
+    const selectedRoomNames = Array.from(selected.rooms);
+    const svg = document.getElementById("plan-svg");
+    if (!svg) return;
 
-    document.querySelectorAll("rect[id^='gok_room_'], rect[id^='ssw_room_']").forEach(rect => {
-      const rectId = rect.id; // np. gok_room_34_floor2
+    svg.querySelectorAll("rect[id], path[id], polygon[id]").forEach(el => {
+      const parsed = parseRoomId(el.id);
+      if (!parsed) return;
 
-      // Wyciągnij dane z rectId np. gok_room_34_floor2 → building=gok, room=34, floor=2
-      const match = rectId.match(/^([a-z]+)_room_(\d+)_floor(\d+)$/);
-      if (!match) return;
-
-      const [_, building, room, floor] = match;
-
-      const matched = selectedRoomNames.some(roomName => {
-        const parts = roomName.toUpperCase().split("-");
-        if (parts.length !== 3) return false;
-
-        const [selBuilding, selFloor, selRoom] = parts;
-
-        return (
-          selBuilding.toLowerCase() === building &&
-          selFloor.toLowerCase() === `piętro${floor}` &&
-          selRoom.toLowerCase() === `pokój${room}`
-        );
-      });
+      const matched = roomMatchesSelection(parsed, selectedRoomNames);
 
       if (matched) {
-        rect.setAttribute("fill", "#f44336");
-        rect.setAttribute("stroke", "#000");
-        rect.setAttribute("stroke-width", "2");
-        rect.setAttribute("fill-opacity", "0.3");
+        el.setAttribute("stroke", "#000");
+        el.setAttribute("stroke-width", "1");
+        el.setAttribute("fill-opacity", "0.25");
+        el.setAttribute("fill", "#F07470");
       } else {
-        rect.setAttribute("fill", "url(#roomGradBabyBlue)");
-        rect.setAttribute("stroke", "#ccc");
-        rect.setAttribute("stroke-width", "1.2");
+        el.setAttribute("stroke", "#ccc");
+        el.setAttribute("stroke-width", "1.2");
+        el.removeAttribute("fill-opacity");
+        el.setAttribute("fill", "#fff0");
       }
     });
   }
 
+  // --- Tooltipy SVG ---
+
   function initSVGRoomTooltips() {
-    let tooltip = document.createElement("div");
+    document.querySelectorAll(".custom-tooltip").forEach(t => t.remove());
+
+    const tooltip = document.createElement("div");
     tooltip.className = "custom-tooltip";
     document.body.appendChild(tooltip);
     let timeout;
 
-    document.querySelectorAll("rect[id^='gok_room_'], rect[id^='ssw_room_']").forEach(rect => {
-      rect.style.pointerEvents = 'all';
-      rect.addEventListener("mouseenter", () => {
+    const svg = document.getElementById("plan-svg");
+    if (!svg) return;
+
+    svg.querySelectorAll("rect[id], path[id], polygon[id]").forEach(el => {
+      const parsed = parseRoomId(el.id);
+      if (!parsed) return;
+
+      el.style.pointerEvents = "auto";
+
+      el.addEventListener("mouseenter", () => {
         timeout = setTimeout(() => {
-          const id = rect.id; // np. gok_room_23_floor1
-          const match = id.match(/^([a-z]+)_room_(\d+)_floor(\d+)$/);
-          if (!match) return;
+          const { building, floor, room } = parsed;
 
-          const [_, building, number, floor] = match;
-
-          fetch(`/api/room_info?number=${number}&floor=${floor}&building=${building.toUpperCase()}`)
+          fetch(`/api/room_info?number=${encodeURIComponent(room)}&floor=${encodeURIComponent(floor)}&building=${encodeURIComponent(String(building).toUpperCase())}`)
             .then(res => res.json())
             .then(data => {
               tooltip.innerHTML = `
@@ -228,93 +298,186 @@ document.addEventListener("DOMContentLoaded", () => {
                 <strong>Okno:</strong> ${data.isWindow || ''}
               `;
 
-              const rectBox = rect.getBoundingClientRect();
-              const tooltipWidth = tooltip.offsetWidth;
-              const tooltipHeight = tooltip.offsetHeight;
-              const viewportWidth = window.innerWidth;
-              const viewportHeight = window.innerHeight;
+              const b = el.getBoundingClientRect();
+              const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+              const vw = window.innerWidth, vh = window.innerHeight;
 
-              let top = rectBox.top;
-              let left = rectBox.right + 10;
-
-              // Jeśli tooltip wychodzi poza dół ekranu – przesuń go wyżej
-              if (top + tooltipHeight > viewportHeight) {
-                top = viewportHeight - tooltipHeight - 10;
-                if (top < 0) top = 0;
-              }
-
-              // Jeśli tooltip wychodzi poza prawą krawędź – przesuń go w lewo od elementu
-              if (left + tooltipWidth > viewportWidth) {
-                left = rectBox.left - tooltipWidth - 10;
-                if (left < 0) left = 0;
-              }
+              let top = b.top, left = b.right + 10;
+              if (top + th > vh) top = Math.max(0, vh - th - 10);
+              if (left + tw > vw) left = Math.max(0, b.left - tw - 10);
 
               tooltip.style.left = `${left}px`;
               tooltip.style.top = `${top}px`;
               tooltip.classList.add("visible");
             });
-        }, 700); // 600ms
+        }, 700);
       });
 
-      rect.addEventListener("mouseleave", () => {
+      el.addEventListener("mouseleave", () => {
         clearTimeout(timeout);
         tooltip.classList.remove("visible");
       });
     });
   }
 
+  // --- Ładowanie mapy: JEDNO SVG zawiera PNG i wektory 1:1 ---
+
   function loadSVGMap(file) {
     const container = document.getElementById("svg-map-container");
-    if (!container) return; // sprawdzenie czy kontener na mapę istnieje na stronie
+    if (!container) return;
+
+    // Widok kampusu — bez zmian
     if (file === "campus.png") {
       container.innerHTML = `
-        <svg id="svg-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 850" preserveAspectRatio="none">
-          <image href="/static/img/campus.png" x="0" y="0" width="1450" height="850"/>
-          <polygon id="gok" data-file="gok_floor1.svg" points="384,265 558,328 527,354 348,290" fill="transparent" stroke="none"/>
-          <polygon id="ssw" data-file="ssw_floor1.svg" points="541,284 554,274 546,270 562,256 573,260 656,195 728,219 615,310" fill="transparent" stroke="none"/>
+        <svg id="plan-svg" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 6104 2000" preserveAspectRatio="xMidYMid meet"
+             style="display:block;width:100%;height:auto;max-width:95vw;max-height:85vh;margin:0 auto;overflow:visible;">
+        <style>
+          .zone {
+            fill: transparent;
+            stroke: rgba(0,0,0,0);
+            pointer-events: all;
+            vector-effect: non-scaling-stroke;
+            transition: fill 120ms ease, stroke 120ms ease, stroke-width 120ms ease;
+            cursor: pointer;
+          }
+          .zone:hover {
+            fill: rgba(255, 211, 77, 0.35);
+            stroke: #FFC107;
+            stroke-width: 2;
+          }
+        </style>
+          <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
+
+          <polygon class="zone" id="GOK" data-file="c3_1.svg" points="2768,1636 3173,1409 2949,1333 2949,914 3073,848 3525,1004 3526,1204 3658,1135 3951,1234 3055,1735 2768,1636"/>
+          <polygon class="zone" id="DYREKCJA" data-file="dyr_floor1.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
+          <polygon class="zone" id="ZIOLOWA" data-file="ziolowa_floor.svg" points="5004,390 5306,221 5390,249 5089,418"/>
+          <polygon class="zone" id="SZARY" data-file="szary_floor1.svg" points="738,1396 814,1356 1178,1482 1103,1523"/>
+          <polygon class="zone" id="BIALY" data-file="bialy_floor1.svg" points="1168,1260 1249,1214 1326,1240 1246,1286"/>
+          <polygon class="zone" id="JNIEBIESKI" data-file="bialy_floor1.svg" points="1405,1689 1571,1596 1706,1641 1537,1735"/>
+          <polygon class="zone" id="CNIEBIESKI" data-file="bialy_floor1.svg" points="1373,1276 1454,1231 1789,1346 1709,1393"/>
+          <polygon class="zone" id="CEGLA" data-file="bialy_floor1.svg" points="1774,1567 1821,1540 1924,1574 1873,1602"/>
+          <polygon class="zone" id="ZIELONY" data-file="bialy_floor1.svg" points="1730,1143 1777,1119 1929,1171 1885,1198"/>
+          <polygon class="zone" id="FIOLETOWY" data-file="bialy_floor1.svg" points="2070,1075 2118,1047 2253,1092 2205,1122"/>
+          <polygon class="zone" id="POMARANCZOWY" data-file="bialy_floor1.svg" points="2049,877 2164,813 2213,830 2205,835 2289,863 2185,923"/>
+          <polygon class="zone" id="ROZOWY" data-file="bialy_floor1.svg" points="2282,958 2389,899 2525,945 2421,1006"/>
+          <polygon class="zone" id="ZOLTY" data-file="bialy_floor1.svg" points="2329,807 2411,762 2452,767 2457,748 2586,791 2890,628 3022,675 2646,886 2653,889 2633,901"/>
+          <polygon class="zone" id="MBRAZOWY" data-file="bialy_floor1.svg" points="3013,618 3048,597 3116,621 3081,642"/>
+          <polygon class="zone" id="DBRAZOWY" data-file="bialy_floor1.svg" points="3110,753 3176,717 3430,804 3365,842"/>
+          <polygon class="zone" id="FIOLETOWY2" data-file="bialy_floor1.svg" points="2766,940 2879,878 2962,906 2949,914 2949,946 2965,951 2964,956 2949,965 2949,995 2941,1000"/>
+          <polygon class="zone" id="SSW" data-file="ssw_floor1.svg" points="3500,373 3686,270 3706,275 3746,255 3805,274 3805,307 3839,318 3842,299 4294,49 4392,81 4389,467 4888,648 4460,873 4168,775 4437,628 4389,616 4391,648 3938,901 3839,868 3837,820 3803,833 3802,852 3561,772 3518,796 3500,794 3500,373"/>
         </svg>
       `;
       updateFloorSelectOptions(file);
-      container.querySelectorAll("polygon").forEach(polygon => {
-        polygon.addEventListener("click", () => {
-          const target = polygon.getAttribute("data-file");
+      container.querySelectorAll("polygon[data-file]").forEach(p => {
+        p.addEventListener("click", () => {
+          const target = p.getAttribute("data-file");
           if (target) loadSVGMap(target);
         });
       });
-    } else {
-      fetch(`/static/maps/${file}`)
-        .then(res => {
-          if (!res.ok) throw new Error(`Nie można załadować: ${file}`);
-          return res.text();
-        })
-        .then(svgContent => {
-          container.innerHTML = svgContent;
-          updateFloorSelectOptions(file);
-          container.querySelectorAll("polygon").forEach(polygon => {
-            polygon.addEventListener("click", () => {
-              const next = polygon.getAttribute("data-file");
-              if (next) loadSVGMap(next);
-            });
-          });
-
-          container.querySelectorAll("text").forEach(text => {
-            text.style.pointerEvents = 'none';
-          });
-
-          highlightSelectedRooms();
-          initSVGRoomTooltips();
-        })
-        .catch(err => {
-          console.error("Błąd ładowania mapy:", err);
-        });
+      return;
     }
+
+    // --- Plany pięter: pobierz SVG, wstaw PNG i te same wektory do jednego <svg> ---
+    fetch(`/static/maps/${file}`)
+      .then(res => {
+        if (!res.ok) throw new Error(`Nie można załadować: ${file}`);
+        return res.text();
+      })
+      .then(svgText => {
+        const parser = new DOMParser();
+        const srcDoc = parser.parseFromString(svgText, "image/svg+xml");
+        const srcSvg = srcDoc.documentElement;
+
+        // Oczekiwany układ (naprawiony w pliku SVG):
+        // viewBox="0 0 2907 1962" width="2907" height="1962"
+        let viewBox = srcSvg.getAttribute("viewBox") || "0 0 2907 1962";
+        const [ , , vbW = 2907, vbH = 1962 ] = viewBox.trim().split(/\s+/).map(Number);
+
+        const base = file.replace(/\.svg$/i, "");
+        const pngUrl = `/static/maps/${base}.png`;
+
+        // Jedno <svg> – najpierw PNG jako tło, potem sklonowane wektory 1:1
+        const NS = "http://www.w3.org/2000/svg";
+        container.innerHTML = `
+          <svg id="plan-svg" xmlns="${NS}"
+               viewBox="${viewBox}"
+               width="100%"
+               preserveAspectRatio="xMidYMid meet"
+               style="display:block;max-width:95vw;max-height:85vh;margin:0 auto;overflow:visible;">
+          </svg>
+        `;
+        const svg = container.querySelector("#plan-svg");
+
+        // PNG jako tło w tej samej przestrzeni
+        const img = document.createElementNS(NS, "image");
+        img.setAttribute("href", pngUrl);
+        img.setAttribute("x", 0);
+        img.setAttribute("y", 0);
+        img.setAttribute("width", vbW);
+        img.setAttribute("height", vbH);
+        img.setAttribute("preserveAspectRatio", "none");
+        svg.appendChild(img);
+
+        // Defs/gradient (gdyby kształty miały fill="url(#roomGradBabyBlue)")
+        if (!svg.querySelector("#roomGradBabyBlue")) {
+          const defs = document.createElementNS(NS, "defs");
+          const grad = document.createElementNS(NS, "linearGradient");
+          grad.setAttribute("id", "roomGradBabyBlue");
+          grad.innerHTML = `<stop offset="0%" stop-color="#e7f3ff"/><stop offset="100%" stop-color="#cfe8ff"/>`;
+          defs.appendChild(grad);
+          svg.appendChild(defs);
+        }
+
+        // Warstwa pokoi: kopia elementów z pliku SVG (bez <image>)
+        const roomsLayer = document.createElementNS(NS, "g");
+        roomsLayer.setAttribute("id", "rooms-layer");
+        svg.appendChild(roomsLayer);
+
+        Array.from(srcSvg.children).forEach(node => {
+          if (node.tagName?.toLowerCase() === "image") return;
+          roomsLayer.appendChild(node.cloneNode(true));
+        });
+
+        // Interakcje / style
+        svg.querySelectorAll("text").forEach(t => { t.style.pointerEvents = "none"; });
+        roomsLayer.querySelectorAll("rect, path, polygon").forEach(el => {
+          el.style.pointerEvents = "auto";
+          if (!el.getAttribute("fill")) el.setAttribute("fill", "url(#roomGradBabyBlue)");
+          if (!el.getAttribute("stroke")) el.setAttribute("stroke", "#ccc");
+          if (!el.getAttribute("stroke-width")) el.setAttribute("stroke-width", "1.2");
+          el.setAttribute("vector-effect", "non-scaling-stroke");
+        });
+
+        // Klikalne polygony (jeśli są) do przełączania planów
+        svg.querySelectorAll("polygon[data-file]").forEach(p => {
+          p.style.pointerEvents = "auto";
+          p.addEventListener("click", () => {
+            const next = p.getAttribute("data-file");
+            if (next) loadSVGMap(next);
+          });
+        });
+
+        updateFloorSelectOptions(file);
+        highlightSelectedRooms();
+        initSVGRoomTooltips();
+      })
+      .catch(err => console.error("Błąd ładowania mapy:", err));
   }
+
+  // --- Tooltips dla długich etykiet list ---
 
   function initCustomTooltips(containerId) {
     const container = document.getElementById(containerId);
-    let tooltip = document.createElement("div");
-    tooltip.className = "custom-tooltip";
-    document.body.appendChild(tooltip);
+    if (!container) return;
+
+    let tooltip = container._tooltip;
+    if (!tooltip) {
+      tooltip = document.createElement("div");
+      tooltip.className = "custom-tooltip";
+      document.body.appendChild(tooltip);
+      container._tooltip = tooltip;
+    }
     let timeout;
 
     container.addEventListener("mouseover", (e) => {
@@ -341,20 +504,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initCustomTooltips("departments-list");
   initCustomTooltips("rooms-list");
+
+  // --- Eksport globalny ---
+  window.loadSVGMap = loadSVGMap;
+  window.highlightSelectedRooms = highlightSelectedRooms;
 });
 
-  function goToHospitalMap() {
-    if (window.location.pathname === "/") {
-      window.location.reload(); // jesteśmy na campus → po prostu reload
-    } else {
-      window.location.href = "/"; // w innych przypadkach przejdź
-    }
-  }
+// --- Nawigacja między podstronami ---
 
-  function goToDataBases() {
-      window.location.href = '/bazy_danych.html';
-  }
+function goToHospitalMap() {
+  if (window.location.pathname === "/") window.location.reload();
+  else window.location.href = "/";
+}
 
-  function goToDataCalendar() {
-      window.location.href = '/harmonogram_pokoi.html';
-  }
+function goToDataBases() {
+  window.location.href = "/bazy_danych.html";
+}
+
+function goToDataCalendar() {
+  window.location.href = "/harmonogram_pokoi.html";
+}

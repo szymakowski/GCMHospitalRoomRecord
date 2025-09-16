@@ -1,0 +1,947 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-110 -100 4520 3020"
+    width="4500"
+    height="1500">
+
+  <!-- Definicje filtrów, gradientów i stylów -->
+  <defs>
+    <!-- Radialny gradient tła głównego (budynek) -->
+    <radialGradient id="bgBuildRad" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f2f2"/>
+    </radialGradient>
+
+    <!-- Gradient korytarzy (subtelny) -->
+    <linearGradient id="corridorGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0E0E0"/>
+      <stop offset="100%" stop-color="#B3B3B3"/>
+    </linearGradient>
+
+    <!-- Gradient pokoi (szarosc) -->
+    <linearGradient id="roomGradGrey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="20%" stop-color="#D3D3D3"/>
+      <stop offset="100%" stop-color="#A9A9A9"/>
+    </linearGradient>
+
+    <!-- Cień (Drop Shadow) z większym rozmyciem -->
+    <filter id="shadow" x="-20%" y="-20%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Dodatkowe style globalne -->
+  <style>
+    /* Styl etykiet – dodajemy cień tekstu, by był czytelniejszy na jasnym tle */
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      fill: #333;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+    }
+  </style>
+
+
+<!-- Budynek C2-->
+<!-- Pokój C2 1.01 Zastępca Dyrektora ds. Ekonomiczno-Finansowych -->
+<path id="room_c2_1_01" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_01"
+      x="520" y="512"
+      text-anchor="middle">C2.1.01</text>
+<path id="door_c2_1_01"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.02 Sekretariat -->
+<path id="room_c2_1_02" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_02"
+      x="520" y="512"
+      text-anchor="middle">C2.1.02</text>
+<path id="door_c2_1_02"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.03 Główny Księgowy -->
+<path id="room_c2_1_02" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_03"
+      x="520" y="512"
+      text-anchor="middle">C2.1.03</text>
+<path id="door_c2_1_03"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.04 Sala Konferencyjna nr2 -->
+<path id="room_c2_1_04" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_04"
+      x="520" y="512"
+      text-anchor="middle">C2.1.04</text>
+<path id="door_c2_1_04"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.05 Pracownia Naukowa III Oddział Kardiologii -->
+<path id="room_c2_1_05" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_05"
+      x="520" y="512"
+      text-anchor="middle">C2.1.05</text>
+<path id="door_c2_1_05"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.06 Pracownia Naukowa Oddział Elektrokardiologii -->
+<path id="room_c2_1_06" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_06"
+      x="520" y="512"
+      text-anchor="middle">C2.1.06</text>
+<path id="door_c2_1_06"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.07 Pracownia Naukowa Oddział Kardiochirurgii Oddział Elektrokardiologii -->
+<path id="room_c2_1_07" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_07"
+      x="520" y="512"
+      text-anchor="middle">C2.1.07</text>
+<path id="door_c2_1_07"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.08 Pracownia Naukowa Oddział Kardiochirurgii Oddział Elektrokardiologii -->
+<path id="room_c2_1_08" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_08"
+      x="520" y="512"
+      text-anchor="middle">C2.1.08</text>
+<path id="door_c2_1_08"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.09 Pracownia Naukowa II Oddział Kardiologii prof. Dąbek -->
+<path id="room_c2_1_09" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_09"
+      x="520" y="512"
+      text-anchor="middle">C2.1.09</text>
+<path id="door_c2_1_09"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.10 Pracownia Naukowa II Oddział Kardiologii prof. Dąbek -->
+<path id="room_c2_1_10" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_10"
+      x="520" y="512"
+      text-anchor="middle">C2.1.10</text>
+<path id="door_c2_1_10"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.11 Dział Wdrażania Nowych Technologii Medycznych -->
+<path id="room_c2_1_11" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_11"
+      x="520" y="512"
+      text-anchor="middle">C2.1.11</text>
+<path id="door_c2_1_11"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.12 Dział Aparatury Medycznej -->
+<path id="room_c2_1_12" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_12"
+      x="520" y="512"
+      text-anchor="middle">C2.1.12</text>
+<path id="door_c2_1_12"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.13 Dział Aparatury Medycznej -->
+<path id="room_c2_1_13" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_13"
+      x="520" y="512"
+      text-anchor="middle">C2.1.13</text>
+<path id="door_c2_1_13"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.14 Główny Specjalista ds Technologii Informacyjnych -->
+<path id="room_c2_1_14" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_14"
+      x="520" y="512"
+      text-anchor="middle">C2.1.14</text>
+<path id="door_c2_1_14"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.15.1 WC damskie -->
+<path id="room_c2_1_15_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_15_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.15.1</text>
+<path id="door_c2_1_15_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.15.2 WC NPS + męskie -->
+<path id="room_c2_1_15_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_15_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.15.2</text>
+<path id="door_c2_1_15_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.15.3 Brudownik -->
+<path id="room_c2_1_15_3" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_15_3"
+      x="520" y="512"
+      text-anchor="middle">C2.1.15.3</text>
+<path id="door_c2_1_15_3"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.16 Łazienka Personelu -->
+<path id="room_c2_1_16" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_16"
+      x="520" y="512"
+      text-anchor="middle">C2.1.16</text>
+<path id="door_c2_1_16"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.17.1 Dział Aparatury Medycznej -->
+<path id="room_c2_1_17_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_17_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.17.1</text>
+<path id="door_c2_1_17_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.17.2 Dział Aparatury Medycznej -->
+<path id="room_c2_1_17_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_17_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.17.2</text>
+<path id="door_c2_1_17_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.18 Dział Informatyki -->
+<path id="room_c2_1_18" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_18"
+      x="520" y="512"
+      text-anchor="middle">C2.1.18</text>
+<path id="door_c2_1_18"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.19 Dział Informatyki -->
+<path id="room_c2_1_19" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_19"
+      x="520" y="512"
+      text-anchor="middle">C2.1.19</text>
+<path id="door_c2_1_19"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.20 Dział Informatyki -->
+<path id="room_c2_1_20" class="room"
+      d=""
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_20"
+      x="520" y="512"
+      text-anchor="middle">C2.1.20</text>
+<path id="door_c2_1_20"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.21 Dział Informatyki -->
+<path id="room_c2_1_21" class="room"
+      d=""
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_21"
+      x="520" y="512"
+      text-anchor="middle">C2.1.21</text>
+<path id="door_c2_1_21"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.22 Dział Informatyki -->
+<path id="room_c2_1_22" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_22"
+      x="520" y="512"
+      text-anchor="middle">C2.1.22</text>
+<path id="door_c2_1_22"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.23.1 Dział Informatyki -->
+<path id="room_c2_1_23_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_23_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.23.1</text>
+<path id="door_c2_1_23_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.23.2 Dział Informatyki -->
+<path id="room_c2_1_23_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_23_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.23.2</text>
+<path id="door_c2_1_23_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.24 Dział Informatyki -->
+<path id="room_c2_1_24" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_24"
+      x="520" y="512"
+      text-anchor="middle">C2.1.24</text>
+<path id="door_c2_1_24"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.25 -->
+<path id="room_c2_1_25" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_25"
+      x="520" y="512"
+      text-anchor="middle">C2.1.25</text>
+<path id="door_c2_1_25"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.26 -->
+<path id="room_c2_1_26" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.26</text>
+<path id="door_c2_1_26"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.27 -->
+<path id="room_c2_1_27" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.27</text>
+<path id="door_c2_1_27"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.28 LZI Kierownik-->
+<path id="room_c2_1_28" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.28</text>
+<path id="door_c2_1_28"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.29 LZI Zastępca Kierownika -->
+<path id="room_c2_1_29" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_29"
+      x="520" y="512"
+      text-anchor="middle">C2.1.29</text>
+<path id="door_c2_1_29"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.30.1 LZI Sekretariat -->
+<path id="room_c2_1_30_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_30_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.30.1</text>
+<path id="door_c2_1_30_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.30.2 LZI Kierownik Kliniki -->
+<path id="room_c2_1_30_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_30_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.30.2</text>
+<path id="door_c2_1_30_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.31 -->
+<path id="room_c2_1_31" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_31"
+      x="520" y="512"
+      text-anchor="middle">C2.1.31</text>
+<path id="door_c2_1_31"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.32 -->
+<path id="room_c2_1_32" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_32"
+      x="520" y="512"
+      text-anchor="middle">C2.1.32</text>
+<path id="door_c2_1_32"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.33.1 -->
+<path id="room_c2_1_33_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_33_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.33.1</text>
+<path id="door_c2_1_33_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.33.2 -->
+<path id="room_c2_1_33_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_33_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.33.2</text>
+<path id="door_c2_1_33_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.33.3 -->
+<path id="room_c2_1_33_3" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_33_3"
+      x="520" y="512"
+      text-anchor="middle">C2.1.33.3</text>
+<path id="door_c2_1_33_3"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.34 KOS Zawał -->
+<path id="room_c2_1_34" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_34"
+      x="520" y="512"
+      text-anchor="middle">C2.1.34</text>
+<path id="door_c2_1_34"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.35 Fundacja na rzecz Kardiologii prof. Skowerski -->
+<path id="room_c2_1_35" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_35"
+      x="520" y="512"
+      text-anchor="middle">C2.1.35</text>
+<path id="door_c2_1_35"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.36 Pracownia Nieinwazycjej Diagnostyki Kardiologicznej Gabinet Telemetrii -->
+<path id="room_c2_1_36" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_36"
+      x="520" y="512"
+      text-anchor="middle">C2.1.36</text>
+<path id="door_c2_1_36"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.37 Pracownia Naukowa prof. Młynarski -->
+<path id="room_c2_1_37" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_37"
+      x="520" y="512"
+      text-anchor="middle">C2.1.37</text>
+<path id="door_c2_1_37"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.38 Koordynator ds. ochrony radiologicznej -->
+<path id="room_c2_1_38" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_38"
+      x="520" y="512"
+      text-anchor="middle">C2.1.38</text>
+<path id="door_c2_1_38"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.39 Koordynator ds. ochrony radiologicznej -->
+<path id="room_c2_1_39" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_39"
+      x="520" y="512"
+      text-anchor="middle">C2.1.39</text>
+<path id="door_c2_1_39"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.40, 1.41 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej Pracownia Ergometrii Pracownia EKG wysiłkowe-->
+<path id="room_c2_1_40" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_40"
+      x="520" y="512"
+      text-anchor="middle">C2.1.40</text>
+<path id="door_c2_1_40"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.42 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej Pracownia Ergometrii -->
+<path id="room_c2_1_42" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_42"
+      x="520" y="512"
+      text-anchor="middle">C2.1.42</text>
+<path id="door_c2_1_42"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.43 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej Pracownia Holter -->
+<path id="room_c2_1_43" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_43"
+      x="520" y="512"
+      text-anchor="middle">C2.1.43</text>
+<path id="door_c2_1_43"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.44 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej Pracownia Badania tilt-test -->
+<path id="room_c2_1_44" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_44"
+      x="520" y="512"
+      text-anchor="middle">C2.1.44</text>
+<path id="door_c2_1_44"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.45 Zakład Patomorfologii -->
+<path id="room_c2_1_45" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_45"
+      x="520" y="512"
+      text-anchor="middle">C2.1.45</text>
+<path id="door_c2_1_45"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.46 Sala konferencyjna nr.1 -->
+<path id="room_c2_1_46" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_46"
+      x="520" y="512"
+      text-anchor="middle">C2.1.46</text>
+<path id="door_c2_1_46"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.47 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej Pracownia Telemedycyny -->
+<path id="room_c2_1_47" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_47"
+      x="520" y="512"
+      text-anchor="middle">C2.1.47</text>
+<path id="door_c2_1_47"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.48, 1.49, 1.50 LK3 Kierownik -->
+<path id="room_c2_1_48" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_48"
+      x="520" y="512"
+      text-anchor="middle">C2.1.48</text>
+<path id="door_c2_1_48"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.51 LZI/LK1 Kierownik Ablacji -->
+<path id="room_c2_1_51" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_51"
+      x="520" y="512"
+      text-anchor="middle">C2.1.51</text>
+<path id="door_c2_1_51"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.52 LZI Pielęgniarka Oddziałowa -->
+<path id="room_c2_1_52" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_52"
+      x="520" y="512"
+      text-anchor="middle">C2.1.52</text>
+<path id="door_c2_1_52"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.53 -->
+<path id="room_c2_1_53" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_53"
+      x="520" y="512"
+      text-anchor="middle">C2.1.53</text>
+<path id="door_c2_1_53"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.54.1 -->
+<path id="room_c2_1_54_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_54_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.54.1</text>
+<path id="door_c2_1_54_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.54.2 -->
+<path id="room_c2_1_54_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_54_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.54.2</text>
+<path id="door_c2_1_54_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.54.3 -->
+<path id="room_c2_1_54_3" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_54_3"
+      x="520" y="512"
+      text-anchor="middle">C2.1.54.3</text>
+<path id="door_c2_1_54_3"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.55 -->
+<path id="room_c2_1_55" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_55"
+      x="520" y="512"
+      text-anchor="middle">C2.1.55</text>
+<path id="door_c2_1_55"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.56 -->
+<path id="room_c2_1_56" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_56"
+      x="520" y="512"
+      text-anchor="middle">C2.1.56</text>
+<path id="door_c2_1_56"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.57 -->
+<path id="room_c2_1_57" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_57"
+      x="520" y="512"
+      text-anchor="middle">C2.1.57</text>
+<path id="door_c2_1_57"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.58 -->
+<path id="room_c2_1_58" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_58"
+      x="520" y="512"
+      text-anchor="middle">C2.1.58</text>
+<path id="door_c2_1_58"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.59 -->
+<path id="room_c2_1_59" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_59"
+      x="520" y="512"
+      text-anchor="middle">C2.1.59</text>
+<path id="door_c2_1_59"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.60.1 -->
+<path id="room_c2_1_60_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_60_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.60.1</text>
+<path id="door_c2_1_60_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.60.2 -->
+<path id="room_c2_1_60_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_60_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.60.2</text>
+<path id="door_c2_1_60_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.61 -->
+<path id="room_c2_1_61" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_61"
+      x="520" y="512"
+      text-anchor="middle">C2.1.61</text>
+<path id="door_c2_1_61"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.62 -->
+<path id="room_c2_1_62" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_62"
+      x="520" y="512"
+      text-anchor="middle">C2.1.62</text>
+<path id="door_c2_1_62"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.63 -->
+<path id="room_c2_1_63" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_63"
+      x="520" y="512"
+      text-anchor="middle">C2.1.63</text>
+<path id="door_c2_1_63"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.64 -->
+<path id="room_c2_1_64" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_64"
+      x="520" y="512"
+      text-anchor="middle">C2.1.64</text>
+<path id="door_c2_1_64"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.65, 1.66 -->
+<path id="room_c2_1_65" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_65"
+      x="520" y="512"
+      text-anchor="middle">C2.1.65</text>
+<path id="door_c2_1_65"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.67.1 -->
+<path id="room_c2_1_67_1" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_67_1"
+      x="520" y="512"
+      text-anchor="middle">C2.1.67.1</text>
+<path id="door_c2_1_67_1"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.67.2 -->
+<path id="room_c2_1_67_2" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_67_2"
+      x="520" y="512"
+      text-anchor="middle">C2.1.67.2</text>
+<path id="door_c2_1_67_2"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+<!-- Pokój C2 1.67.3 -->
+<path id="room_c2_1_67_3" class="room"
+      d="M490,495 H550 V521 H490Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1.2"/>
+<text id="label_c2_1_67_3"
+      x="520" y="512"
+      text-anchor="middle">C2.1.67.3</text>
+<path id="door_c2_1_67_3"
+      d="M548,504 H550 V512 H548 Z"
+      fill="black" stroke="black" stroke-width="1"/>
+
+</svg>
