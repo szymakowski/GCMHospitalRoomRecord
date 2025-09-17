@@ -76,19 +76,19 @@
 
 <!-- Pokój C3 1.05 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_05" class="room"
-      d="M1808,479 H1919 V565 H1808Z"
+      d="M1810,483 H1917 V565 H1810Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.06 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_06" class="room"
-      d="M1667,479 H1808 V565 H1667Z"
+      d="M1669,483 H1806 V565 H1669Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.07 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_07" class="room"
-      d="M1667,256 H1778 V395 H1667Z"
+      d="M1669,256 H1776 V393 H1669Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
@@ -146,17 +146,17 @@
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
-<!--&lt;!&ndash; Pokój C3 1.21.1 Dział Kadr &ndash;&gt;-->
-<!--<path id="room_c3_1_21_1" class="room"-->
-<!--      d="M220,1272 H349 V1455 H220Z"-->
-<!--      fill="none"-->
-<!--      stroke="#bbb" stroke-width="1"/>-->
+<!-- Pokój C3 1.21.1 Dział Kadr -->
+<path id="room_c3_1_21" class="room"
+      d="M220,1272 H349 V1455 H220Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
 
-<!--&lt;!&ndash; Pokój C3 1.21.2 Dział Kadr &ndash;&gt;-->
-<!--<path id="room_c3_1_21_2" class="room"-->
-<!--      d="M220,1463 H349 V1574 H220Z"-->
-<!--      fill="none"-->
-<!--      stroke="#bbb" stroke-width="1"/>-->
+<!-- Pokój C3 1.21.2 Dział Kadr -->
+<path id="room_c3_1_212" class="room"
+      d="M220,1463 H349 V1574 H220Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.22 Gabinet Lekarza kierującego Oddziałem I Oddział Kardiologii -->
 <path id="room_c3_1_22" class="room"
@@ -256,273 +256,157 @@
 
 <!-- Pokój C3 1.38 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_38" class="room"
-      d="M1357,1272 H1473 V1456 H1385 V1432 H1357Z"
+      d="M1107,1272 H1226 V1452 H1148 V1437 H1107Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.39 LK2 Pracownia Naukowa -->
 <path id="room_c3_1_39" class="room"
-      d="M1107,1272 H1226 V1452 H1148 V1437 H1107Z"
+      d="M986,1272 H1102 V1438 H986Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.40 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_40" class="room"
-      d="M986,1272 H1102 V1438 H986Z"
+      d="M839,1272 H952 V1420 H937 V1438 H839Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.41 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_41" class="room"
-      d="M490,1272 H550 V521 H490Z"
+      d="M712,1272 H829 V1433 H789 V1452 H721 V1420 H712Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C3 1.42 Pracownia Naukowa -->
 <path id="room_c3_1_42" class="room"
-      d="M490,1272 H550 V521 H490Z"
+      d="M610,1272 H707 V1386 H659 V1401 H700 V1440 H671 V1455 H610Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-
 
 <!-- Pokój C3 1.43.1 WC -->
-<path id="room_c3_1_43_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_431" class="room"
+      d="M528,1272 H603 V1455 H528Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_43_1"
-      x="520" y="512"
-      text-anchor="middle">1.43.1</text>
-<path id="door_c3_1_43_1"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.43.2 WC -->
-<path id="room_c3_1_43_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_432" class="room"
+      d="M455,1273 H522 V1439 H506 V1455 H472 V1422 H455Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_43_2"
-      x="520" y="512"
-      text-anchor="middle">1.43.2</text>
-<path id="door_c3_1_43_2"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.KL.2 Klatka Schodowa W -->
-<path id="room_c3_1_KL_2" class="room"
-      d="M490,495 H550 V521 H490Z"
-      fill="none"
-      stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_KL_2"
-      x="520" y="512"
-      text-anchor="middle">1.KL.2</text>
-<path id="door_c3_1_KL_2"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
+<!--<path id="room_c3_1_KL_2" class="room"-->
+<!--      d="M490,495 H550 V521 H490Z"-->
+<!--      fill="none"-->
+<!--      stroke="#bbb" stroke-width="1"/>-->
 
 <!-- Pokój C3 1.44 Dział Kadr -->
 <path id="room_c3_1_44" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M445,743 H614 V985 H481 V927 H445Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_44"
-      x="520" y="512"
-      text-anchor="middle">1.44</text>
-<path id="door_c3_1_44"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.45 Kapelania -->
 <path id="room_c3_1_45" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M648,707 H740 V733 H761 V885 H648Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_45"
-      x="520" y="512"
-      text-anchor="middle">1.45</text>
-<path id="door_c3_1_45"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.46, 1.47, 1.48, 1.49, 1.50, 1.51 Kaplica -->
 <path id="room_c3_1_46" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M766,711 H1032 V734 H1069 V711 H1274 V734 H1311 V711 H1499 V721 H1514 V886 H766Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_46"
-      x="520" y="512"
-      text-anchor="middle">1.46</text>
-<path id="door_c3_1_46"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.52 Dział Finansowo-Księgowy -->
 <path id="room_c3_1_52" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M1581,700 H1660 V885 H1549 V739 H1555 V722 H1581Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_52"
-      x="520" y="512"
-      text-anchor="middle">1.52</text>
-<path id="door_c3_1_52"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.53, 1.54 Dział Księgowości Materiałowej -->
 <path id="room_c3_1_53" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M1705,700 H1752 V730 H1778 V739 H1804 V730 H1891 V885 H1672 V730 H1705Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_53"
-      x="520" y="512"
-      text-anchor="middle">1.53</text>
-<path id="door_c3_1_53"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.55 Dział Finansowo-Księgowy Zastępca Głównego Księgowego -->
 <path id="room_c3_1_55" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M1922,700 H2027 V739 H2036 V885 H1896 V728 H1922Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_55"
-      x="520" y="512"
-      text-anchor="middle">1.55</text>
-<path id="door_c3_1_55"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.56 Dział Controllingu Kierownik Działu -->
 <path id="room_c3_1_56" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M2051,700 H2124 V729 H2158 V886 H2042 V739 H2051Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_56"
-      x="520" y="512"
-      text-anchor="middle">1.56</text>
-<path id="door_c3_1_56"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.57 Dział Finansowo-Księgowy Kasa -->
 <path id="room_c3_1_57" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M2185,700 H2276 V735 H2282 V885 H2165 V724 H2185Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_57"
-      x="520" y="512"
-      text-anchor="middle">1.57</text>
-<path id="door_c3_1_57"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.58.1 Dział Finansowo-Księgowy Magazyn -->
-<path id="room_c3_1_58_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_581" class="room"
+      d="M2315,700 H2390 V828 H2315Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_58_1"
-      x="520" y="512"
-      text-anchor="middle">1.58.1</text>
-<path id="door_c3_1_58_1"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.58.2 WC -->
-<path id="room_c3_1_58_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_582" class="room"
+      d="M2395,700 H2463 V828 H2395Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_58_2"
-      x="520" y="512"
-      text-anchor="middle">1.58.2</text>
-<path id="door_c3_1_58_2"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
-<!-- Pokój C3 1.58.3 -->
-<path id="room_c3_1_58_3" class="room"
-      d="M490,495 H550 V521 H490Z"
+<!-- Pokój C3 1.58.3 WC-->
+<path id="room_c3_1_583" class="room"
+      d="M2315,834 H2462 V948 H2315Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_58_3"
-      x="520" y="512"
-      text-anchor="middle">1.58.3</text>
-<path id="door_c3_1_58_3"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.59.1  -->
-<path id="room_c3_1_59_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_591" class="room"
+      d="M2471,707 H2517 V760 H2562 V828 H2471Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_59_1"
-      x="520" y="512"
-      text-anchor="middle">1.59.1</text>
-<path id="door_c3_1_59_1"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.59.2 WC -->
-<path id="room_c3_1_59_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_592" class="room"
+      d="M2471,834 H2562 V888 H2471Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_59_2"
-      x="520" y="512"
-      text-anchor="middle">1.59.2</text>
-<path id="door_c3_1_59_2"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.59.3 WC -->
-<path id="room_c3_1_59_3" class="room"
-      d="M490,495 H550 V521 H490Z"
+<path id="room_c3_1_593" class="room"
+      d="M2471,894 H2562 V948 H2533 V936 H2504 V939 H2489 V948 H2471Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_59_3"
-      x="520" y="512"
-      text-anchor="middle">1.59.3</text>
-<path id="door_c3_1_59_3"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.60 Dział Kadr -->
 <path id="room_c3_1_60" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M2317,952 H2547 V972 H2562 V1026 H2317Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_60"
-      x="520" y="512"
-      text-anchor="middle">1.60</text>
-<path id="door_c3_1_60"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.61 Dział Kadr Magazyn -->
 <path id="room_c3_1_61" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M2675,844 H2810 V942 H2773 V954 H2795 V972 H2810 V1026 H2675Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_61"
-      x="520" y="512"
-      text-anchor="middle">1.61</text>
-<path id="door_c3_1_61"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C3 1.62 Dział Kadr Magazyn -->
 <path id="room_c3_1_62" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M2675,697 H2765 V717 H2774 V740 H2810 V799 H2795 V838 H2675Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_62"
-      x="520" y="512"
-      text-anchor="middle">1.62</text>
-<path id="door_c3_1_62"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
+
+
+
+
+
 
 </svg>
