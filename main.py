@@ -165,7 +165,6 @@ def api_room_info():
             "department": '',
             "roomType": '',
             "numberOfSeats": '',
-            "isForPatient": False,
             "workers": '',
         })
 
@@ -191,7 +190,6 @@ def api_free_rooms():
     free_rooms_df = df[(df["department"].isnull()) & (df["roomName"].isnull())
                        | (df["department"] == "") & (df["roomName"] == "")]
 
-    # [load_excel_sheet("rooms")["department"].isnull() | load_excel_sheet("rooms")["department"] == ""]
     result = []
     for _, room in free_rooms_df.iterrows():
         result.append({

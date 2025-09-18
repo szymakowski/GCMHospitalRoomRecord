@@ -294,7 +294,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 <strong>Typ pokoju:</strong> ${data.roomType || ''}<br>
                 <strong>Liczba stanowisk:</strong> ${data.numberOfSeats || ''}<br>
                 <strong>Dla pacjentów:</strong> ${data.isForPatient || ''}<br>
-                <strong>Pracownicy:</strong> <ul style="margin:0;">${data.workers.map(prac => `<li>${prac}</li>`).join("") || ''}</ul><br>
+                ${Array.isArray(data.workers) && data.workers.length > 0
+                ? `<strong>Pracownicy:</strong>
+                   <ul style="margin:0;">
+                     ${data.workers.map(prac => `<li>${prac}</li>`).join("")}
+                   </ul><br>`
+                : ""
+              }
               `;
 
               const b = el.getBoundingClientRect();
