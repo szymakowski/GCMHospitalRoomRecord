@@ -40,6 +40,12 @@
       fill: #333;
       text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
     }
+
+    text {
+      font-size: 30px;
+      font-family: Arial, sans-serif;
+      fill: black;
+    }
   </style>
 
 
@@ -49,6 +55,7 @@
       d="M2561,256 H2802 V475 H2745 V565 H2561Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_01" x="2620" y="420">C3.1.01</text>
 
 <!-- Pokój C3 1.011 Socjalna dostawka do C3 1.01 -->
 <path id="room_c3_1_01.1" class="room"
@@ -61,18 +68,21 @@
       d="M2316,256 H2554 V565 H2316Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_02" x="2370" y="420">C3.1.02</text>
 
 <!-- Pokój C3 1.03 Dział ds. badań i pozyskiwania funduszy -->
 <path id="room_c3_1_03" class="room"
       d="M2167,256 H2281 V565 H2167Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_03" x="2170" y="420">C3.1.03</text>
 
 <!-- Pokój C3 1.04 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_04" class="room"
       d="M1778,256 H2160 V565 H1923 V479 H1670 V395 H1778Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_04" x="1860" y="420">C3.1.04</text>
 
 <!-- Pokój C3 1.05 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_05" class="room"

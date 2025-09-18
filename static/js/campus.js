@@ -213,19 +213,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // znormalizuj wartości z 'parsed'
     const building = normalizeBasic(parsed.building);
-    const floor    = extractNumber(normalizeBasic(parsed.floor)); // "1"
-    const room     = to2(extractNumber(normalizeBasic(parsed.room))); // "01"
+    const floor    = extractNumber(normalizeBasic(parsed.floor));      // "1"
+    const room     = to2(extractNumber(normalizeBasic(parsed.room)));  // "01"
 
     return selectedRoomNames.some(roomNameRaw => {
-      const norm = normalizeBasic(roomNameRaw);
-      // oczekujemy formatu z trzema częściami po myślnikach,
-      // np. "C3-PIETRO1-POKOJ01" lub "C3-1-01"
-      const parts = norm.split("-");
+      const codeOnly = String(roomNameRaw).split(/\s+-\s+/)[0];
+      const norm = normalizeBasic(codeOnly).replace(/\./g, "-");
+      const parts = norm.split("-").filter(Boolean);
       if (parts.length !== 3) return false;
 
       const selBuilding = parts[0];                       // "C3"
-      const selFloor    = extractNumber(parts[1]);        // "1" z "PIETRO1" lub "1"
-      const selRoom     = to2(extractNumber(parts[2]));   // "01" z "POKOJ01" lub "01"
+      const selFloor    = extractNumber(parts[1]);        // "1"
+      const selRoom     = to2(extractNumber(parts[2]));   // "01"
 
       return (
         selBuilding === building &&
@@ -289,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
               tooltip.innerHTML = `
-                <strong>Numer pokoju:</strong> ${data.roomNumber || ''}<br>
+                <strong>Numer pokoju:</strong> ${String(data.roomBuilding) + '.' + String(data.roomFloor) + '.' + String(data.roomNumber)|| ''}<br>
                 <strong>Dział:</strong> ${data.department || ''}<br>
                 <strong>Typ pokoju:</strong> ${data.roomType || ''}<br>
                 <strong>Liczba stanowisk:</strong> ${data.numberOfSeats || ''}<br>

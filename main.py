@@ -64,11 +64,11 @@ def api_rooms():
 
     room_labels = [
         f"{row['roomBuilding'].upper()}.{row['roomFloor']}.{int(row['roomNumber']):02d}"
+        + (f" - {row['roomName']}" if pd.notna(row['roomName']) else "")
         for _, row in df.iterrows()
     ]
     print(room_labels)
     return jsonify(room_labels)
-
 
 @app.route('/api/rooms_all')
 def api_rooms_all():
@@ -173,7 +173,9 @@ def api_room_info():
     print(workers)
 
     return jsonify({
-        "roomNumber": str(room["roomNumber"]) if pd.notna(room["roomNumber"]) else "",
+        "roomNumber": str(room["roomNumber"]).zfill(2) if pd.notna(room["roomNumber"]) else "",
+        "roomFloor": str(room["roomFloor"]) if pd.notna(room["roomFloor"]) else "",
+        "roomBuilding": str(room["roomBuilding"]) if pd.notna(room["roomBuilding"]) else "",
         "roomName": str(room["roomName"]) if pd.notna(room["roomName"]) else "",
         "department": str(room["department"]) if pd.notna(room["department"]) else "",
         "roomType": str(room["roomType"]) if pd.notna(room["roomType"]) else "",
