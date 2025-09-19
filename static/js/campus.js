@@ -353,7 +353,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </style>
           <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
 
-          <polygon class="zone" id="GOK" data-file="c3_1.svg" points="2768,1636 3173,1409 2949,1333 2949,914 3073,848 3525,1004 3526,1204 3658,1135 3951,1234 3055,1735 2768,1636"/>
+          <polygon class="zone" id="C1" data-file="c1_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
+          <polygon class="zone" id="C2" data-file="c2_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
+          <polygon class="zone" id="C3" data-file="c3_1.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
           <polygon class="zone" id="DYREKCJA" data-file="dyr_floor1.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
           <polygon class="zone" id="ZIOLOWA" data-file="ziolowa_floor.svg" points="5004,390 5306,221 5390,249 5089,418"/>
           <polygon class="zone" id="SZARY" data-file="szary_floor1.svg" points="738,1396 814,1356 1178,1482 1103,1523"/>
@@ -382,91 +384,116 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // --- Plany pięter: pobierz SVG, wstaw PNG i te same wektory do jednego <svg> ---
-    fetch(`/static/maps/${file}`)
-      .then(res => {
-        if (!res.ok) throw new Error(`Nie można załadować: ${file}`);
-        return res.text();
-      })
-      .then(svgText => {
-        const parser = new DOMParser();
-        const srcDoc = parser.parseFromString(svgText, "image/svg+xml");
-        const srcSvg = srcDoc.documentElement;
+// --- Plany pięter: pobierz SVG, wstaw PNG i te same wektory do jednego <svg> ---
+fetch(`/static/maps/${file}`)
+  .then(res => {
+    if (!res.ok) throw new Error(`Nie można załadować: ${file}`);
+    return res.text();
+  })
+  .then(svgText => {
+    const parser = new DOMParser();
+    const srcDoc = parser.parseFromString(svgText, "image/svg+xml");
+    const srcSvg = srcDoc.documentElement;
 
-        // Oczekiwany układ (naprawiony w pliku SVG):
-        // viewBox="0 0 2907 1962" width="2907" height="1962"
-        let viewBox = srcSvg.getAttribute("viewBox") || "0 0 2907 1962";
-        const [ , , vbW = 2907, vbH = 1962 ] = viewBox.trim().split(/\s+/).map(Number);
+    // Wymiary z SVG defaultowe, jak nie ma w pliku svg
+    let viewBox = srcSvg.getAttribute("viewBox") || "0 0 2907 1962";
+    let [ , , vbW = 2907, vbH = 1962 ] = viewBox.trim().split(/\s+/).map(Number);
 
-        const base = file.replace(/\.svg$/i, "");
-        const pngUrl = `/static/maps/${base}.png`;
+    const base = file.replace(/\.svg$/i, "");
+    const pngUrl = `/static/maps/${base}.png`;
 
-        // Jedno <svg> – najpierw PNG jako tło, potem sklonowane wektory 1:1
-        const NS = "http://www.w3.org/2000/svg";
-        container.innerHTML = `
-          <svg id="plan-svg" xmlns="${NS}"
-               viewBox="${viewBox}"
-               width="100%"
-               preserveAspectRatio="xMidYMid meet"
-               style="display:block;max-width:95vw;max-height:85vh;margin:0 auto;overflow:visible;">
-          </svg>
-        `;
-        const svg = container.querySelector("#plan-svg");
+    // 1) Najpierw odczytaj oryginalne wymiary PNG.
+    return new Promise(resolve => {
+      const probe = new Image();
+      probe.onload = () => resolve({
+        srcSvg, pngUrl, vbW, vbH,
+        pngW: probe.naturalWidth || vbW,
+        pngH: probe.naturalHeight || vbH
+      });
+      probe.onerror = () => resolve({
+        srcSvg, pngUrl, vbW, vbH,
+        pngW: vbW, pngH: vbH // awaryjnie: jak SVG
+      });
+      probe.src = pngUrl;
+    });
+  })
+  .then(({ srcSvg, pngUrl, vbW, vbH, pngW, pngH }) => {
+    // 2) Budujemy wspólne <svg> w oryginalnych wymiarach PNG.
+    const container = document.getElementById("svg-map-container");
+    const NS = "http://www.w3.org/2000/svg";
+    container.innerHTML = `
+      <svg id="plan-svg" xmlns="${NS}"
+           viewBox="0 0 ${pngW} ${pngH}"
+           width="100%"
+           preserveAspectRatio="xMidYMid meet"
+           style="display:block;max-width:95vw;max-height:85vh;margin:0 auto;overflow:visible;">
+      </svg>
+    `;
+    const svg = container.querySelector("#plan-svg");
 
-        // PNG jako tło w tej samej przestrzeni
-        const img = document.createElementNS(NS, "image");
-        img.setAttribute("href", pngUrl);
-        img.setAttribute("x", 0);
-        img.setAttribute("y", 0);
-        img.setAttribute("width", vbW);
-        img.setAttribute("height", vbH);
-        img.setAttribute("preserveAspectRatio", "none");
-        svg.appendChild(img);
+    // PNG jako tło (w oryginalnych wymiarach)
+    const img = document.createElementNS(NS, "image");
+    img.setAttribute("href", pngUrl);
+    img.setAttribute("x", 0);
+    img.setAttribute("y", 0);
+    img.setAttribute("width", pngW);
+    img.setAttribute("height", pngH);
+    img.setAttribute("preserveAspectRatio", "none");
+    svg.appendChild(img);
 
-        // Defs/gradient (gdyby kształty miały fill="url(#roomGradBabyBlue)")
-        if (!svg.querySelector("#roomGradBabyBlue")) {
-          const defs = document.createElementNS(NS, "defs");
-          const grad = document.createElementNS(NS, "linearGradient");
-          grad.setAttribute("id", "roomGradBabyBlue");
-          grad.innerHTML = `<stop offset="0%" stop-color="#e7f3ff"/><stop offset="100%" stop-color="#cfe8ff"/>`;
-          defs.appendChild(grad);
-          svg.appendChild(defs);
-        }
+    // Defs/gradient (gdyby kształty miały fill="url(#roomGradBabyBlue)")
+    if (!svg.querySelector("#roomGradBabyBlue")) {
+      const defs = document.createElementNS(NS, "defs");
+      const grad = document.createElementNS(NS, "linearGradient");
+      grad.setAttribute("id", "roomGradBabyBlue");
+      grad.innerHTML = `<stop offset="0%" stop-color="#e7f3ff"/><stop offset="100%" stop-color="#cfe8ff"/>`;
+      defs.appendChild(grad);
+      svg.appendChild(defs);
+    }
 
-        // Warstwa pokoi: kopia elementów z pliku SVG (bez <image>)
-        const roomsLayer = document.createElementNS(NS, "g");
-        roomsLayer.setAttribute("id", "rooms-layer");
-        svg.appendChild(roomsLayer);
+    // Warstwa pokoi: kopia elementów z pliku SVG (bez <image>)
+    const roomsLayer = document.createElementNS(NS, "g");
+    roomsLayer.setAttribute("id", "rooms-layer");
+    svg.appendChild(roomsLayer);
 
-        Array.from(srcSvg.children).forEach(node => {
-          if (node.tagName?.toLowerCase() === "image") return;
-          roomsLayer.appendChild(node.cloneNode(true));
-        });
+    Array.from(srcSvg.children).forEach(node => {
+      if (node.tagName?.toLowerCase() === "image") return;
+      roomsLayer.appendChild(node.cloneNode(true));
+    });
 
-        // Interakcje / style
-        svg.querySelectorAll("text").forEach(t => { t.style.pointerEvents = "none"; });
-        roomsLayer.querySelectorAll("rect, path, polygon").forEach(el => {
-          el.style.pointerEvents = "auto";
-          if (!el.getAttribute("fill")) el.setAttribute("fill", "url(#roomGradBabyBlue)");
-          if (!el.getAttribute("stroke")) el.setAttribute("stroke", "#ccc");
-          if (!el.getAttribute("stroke-width")) el.setAttribute("stroke-width", "1.2");
-          el.setAttribute("vector-effect", "non-scaling-stroke");
-        });
+    // 3) Jeśli układ SVG ≠ wymiary PNG, przeskaluj warstwę z wektorami.
+    //    Dzięki temu wektory siądą 1:1 na bitmapę z piętra.
+    const scaleX = pngW / vbW;
+    const scaleY = pngH / vbH;
+    if (Number.isFinite(scaleX) && Number.isFinite(scaleY) && (Math.abs(scaleX - 1) > 1e-6 || Math.abs(scaleY - 1) > 1e-6)) {
+      roomsLayer.setAttribute("transform", `scale(${scaleX} ${scaleY})`);
+    }
 
-        // Klikalne polygony (jeśli są) do przełączania planów
-        svg.querySelectorAll("polygon[data-file]").forEach(p => {
-          p.style.pointerEvents = "auto";
-          p.addEventListener("click", () => {
-            const next = p.getAttribute("data-file");
-            if (next) loadSVGMap(next);
-          });
-        });
+    // Interakcje / style
+    svg.querySelectorAll("text").forEach(t => { t.style.pointerEvents = "none"; });
+    roomsLayer.querySelectorAll("rect, path, polygon, circle, ellipse, polyline, line").forEach(el => {
+      el.style.pointerEvents = "auto";
+      if (!el.getAttribute("fill")) el.setAttribute("fill", "url(#roomGradBabyBlue)");
+      if (!el.getAttribute("stroke")) el.setAttribute("stroke", "#ccc");
+      if (!el.getAttribute("stroke-width")) el.setAttribute("stroke-width", "1.2");
+      el.setAttribute("vector-effect", "non-scaling-stroke");
+    });
 
-        updateFloorSelectOptions(file);
-        highlightSelectedRooms();
-        initSVGRoomTooltips();
-      })
-      .catch(err => console.error("Błąd ładowania mapy:", err));
+    // Klikalne polygony (nawigacja między planami)
+    svg.querySelectorAll("polygon[data-file]").forEach(p => {
+      p.style.pointerEvents = "auto";
+      p.addEventListener("click", () => {
+        const next = p.getAttribute("data-file");
+        if (next) loadSVGMap(next);
+      });
+    });
+
+    updateFloorSelectOptions(file);
+    highlightSelectedRooms?.();
+    initSVGRoomTooltips?.();
+  })
+  .catch(err => console.error("Błąd ładowania mapy:", err));
+
   }
 
   // --- Tooltips dla długich etykiet list ---

@@ -2,9 +2,9 @@ import cv2
 from matplotlib import pyplot as plt
 
 # Wczytaj obraz
-image = cv2.imread("static/img/C3-1.png")
+image = cv2.imread("static/img/C1-1.png")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-cv2.imwrite("plan_grey.png", gray)
+cv2.imwrite("static/maps/C1_1.png", gray)
 
 
 # Progowanie - zostają czarne linie, reszta biała
