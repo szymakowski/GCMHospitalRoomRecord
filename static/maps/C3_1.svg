@@ -42,8 +42,9 @@
     }
 
     text {
-      font-size: 30px;
+      font-size: 25px;
       font-family: Arial, sans-serif;
+
       fill: black;
     }
   </style>
@@ -55,7 +56,7 @@
       d="M2561,256 H2802 V475 H2745 V565 H2561Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_01" x="2620" y="420">C3.1.01</text>
+<text id="label_c3_1_01" x="2630" y="420">C3.1.01</text>
 
 <!-- Pokój C3 1.011 Socjalna dostawka do C3 1.01 -->
 <path id="room_c3_1_01.1" class="room"
@@ -68,99 +69,112 @@
       d="M2316,256 H2554 V565 H2316Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_02" x="2370" y="420">C3.1.02</text>
+<text id="label_c3_1_02" x="2380" y="420">C3.1.02</text>
 
 <!-- Pokój C3 1.03 Dział ds. badań i pozyskiwania funduszy -->
 <path id="room_c3_1_03" class="room"
       d="M2167,256 H2281 V565 H2167Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_03" x="2170" y="420">C3.1.03</text>
+<text id="label_c3_1_03" x="2180" y="420">C3.1.03</text>
 
 <!-- Pokój C3 1.04 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_04" class="room"
       d="M1778,256 H2160 V565 H1923 V479 H1670 V395 H1778Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-<text id="label_c3_1_04" x="1860" y="420">C3.1.04</text>
+<text id="label_c3_1_04" x="1870" y="420">C3.1.04</text>
 
 <!-- Pokój C3 1.05 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_05" class="room"
       d="M1810,483 H1917 V565 H1810Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_05" x="1822" y="542">C3.1.05</text>
 
 <!-- Pokój C3 1.06 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_06" class="room"
       d="M1669,483 H1806 V565 H1669Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_06" x="1690" y="542">C3.1.06</text>
 
 <!-- Pokój C3 1.07 Dział Rachuby Zarobkowej -->
 <path id="room_c3_1_07" class="room"
       d="M1669,256 H1776 V393 H1669Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_07" x="1680" y="320">C3.1.07</text>
 
 <!-- Pokój C3 1.08 Dział ds. badań i pozyskiwania funduszy -->
 <path id="room_c3_1_08" class="room"
       d="M1548,256 H1663 V565 H1548Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_08" x="1565" y="420">C3.1.08</text>
 
 <!-- Pokój C3 1.09, 1.10, 1.11, 1.12, 1.13 Sala konferencyjna nr3 -->
 <path id="room_c3_1_09" class="room"
       d="M775,172 H1513 V565 H775Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_09" x="1100" y="420">C3.1.09</text>
 
 <!-- Pokój C3 1.14 -->
 <path id="room_c3_1_14" class="room"
       d="M655,172 H774 V256 H655Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_14" x="670" y="220">C3.1.14</text>
 
 <!-- Pokój C3 1.15 Centalny Rejestr Umów -->
 <path id="room_c3_1_15" class="room"
       d="M653,265 H773 V454 H653Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_15" x="670" y="375">C3.1.15</text>
 
 <!-- Pokój C3 1.16 Serwerownia -->
 <path id="room_c3_1_16" class="room"
       d="M445,256 H616 V565 H488 V462 H445Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_16" x="490" y="420">C3.1.16</text>
 
 <!-- Pokój C3 1.17 Dział Finansowo-Księgowy -->
 <path id="room_c3_1_17" class="room"
       d="M220,256 H439 V565 H326 V616 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_17" x="280" y="450">C3.1.17</text>
 
 <!-- Pokój C3 1.18 Dział Kadr -->
 <path id="room_c3_1_18" class="room"
       d="M220,628 H349 V867 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_18" x="240" y="780">C3.1.18</text>
 
 <!-- Pokój C3 1.19 Dział Kadr -->
 <path id="room_c3_1_19" class="room"
       d="M220,874 H349 V1097 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_19" x="240" y="1000">C3.1.19</text>
 
 <!-- Pokój C3 1.20 Dział Kadr -->
 <path id="room_c3_1_20" class="room"
       d="M220,1105 H349 V1238 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_20" x="240" y="1180">C3.1.20</text>
 
 <!-- Pokój C3 1.21.1 Dział Kadr -->
 <path id="room_c3_1_21" class="room"
       d="M220,1272 H349 V1455 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_21" x="240" y="1360">C3.1.21</text>
 
 <!-- Pokój C3 1.21.2 Dział Kadr -->
 <path id="room_c3_1_212" class="room"
@@ -173,126 +187,147 @@
       d="M220,1578 H331 V1904 H220Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_22" x="230" y="1780">C3.1.22</text>
 
 <!-- Pokój C3 1.23 Gabinet Lekarza kierującego Oddziałem I Oddział Kardiologii -->
 <path id="room_c3_1_23" class="room"
       d="M371,1656 H456 V1904 H341 V1690 H371Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_23" x="355" y="1780">C3.1.23</text>
 
 <!-- Pokój C3 1.24 Gabinet Lekarza kierującego Oddziałem I Oddział Kardiologii -->
 <path id="room_c3_1_24" class="room"
       d="M466,1656 H583 V1904 H466Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_24" x="476" y="1780">C3.1.24</text>
 
 <!-- Pokój C3 1.25 Gabinet Lekarza kierującego Oddziałem I Oddział Kardiologii -->
 <path id="room_c3_1_25" class="room"
       d="M590,1579 H709 V1646 H671 V1687 H705 V1904 H590 V1685 H627 V1631 H590Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_25" x="600" y="1780">C3.1.25</text>
 
 <!-- Pokój C3 1.26 Gabinet Lekarza kierującego Oddziałem II Oddział Kardiologii -->
 <path id="room_c3_1_26" class="room"
       d="M715,1588 H757 V1579 H830 V1658 H791 V1686 H836 V1904 H712 V1686 H743 V1670 H715Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_26" x="725" y="1780">C3.1.26</text>
 
 <!-- Pokój C3 1.27 Gabinet Lekarza kierującego Oddziałem II Oddział Kardiologii -->
 <path id="room_c3_1_27" class="room"
       d="M842,1656 H952 V1904 H842Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_27" x="852" y="1780">C3.1.27</text>
 
 <!-- Pokój C3 1.28 Gabinet kierującego Oddziałem Oddział Elektrokardiologii -->
 <path id="room_c3_1_28" class="room"
       d="M988,1656 H1103 V1904 H988Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_28" x="998" y="1780">C3.1.28</text>
 
 <!-- Pokój C3 1.29 Gabinet kierującego Oddziałem Oddział Elektrokardiologii -->
 <path id="room_c3_1_29" class="room"
       d="M1109,1589 H1182 V1593 H1226 V1647 H1199 V1673 H1188 V1697 H1226 V1904 H1109Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_29" x="1119" y="1780">C3.1.29</text>
 
 <!-- Pokój C3 1.30 Gabinet kierującego Oddziałem Oddział Kardiochirurgii -->
 <path id="room_c3_1_30" class="room"
       d="M1238,1586 H1287 V1576 H1351 V1650 H1435 V1672 H1472 V1904 H1356 V1686 H1316 V1662 H1238Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_30" x="1370" y="1780">C3.1.30</text>
 
 <!-- Pokój C3 1.31 Gabinet kierującego Oddziałem Oddział Kardiochirurgii -->
 <path id="room_c3_1_31" class="room"
       d="M1234,1698 H1351 V1904 H1234Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_31" x="1248" y="1780">C3.1.31</text>
 
 <!-- Pokój C3 1.32 Gabinet kierującego Oddziałem Oddział Anestezjologii i Intensywnej Terapii z Nadzorem Kardiologicznym -->
 <path id="room_c3_1_32" class="room"
       d="M1498,1607 H1599 V1904 H1498Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_32" x="1508" y="1780">C3.1.32</text>
 
 <!-- Pokój C3 1.33 Gabinet kierującego Oddziałem Oddział Anestezjologii i Intensywnej Terapii z Nadzorem Kardiologicznym -->
 <path id="room_c3_1_33" class="room"
       d="M1604,1607 H1641 V1590 H1699 V1610 H1722 V1667 H1684 V1679 H1717 V1904 H1604Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_33" x="1614" y="1780">C3.1.33</text>
 
 <!-- Pokój C3 1.34 Gabinet lekarski LAK2 -->
 <path id="room_c3_1_34" class="room"
       d="M1606,1272 H1717 V1456 H1631 V1439 H1606Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_34" x="1616" y="1365">C3.1.34</text>
 
 <!-- Pokój C3 1.35 Gabinet lekarski LAK2 -->
 <path id="room_c3_1_35" class="room"
       d="M1477,1272 H1598 V1439 H1550 V1454 H1487 V1421 H1477Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_35" x="1490" y="1365">C3.1.35</text>
 
 <!-- Pokój C3 1.36 Pracownia Naukowa LAK -->
 <path id="room_c3_1_36" class="room"
       d="M1357,1272 H1473 V1456 H1385 V1432 H1357Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_36" x="1370" y="1365">C3.1.36</text>
 
 <!-- Pokój C3 1.37 Pracownia Naukowa LAK -->
 <path id="room_c3_1_37" class="room"
       d="M1230,1272 H1350 V1433 H1324 V1452 H1270 V1433 H1230Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_37" x="1244" y="1365">C3.1.37</text>
 
 <!-- Pokój C3 1.38 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_38" class="room"
       d="M1107,1272 H1226 V1452 H1148 V1437 H1107Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_38" x="1120" y="1365">C3.1.38</text>
 
 <!-- Pokój C3 1.39 LK2 Pracownia Naukowa -->
 <path id="room_c3_1_39" class="room"
       d="M986,1272 H1102 V1438 H986Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_39" x="1000" y="1365">C3.1.39</text>
 
 <!-- Pokój C3 1.40 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_40" class="room"
       d="M839,1272 H952 V1420 H937 V1438 H839Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_40" x="853" y="1365">C3.1.40</text>
 
 <!-- Pokój C3 1.41 LK3 Pracownia Naukowa -->
 <path id="room_c3_1_41" class="room"
       d="M712,1272 H829 V1433 H789 V1452 H721 V1420 H712Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_41" x="725" y="1365">C3.1.41</text>
 
 <!-- Pokój C3 1.42 Pracownia Naukowa -->
 <path id="room_c3_1_42" class="room"
       d="M610,1272 H707 V1386 H659 V1401 H700 V1440 H671 V1455 H610Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_42" x="614" y="1365">C3.1.42</text>
 
 <!-- Pokój C3 1.43.1 WC -->
 <path id="room_c3_1_431" class="room"
@@ -317,48 +352,56 @@
       d="M445,743 H614 V985 H481 V927 H445Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_44" x="485" y="850">C3.1.44</text>
 
 <!-- Pokój C3 1.45 Kapelania -->
 <path id="room_c3_1_45" class="room"
       d="M648,707 H740 V733 H761 V885 H648Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_45" x="658" y="806">C3.1.45</text>
 
 <!-- Pokój C3 1.46, 1.47, 1.48, 1.49, 1.50, 1.51 Kaplica -->
 <path id="room_c3_1_46" class="room"
       d="M766,711 H1032 V734 H1069 V711 H1274 V734 H1311 V711 H1499 V721 H1514 V886 H766Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_46" x="1100" y="806">C3.1.46</text>
 
 <!-- Pokój C3 1.52 Dział Finansowo-Księgowy -->
 <path id="room_c3_1_52" class="room"
       d="M1581,700 H1660 V885 H1549 V739 H1555 V722 H1581Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_52" x="1565" y="806">C3.1.52</text>
 
 <!-- Pokój C3 1.53, 1.54 Dział Księgowości Materiałowej -->
 <path id="room_c3_1_53" class="room"
       d="M1705,700 H1752 V730 H1778 V739 H1804 V730 H1891 V885 H1672 V730 H1705Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_53" x="1752" y="806">C3.1.53</text>
 
 <!-- Pokój C3 1.55 Dział Finansowo-Księgowy Zastępca Głównego Księgowego -->
 <path id="room_c3_1_55" class="room"
       d="M1922,700 H2027 V739 H2036 V885 H1896 V728 H1922Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_55" x="1932" y="806">C3.1.55</text>
 
 <!-- Pokój C3 1.56 Dział Controllingu Kierownik Działu -->
 <path id="room_c3_1_56" class="room"
       d="M2051,700 H2124 V729 H2158 V886 H2042 V739 H2051Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_56" x="2050" y="806">C3.1.56</text>
 
 <!-- Pokój C3 1.57 Dział Finansowo-Księgowy Kasa -->
 <path id="room_c3_1_57" class="room"
       d="M2185,700 H2276 V735 H2282 V885 H2165 V724 H2185Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_57" x="2175" y="806">C3.1.57</text>
 
 <!-- Pokój C3 1.58.1 Dział Finansowo-Księgowy Magazyn -->
 <path id="room_c3_1_581" class="room"
@@ -377,6 +420,7 @@
       d="M2315,834 H2462 V948 H2315Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_583" x="2336" y="900">C3.1.583</text>
 
 <!-- Pokój C3 1.59.1  -->
 <path id="room_c3_1_591" class="room"
@@ -401,22 +445,19 @@
       d="M2317,952 H2547 V972 H2562 V1026 H2317Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_60" x="2396" y="1000">C3.1.60</text>
 
 <!-- Pokój C3 1.61 Dział Kadr Magazyn -->
 <path id="room_c3_1_61" class="room"
       d="M2675,844 H2810 V942 H2773 V954 H2795 V972 H2810 V1026 H2675Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
+<text id="label_c3_1_61" x="2685" y="950">C3.1.61</text>
 
 <!-- Pokój C3 1.62 Dział Kadr Magazyn -->
 <path id="room_c3_1_62" class="room"
       d="M2675,697 H2765 V717 H2774 V740 H2810 V799 H2795 V838 H2675Z"
       fill="none"
       stroke="#bbb" stroke-width="1"/>
-
-
-
-
-
-
+<text id="label_c3_1_62" x="2685" y="778">C3.1.62</text>
 </svg>

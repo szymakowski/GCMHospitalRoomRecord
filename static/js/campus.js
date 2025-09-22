@@ -264,10 +264,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Tooltipy SVG ---
 
   function initSVGRoomTooltips() {
-    document.querySelectorAll(".custom-tooltip").forEach(t => t.remove());
+    document.querySelectorAll(".svg-tooltip").forEach(t => t.remove());
 
     const tooltip = document.createElement("div");
-    tooltip.className = "custom-tooltip";
+    tooltip.className = "custom-tooltip svg-tooltip";
     document.body.appendChild(tooltip);
     let timeout;
 
