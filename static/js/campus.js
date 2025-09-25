@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "campus.png": ["powierzchnia", "podziemia"],
     "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
     "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"],
-    "c3_1.svg": ["1 piętro"]
+    "c1_1.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "5 piętro", "7 piętro", "8 piętro"],
+    "c2_1.svg": ["Parter", "1 piętro"],
+    "c3_1.svg": ["Parter", "1 piętro"]
   };
 
   // Start: kampus
@@ -353,8 +355,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </style>
           <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
 
-          <polygon class="zone" id="C1" data-file="c1_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
-          <polygon class="zone" id="C2" data-file="c2_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
+          <polygon class="zone" id="C1" data-file="c1_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
+          <polygon class="zone" id="C2" data-file="c2_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
           <polygon class="zone" id="C3" data-file="c3_1.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
           <polygon class="zone" id="DYREKCJA" data-file="dyr_floor1.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
           <polygon class="zone" id="ZIOLOWA" data-file="ziolowa_floor.svg" points="5004,390 5306,221 5390,249 5089,418"/>

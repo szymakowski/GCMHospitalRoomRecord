@@ -58,11 +58,12 @@
       stroke="#bbb" stroke-width="1"/>
 <text id="label_c3_1_01" x="2630" y="420">C3.1.01</text>
 
-<!-- Pokój C3 1.011 Socjalna dostawka do C3 1.01 -->
-<path id="room_c3_1_01.1" class="room"
-      d="M2745,476 H2806 V570 H2745 V570 H2745Z"
-      fill="none"
-      stroke="#bbb" stroke-width="1"/>
+<!--&lt;!&ndash; Pokój C3 1.011 Socjalna dostawka do C3 1.01 &ndash;&gt;-->
+<!--<path id="room_c3_1_01.1" class="room"-->
+<!--      d="M2745,476 H2806 V570 H2745 V570 H2745Z"-->
+<!--      fill="none"-->
+<!--      stroke="#bbb" stroke-width="1"/>-->
+<!--<text id="label_c3_1_011" x="2630" y="420">C3.1.011</text>-->
 
 <!-- Pokój C3 1.02 Sala seminaryjna Oddział Elektrokardiologii -->
 <path id="room_c3_1_02" class="room"

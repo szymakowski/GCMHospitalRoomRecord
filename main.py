@@ -106,6 +106,19 @@ def api_employee_info():
     } for _,employee in df.iterrows()]
     return jsonify(result)
 
+@app.route('/api/employees_telephone')
+def api_employee_telephone():
+    df = load_excel_sheet('workers').fillna("")
+
+    result = [{
+        "name":employee['name'],
+        "surname":employee['surname'],
+        "email":employee['email'],
+        "department":employee['department'],
+        "roomId":employee['roomId'],
+    } for _,employee in df.iterrows()]
+    return jsonify(result)
+
 @app.route('/api/departments_all')
 def api_departments_all():
     departments_df = load_excel_sheet("departments").fillna("")
