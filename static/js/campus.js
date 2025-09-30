@@ -334,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Widok kampusu — bez zmian
     if (file === "campus.png") {
+    setCurrentBuildingBadge(null);  // ← ukryj badge na widoku kampusu
       container.innerHTML = `
         <svg id="plan-svg" xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 6104 2000" preserveAspectRatio="xMidYMid meet"
@@ -355,9 +356,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </style>
           <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
 
-          <polygon class="zone" id="C1" data-file="c1_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
-          <polygon class="zone" id="C2" data-file="c2_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
-          <polygon class="zone" id="C3" data-file="c3_1.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
+          <polygon class="zone" id="Budynek C1" data-file="c1_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
+          <polygon class="zone" id="Budynek C2" data-file="c2_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
+          <polygon class="zone" id="Budynek C3" data-file="c3_1.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
           <polygon class="zone" id="DYREKCJA" data-file="dyr_floor1.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
           <polygon class="zone" id="ZIOLOWA" data-file="ziolowa_floor.svg" points="5004,390 5306,221 5390,249 5089,418"/>
           <polygon class="zone" id="SZARY" data-file="szary_floor1.svg" points="738,1396 814,1356 1178,1482 1103,1523"/>
@@ -373,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <polygon class="zone" id="MBRAZOWY" data-file="bialy_floor1.svg" points="3013,618 3048,597 3116,621 3081,642"/>
           <polygon class="zone" id="DBRAZOWY" data-file="bialy_floor1.svg" points="3110,753 3176,717 3430,804 3365,842"/>
           <polygon class="zone" id="FIOLETOWY2" data-file="bialy_floor1.svg" points="2766,940 2879,878 2962,906 2949,914 2949,946 2965,951 2964,956 2949,965 2949,995 2941,1000"/>
-          <polygon class="zone" id="SSW" data-file="ssw_floor1.svg" points="3500,373 3686,270 3706,275 3746,255 3805,274 3805,307 3839,318 3842,299 4294,49 4392,81 4389,467 4888,648 4460,873 4168,775 4437,628 4389,616 4391,648 3938,901 3839,868 3837,820 3803,833 3802,852 3561,772 3518,796 3500,794 3500,373"/>
+          <polygon class="zone" id="Budynek B" data-file="ssw_floor1.svg" points="3500,373 3686,270 3706,275 3746,255 3805,274 3805,307 3839,318 3842,299 4294,49 4392,81 4389,467 4888,648 4460,873 4168,775 4437,628 4389,616 4391,648 3938,901 3839,868 3837,820 3803,833 3802,852 3561,772 3518,796 3500,794 3500,373"/>
         </svg>
       `;
       updateFloorSelectOptions(file);
@@ -491,6 +492,7 @@ fetch(`/static/maps/${file}`)
     });
 
     updateFloorSelectOptions(file);
+    setCurrentBuildingBadge(getBuildingFromFilename(file)); // ← pokaż nazwę budynku
     highlightSelectedRooms?.();
     initSVGRoomTooltips?.();
   })
@@ -544,7 +546,6 @@ fetch(`/static/maps/${file}`)
 });
 
 // --- Nawigacja między podstronami ---
-
 function goToHospitalMap() {
   if (window.location.pathname === "/") window.location.reload();
   else window.location.href = "/";
@@ -556,4 +557,25 @@ function goToDataBases() {
 
 function goToDataCalendar() {
   window.location.href = "/harmonogram_pokoi.html";
+}
+
+function getBuildingFromFilename(file) {
+  if (!file) return null;
+  const f = String(file).toUpperCase();
+
+  // Campus => nic nie pokazujemy
+  if (f === "campus.png") return null;
+  return "Budynek: " + f.replace(/_.*/, "");
+}
+
+function setCurrentBuildingBadge(code) {
+  const el = document.getElementById("current-building");
+  if (!el) return;
+  if (!code) {
+    el.textContent = "";
+    el.style.display = "none";
+  } else {
+    el.textContent = code;
+    el.style.display = "inline-flex";
+  }
 }

@@ -49,7 +49,7 @@
           <option value="0">Parter</option>
           <option value="1">1 piętro</option>
         </select>
-        <button onclick="exportMapToPDF()" class="mini-btn" style="margin-bottom: 1rem; float: right;">Eksportuj mapę do PDF</button>
+        <span id="current-building" class="building-badge" aria-live="polite" style="display:none;"></span>
       </div>
       <div id="svg-map-container">
       <img src="{{ url_for('static', filename='img/campus.png') }}" id="initial-campus-img" alt="Plan kampusu" style="width: 100%; height: auto;">
@@ -58,43 +58,5 @@
   </div>
 
   <script src="{{ url_for('static', filename='js/campus.js') }}"></script>
-  <script>function exportMapToPDF() {
-     const svgElement = document.querySelector("#svg-map-container svg");
-     if (!svgElement) {
-       alert("Mapa SVG nie została jeszcze załadowana.");
-       return;
-     }
-
-     const svgData = new XMLSerializer().serializeToString(svgElement);
-     const canvas = document.createElement("canvas");
-     const ctx = canvas.getContext("2d");
-
-     const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-     const url = URL.createObjectURL(svgBlob);
-
-     const img = new Image();
-     img.onload = function () {
-       canvas.width = img.width;
-       canvas.height = img.height;
-       ctx.drawImage(img, 0, 0);
-
-       const imgData = canvas.toDataURL("image/png");
-
-<!-- Orientacja obrazu do druku-->
-       const docDefinition = {
-         pageOrientation: 'landscape',
-         content: [
-           {
-             image: imgData,
-             width: 780
-           }
-         ]
-       };
-       pdfMake.createPdf(docDefinition).download("mapa_szpitala.pdf");
-       URL.revokeObjectURL(url);
-     };
-     img.src = url;
-   }
-  </script>
 </body>
 </html>

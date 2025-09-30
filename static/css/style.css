@@ -463,3 +463,22 @@ div.top-buttons {
   display: flex;
   justify-content: flex-end;
 }
+
+.building-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-left:.75rem;
+  padding:.25rem .5rem;
+  border-radius:999px;
+  font-weight:600;
+  font-size:.9rem;
+  border:1px solid var(--border, #ddd);
+  background: var(--badge-bg, #f6f7f9);
+  color: var(--badge-fg, #333);
+}
+html[data-theme="dark"] .building-badge{
+  border-color:#3a3a3a;
+  background:#1f1f1f;
+  color:#eee;
+}

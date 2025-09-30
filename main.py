@@ -102,20 +102,8 @@ def api_employee_info():
         "surname":employee['surname'],
         "email":employee['email'],
         "department":employee['department'],
+        "telephone":employee['telephone'],
         "roomId":employee['roomId']
-    } for _,employee in df.iterrows()]
-    return jsonify(result)
-
-@app.route('/api/employees_telephone')
-def api_employee_telephone():
-    df = load_excel_sheet('workers').fillna("")
-
-    result = [{
-        "name":employee['name'],
-        "surname":employee['surname'],
-        "email":employee['email'],
-        "department":employee['department'],
-        "roomId":employee['roomId'],
     } for _,employee in df.iterrows()]
     return jsonify(result)
 
