@@ -1,8 +1,8 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2364 5042"
-    width="4500"
-    height="1500">
+    width="2364"
+    height="5042">
 
   <!-- Definicje filtrów, gradientów i stylów -->
   <defs>
@@ -40,85 +40,68 @@
       fill: #333;
       text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
     }
+
+    text {
+      font-size: 55px;
+      font-family: Arial, sans-serif;
+
+      fill: black;
+    }
   </style>
 
 
 <!-- Budynek C1-->
-<!-- Pokój C1 1.01, 1.02, 1.03, 1.04 Zakład Patomorfologii Pracownia Histopatologii -->
-<path id="room_c1_1_01" class="room"
-      d=""
+<!-- Pokój C1 1.01 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_03" class="room"
+      d="M600,300 M1200 H500 M600Z"
       fill="none"
-      stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_01"
-      x="520" y="512"
-      text-anchor="middle">C1.1.01</text>
-<path id="door_c1_1_01"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
+      stroke="#bbb" stroke-width="1"/>
+
+<!-- Pokój C1 1.02 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_02" class="room"
+      d="M1655,350 M2225 H592 M2051 H632 M1768 H584 M1663 H517 M1851 H503 M1655Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+
+<!-- Pokój C1 1.03 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_01" class="room"
+      d="M510,202 H755 V640, H740, V675 H724 V702 H510Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C1 1.05 -->
 <path id="room_c1_1_05" class="room"
-      d=""
+      d="MZ"
       fill="none"
-      stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_05"
-      x="520" y="512"
-      text-anchor="middle">C1.1.05</text>
-<path id="door_c1_1_05"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
+      stroke="#bbb" stroke-width="1"/>
 
 <!-- Pokój C1 1.06 -->
 <path id="room_c1_1_06" class="room"
       d=""
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_06"
-      x="520" y="512"
-      text-anchor="middle">C1.1.06</text>
-<path id="door_c1_1_06"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C1 1.07, 1.08 -->
 <path id="room_c1_1_07" class="room"
       d=""
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_07"
-      x="520" y="512"
-      text-anchor="middle">C1.1.07</text>
-<path id="door_c1_1_07"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C1 1.09, 1.10 -->
 <path id="room_c1_1_09" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_09"
-      x="520" y="512"
-      text-anchor="middle">C1.1.09</text>
-<path id="door_c1_1_09"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
 <!-- Pokój C1 1.11, 1.12 -->
 <path id="room_c1_1_11" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
-<text id="label_c1_1_11"
-      x="520" y="512"
-      text-anchor="middle">C1.1.11</text>
-<path id="door_c1_1_11"
-      d="M548,504 H550 V512 H548 Z"
-      fill="black" stroke="black" stroke-width="1"/>
 
-<!-- Pokój C1 1.13 -->
+  <!-- Pokój C1 1.13 -->
 <path id="room_c1_1_13" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_13"
@@ -130,7 +113,7 @@
 
 <!-- Pokój C1 1.14 -->
 <path id="room_c1_1_14" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_14"
@@ -142,7 +125,7 @@
 
 <!-- Pokój C1 1.15 -->
 <path id="room_c1_1_15" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_15"
@@ -154,7 +137,7 @@
 
 <!-- Pokój C1 1.16 -->
 <path id="room_c1_1_16" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_16"
@@ -166,7 +149,7 @@
 
 <!-- Pokój C1 1.17 -->
 <path id="room_c1_1_17" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_17"
@@ -178,7 +161,7 @@
 
 <!-- Pokój C1 1.18 -->
 <path id="room_c1_1_18" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_18"
@@ -190,7 +173,7 @@
 
 <!-- Pokój C1 1.19.1 -->
 <path id="room_c1_1_19_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_19_1"
@@ -202,7 +185,7 @@
 
 <!-- Pokój C1 1.19.2 -->
 <path id="room_c1_1_19_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_19_2"
@@ -214,7 +197,7 @@
 
 <!-- Pokój C1 1.20.1 -->
 <path id="room_c1_1_20_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_20_1"
@@ -226,7 +209,7 @@
 
 <!-- Pokój C1 1.20.2 -->
 <path id="room_c1_1_20_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_20_2"
@@ -238,7 +221,7 @@
 
 <!-- Pokój C1 1.20.3 -->
 <path id="room_c1_1_20_3" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_20_3"
@@ -250,7 +233,7 @@
 
 <!-- Pokój C1 1.21.1 -->
 <path id="room_c1_1_21_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_21_1"
@@ -262,7 +245,7 @@
 
 <!-- Pokój C1 1.21.2 -->
 <path id="room_c1_1_21_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_21_2"
@@ -274,7 +257,7 @@
 
 <!-- Pokój C1 1.22 -->
 <path id="room_c1_1_22" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_22"
@@ -286,7 +269,7 @@
 
 <!-- Pokój C1 1.23 -->
 <path id="room_c1_1_23" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_23"
@@ -298,7 +281,7 @@
 
 <!-- Pokój C1 1.24 -->
 <path id="room_c1_1_24" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_24"
@@ -310,7 +293,7 @@
 
 <!-- Pokój C1 1.25.1 -->
 <path id="room_c1_1_25_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_25_1"
@@ -322,7 +305,7 @@
 
 <!-- Pokój C1 1.25.2 -->
 <path id="room_c1_1_25_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_25_2"
@@ -334,7 +317,7 @@
 
 <!-- Pokój C1 1.26.1 -->
 <path id="room_c1_1_26_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_26_1"
@@ -346,7 +329,7 @@
 
 <!-- Pokój C1 1.26.2 -->
 <path id="room_c1_1_26_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_26_2"
@@ -358,7 +341,7 @@
 
 <!-- Pokój C1 1.26.3 -->
 <path id="room_c1_1_26_3" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_26_3"
@@ -370,7 +353,7 @@
 
 <!-- Pokój C1 1.27.1 -->
 <path id="room_c1_1_27_1" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_27_1"
@@ -382,7 +365,7 @@
 
 <!-- Pokój C1 1.27.2 -->
 <path id="room_c1_1_27_2" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_27_2"
@@ -394,7 +377,7 @@
 
 <!-- Pokój C1 1.28 -->
 <path id="room_c1_1_28" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_28"
@@ -406,7 +389,7 @@
 
 <!-- Pokój C1 1.29 -->
 <path id="room_c1_1_29" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_29"
@@ -418,7 +401,7 @@
 
 <!-- Pokój C1 1.30 -->
 <path id="room_c1_1_30" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_30"
@@ -430,7 +413,7 @@
 
 <!-- Pokój C1 1.31 -->
 <path id="room_c1_1_31" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_31"
@@ -442,7 +425,7 @@
 
 <!-- Pokój C1 1.32 -->
 <path id="room_c1_1_32" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_32"
@@ -454,7 +437,7 @@
 
 <!-- Pokój C1 1.33 -->
 <path id="room_c1_1_33" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_33"
@@ -466,7 +449,7 @@
 
 <!-- Pokój C1 1.34 -->
 <path id="room_c1_1_34" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_34"
@@ -478,7 +461,7 @@
 
 <!-- Pokój C1 1.35 -->
 <path id="room_c1_1_35" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_35"
@@ -490,7 +473,7 @@
 
 <!-- Pokój C1 1.36 -->
 <path id="room_c1_1_36" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_36"
@@ -502,7 +485,7 @@
 
 <!-- Pokój C1 1.37 -->
 <path id="room_c1_1_37" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_37"
@@ -514,7 +497,7 @@
 
 <!-- Pokój C1 1.38 -->
 <path id="room_c1_1_38" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_38"
@@ -526,7 +509,7 @@
 
 <!-- Pokój C1 1.39 -->
 <path id="room_c1_1_39" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_39"
@@ -538,7 +521,7 @@
 
 <!-- Pokój C1 1.40 -->
 <path id="room_c1_1_40" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_40"
@@ -550,7 +533,7 @@
 
 <!-- Pokój C1 1.42, 1.43 Dział Controllingu -->
 <path id="room_c1_1_42" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_42"
@@ -562,7 +545,7 @@
 
 <!-- Pokój C1 1.44 Zakład Patomorfologii Pracownia Histopatologii -->
 <path id="room_c1_1_44" class="room"
-      d="M490,495 H550 V521 H490Z"
+      d="M Z"
       fill="none"
       stroke="#bbb" stroke-width="1.2"/>
 <text id="label_c1_1_44"
