@@ -79,10 +79,13 @@
           { data: 'Budynek' },
           { data: 'Numer pokoju' },
           { data: 'Piętro' },
-          { data: 'Nazwa pokoju' },
+          { data: 'Nazwa pokoju'},
           { data: 'Dział' },
           { data: 'Typ pokoju' },
-          { data: 'Liczba stanowisk' },
+          { data: 'Liczba stanowisk',
+           render: function (data, type, row) {
+           return parseInt(data, 10);
+           }},
           { data: 'Powierzchnia pokoju' },
           { data: 'Dostępność gazu' }
         ],
