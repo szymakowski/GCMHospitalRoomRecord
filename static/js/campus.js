@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "c2_1.svg": ["Parter", "1 piętro"],
     "c3_1.svg": ["Parter", "1 piętro"]
   };
+  // Do przechowywania stanów pięter i budynków
+  let currentBuilding = null;   // np. "c1" albo "b4"
+  let currentBaseFile = null;   // np. "c1_1.svg"
 
   // Start: kampus
   loadSVGMap("campus.png");
@@ -18,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     departments: new Set(),
     rooms: new Set()
   };
+
+  let didDragMap = false;
 
   // --- UI list ---
 
@@ -123,9 +128,22 @@ document.addEventListener("DOMContentLoaded", () => {
     renderList(filtered, "rooms-list", "rooms");
   });
 
-  document.getElementById("floor-select")?.addEventListener("change", (e) => {
-    console.log("Wybrano piętro:", e.target.value);
-  });
+    document.getElementById("floor-select")?.addEventListener("change", (e) => {
+      const floor = e.target.value; // np. "2 piętro" lub "Parter"
+      if (!currentBuilding) return;
+
+      // normalizacja: 1 piętro -> 1, Parter -> 1
+      let floorNum = extractNumber(floor) || "1";
+
+      // budujemy nazwę pliku: np. c1_2.png lub b4_2.png
+      const baseFile = currentBaseFile.replace(/(\d+)(\.svg|\.png)$/i, `${floorNum}$2`);
+
+      // jeżeli PNG istnieje, otwieramy PNG, jeśli SVG jest mapą piętra, otwieramy SVG
+      const ext = baseFile.endsWith(".svg") ? "svg" : "png";
+      const fileToLoad = `/static/maps/${currentBuilding}_${floorNum}.${ext}`;
+
+      loadSVGMap(`${currentBuilding}_${floorNum}.svg`);
+    });
 
   // --- Zaznacz/odznacz wszystko ---
 
@@ -325,14 +343,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Ładowanie mapy: JEDNO SVG zawiera PNG i wektory 1:1 ---
+function removeCampusBuildingTooltips() {
+  document.querySelectorAll(".campus-tooltip").forEach(t => t.remove());
+}
 
+  // --- Ładowanie mapy: JEDNO SVG zawiera PNG i wektory 1:1 ---
   function loadSVGMap(file) {
+    removeCampusBuildingTooltips();
+
     const container = document.getElementById("svg-map-container");
+
     if (!container) return;
 
     // Widok kampusu — bez zmian
     if (file === "campus.png") {
+    initCampusBuildingTooltips();   // napisy nazwy budynku tylko w widoku kampusu
     setCurrentBuildingBadge(null);  // ← ukryj badge na widoku kampusu
       container.innerHTML = `
         <svg id="plan-svg" xmlns="http://www.w3.org/2000/svg"
@@ -382,15 +407,79 @@ document.addEventListener("DOMContentLoaded", () => {
     const svg = container.querySelector("#plan-svg");
 
     container.querySelectorAll("polygon[data-file]").forEach(p => {
-      p.addEventListener("click", () => {
+      p.addEventListener("pointerup", e => {
+        if (didDragMap) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
         const target = p.getAttribute("data-file");
-        if (target) loadSVGMap(target);
+        if (!target) return;
+
+        loadSVGMap(target);
+
+        const m = target.match(/^([a-z0-9]+)_\d+\.svg$/i);
+        if (m) {
+          currentBuilding = m[1].toLowerCase();
+          currentBaseFile = target;
+        }
       });
     });
 
+
     enableZoomAndPan(svg);
+
+      // --- Podświetlenie i tooltip budynku na widoku kampusu ---
+      function initCampusBuildingTooltips() {
+        const svg = document.getElementById("plan-svg");
+        if (!svg) return;
+
+        document.querySelectorAll(".campus-tooltip").forEach(t => t.remove());
+
+        const tooltip = document.createElement("div");
+        tooltip.className = "custom-tooltip campus-tooltip";
+        tooltip.style.position = "fixed";
+        tooltip.style.padding = "4px 8px";
+        tooltip.style.background = "rgba(0,0,0,0.7)";
+        tooltip.style.color = "#fff";
+        tooltip.style.borderRadius = "4px";
+        tooltip.style.pointerEvents = "none";
+        tooltip.style.transition = "opacity 0.2s";
+        tooltip.style.opacity = 0;
+        document.body.appendChild(tooltip);
+
+        svg.querySelectorAll("polygon[data-file]").forEach(poly => {
+          poly.addEventListener("mouseenter", (e) => {
+            const buildingName = poly.id.replace("Budynek ", "").toUpperCase();
+            tooltip.textContent = buildingName;
+
+            const rect = poly.getBoundingClientRect();
+            tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + "px";
+            tooltip.style.top  = rect.top - tooltip.offsetHeight - 6 + "px";
+            tooltip.style.opacity = 1;
+
+            poly.style.fill = "rgba(255, 211, 77, 0.35)";
+            poly.style.stroke = "#FFC107";
+            poly.style.strokeWidth = 2;
+          });
+
+          poly.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = 0;
+            poly.style.fill = "transparent";
+            poly.style.stroke = "rgba(0,0,0,0)";
+            poly.style.strokeWidth = 1;
+          });
+        });
+      }
+
+      // --- Wywołanie po załadowaniu mapy kampusu ---
+      if (document.getElementById("plan-svg")) {
+        initCampusBuildingTooltips();
+      }
+
     return;
-    }
+}
 
 // --- Plany pięter: pobierz SVG, wstaw PNG i te same wektory do jednego <svg> ---
 fetch(`/static/maps/${file}`)
@@ -504,11 +593,21 @@ fetch(`/static/maps/${file}`)
     // Klikalne polygony (nawigacja między planami)
     svg.querySelectorAll("polygon[data-file]").forEach(p => {
       p.style.pointerEvents = "auto";
-      p.addEventListener("click", () => {
-        const next = p.getAttribute("data-file");
-        if (next) loadSVGMap(next);
+
+      p.addEventListener("pointerup", e => {
+        if (didDragMap) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
+
+        const target = p.getAttribute("data-file");
+        if (target) {
+          loadSVGMap(target);
+        }
       });
     });
+
 
         updateFloorSelectOptions(file);
         setCurrentBuildingBadge(getBuildingFromFilename(file));
@@ -583,7 +682,6 @@ function getBuildingFromFilename(file) {
   if (!file) return null;
   const f = String(file).toUpperCase();
 
-  // Campus => nic nie pokazujemy
   if (f === "campus.png") return null;
   return "Budynek: " + f.replace(/_.*/, "");
 }
@@ -592,84 +690,105 @@ function enableZoomAndPan(svg) {
   const viewport = svg.querySelector("#viewport");
   if (!viewport) return;
 
+  const vb = svg.viewBox.baseVal;
+
   let scale = 1;
   let panX = 0;
   let panY = 0;
 
-  const PAN_SPEED = 2.5;
   const MIN_SCALE = 0.9;
   const MAX_SCALE = 6;
+  const PAN_SPEED = 4;
 
   let isPanning = false;
   let startX = 0;
   let startY = 0;
 
+  // ===== START: IDEALNE CENTROWANIE =====
+  function centerView() {
+    panX = (vb.width * (1 - scale)) / 2;
+    panY = (vb.height * (1 - scale)) / 2;
+  }
+
+  // ===== OGRANICZENIA (VIEWBOX) =====
+  function clampPan() {
+    const minX = vb.width  * (1 - scale);
+    const minY = vb.height * (1 - scale);
+
+    panX = Math.min(0, Math.max(panX, minX));
+    panY = Math.min(0, Math.max(panY, minY));
+  }
+
   function updateTransform() {
+    clampPan();
     viewport.setAttribute(
       "transform",
       `translate(${panX} ${panY}) scale(${scale})`
     );
   }
 
-  // ---------- ZOOM POD KURSOREM (SVG COORDS) ----------
+  // ===== ZOOM POD KURSOREM =====
   svg.addEventListener("wheel", e => {
     e.preventDefault();
 
-    const zoomFactor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-    const newScale = Math.min(
-      MAX_SCALE,
-      Math.max(MIN_SCALE, scale * zoomFactor)
-    );
+    const zoom = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+    const newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * zoom));
 
-    // Punkt kursora → układ SVG
     const pt = svg.createSVGPoint();
     pt.x = e.clientX;
     pt.y = e.clientY;
+    const cursor = pt.matrixTransform(svg.getScreenCTM().inverse());
 
-    const cursorSVG = pt.matrixTransform(
-      svg.getScreenCTM().inverse()
-    );
-
-    // Zachowaj punkt pod kursorem
-    panX -= (cursorSVG.x * newScale - cursorSVG.x * scale);
-    panY -= (cursorSVG.y * newScale - cursorSVG.y * scale);
+    panX = cursor.x - (cursor.x - panX) * (newScale / scale);
+    panY = cursor.y - (cursor.y - panY) * (newScale / scale);
 
     scale = newScale;
     updateTransform();
   }, { passive: false });
 
-  // ---------- PAN  ----------
+  // ===== PAN (STAŁA PRĘDKOŚĆ) =====
     svg.addEventListener("mousedown", e => {
       if (e.button !== 0) return;
+      e.preventDefault();
 
-      e.preventDefault(); // ← KLUCZOWE
-      document.body.classList.add("no-select");
-
+      didDragMap = false;   // ← reset
       isPanning = true;
       startX = e.clientX;
       startY = e.clientY;
+
+      document.body.classList.add("no-select");
       svg.style.cursor = "grabbing";
     });
 
-  window.addEventListener("mousemove", e => {
-    if (!isPanning) return;
+    window.addEventListener("mousemove", e => {
+      if (!isPanning) return;
 
-    panX += (e.clientX - startX) * PAN_SPEED;
-    panY += (e.clientY - startY) * PAN_SPEED;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
 
-    startX = e.clientX;
-    startY = e.clientY;
+      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+        didDragMap = true;  // ← uznajemy za przeciąganie
+      }
 
-    updateTransform();
+      panX += dx * PAN_SPEED;
+      panY += dy * PAN_SPEED;
+
+      startX = e.clientX;
+      startY = e.clientY;
+
+      updateTransform();
+    });
+
+  window.addEventListener("mouseup", () => {
+    isPanning = false;
+    document.body.classList.remove("no-select");
+    svg.style.cursor = "default";
   });
 
-    window.addEventListener("mouseup", () => {
-      isPanning = false;
-      document.body.classList.remove("no-select");
-      svg.style.cursor = "default";
-    });
+  // ===== INIT =====
+  centerView();
+  updateTransform();
 }
-
 
 
 function setCurrentBuildingBadge(code) {
