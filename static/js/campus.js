@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Konfiguracja pięter ---
   const FLOOR_OPTIONS = {
     "campus.png": ["powierzchnia", "podziemia"],
-    "gok_floor1.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
     "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"],
     "c1_1.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "5 piętro", "7 piętro", "8 piętro"],
     "c2_1.svg": ["Parter", "1 piętro"],
