@@ -353,6 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
             stroke-width: 2;
           }
         </style>
+        <g id="viewport">
           <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
 
           <polygon class="zone" id="Budynek C1" data-file="c1_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
@@ -374,16 +375,21 @@ document.addEventListener("DOMContentLoaded", () => {
           <polygon class="zone" id="DBRAZOWY" data-file="bialy_floor1.svg" points="3110,753 3176,717 3430,804 3365,842"/>
           <polygon class="zone" id="FIOLETOWY2" data-file="bialy_floor1.svg" points="2766,940 2879,878 2962,906 2949,914 2949,946 2965,951 2964,956 2949,965 2949,995 2941,1000"/>
           <polygon class="zone" id="Budynek B" data-file="ssw_floor1.svg" points="3500,373 3686,270 3706,275 3746,255 3805,274 3805,307 3839,318 3842,299 4294,49 4392,81 4389,467 4888,648 4460,873 4168,775 4437,628 4389,616 4391,648 3938,901 3839,868 3837,820 3803,833 3802,852 3561,772 3518,796 3500,794 3500,373"/>
+           </g>
         </svg>
       `;
       updateFloorSelectOptions(file);
-      container.querySelectorAll("polygon[data-file]").forEach(p => {
-        p.addEventListener("click", () => {
-          const target = p.getAttribute("data-file");
-          if (target) loadSVGMap(target);
-        });
+    const svg = container.querySelector("#plan-svg");
+
+    container.querySelectorAll("polygon[data-file]").forEach(p => {
+      p.addEventListener("click", () => {
+        const target = p.getAttribute("data-file");
+        if (target) loadSVGMap(target);
       });
-      return;
+    });
+
+    enableZoomAndPan(svg);
+    return;
     }
 
 // --- Plany pięter: pobierz SVG, wstaw PNG i te same wektory do jednego <svg> ---
@@ -424,11 +430,13 @@ fetch(`/static/maps/${file}`)
     const container = document.getElementById("svg-map-container");
     const NS = "http://www.w3.org/2000/svg";
     container.innerHTML = `
-      <svg id="plan-svg" xmlns="${NS}"
-           viewBox="0 0 ${pngW} ${pngH}"
-           width="100%"
-           preserveAspectRatio="xMidYMid meet"
-           style="display:block;max-width:95vw;max-height:85vh;margin:0 auto;overflow:visible;">
+      <svg id="plan-svg"
+        xmlns="${NS}"
+        viewBox="0 0 ${pngW} ${pngH}"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="xMidYMid meet"
+        style="display:block;max-width:95vw;max-height:85vh;margin:0 auto;overflow:hidden;">
       </svg>
     `;
     const svg = container.querySelector("#plan-svg");
@@ -441,7 +449,19 @@ fetch(`/static/maps/${file}`)
     img.setAttribute("width", pngW);
     img.setAttribute("height", pngH);
     img.setAttribute("preserveAspectRatio", "none");
-    svg.appendChild(img);
+
+    const viewport = document.createElementNS(NS, "g");
+    viewport.setAttribute("id", "viewport");
+    svg.appendChild(viewport);
+
+    // PNG
+    viewport.appendChild(img);
+
+    // --- Warstwa pokoi
+    const roomsLayer = document.createElementNS(NS, "g");
+    roomsLayer.setAttribute("id", "rooms-layer");
+    viewport.appendChild(roomsLayer);
+
 
     // Defs/gradient (gdyby kształty miały fill="url(#roomGradBabyBlue)")
     if (!svg.querySelector("#roomGradBabyBlue")) {
@@ -453,10 +473,10 @@ fetch(`/static/maps/${file}`)
       svg.appendChild(defs);
     }
 
-    // Warstwa pokoi: kopia elementów z pliku SVG (bez <image>)
-    const roomsLayer = document.createElementNS(NS, "g");
-    roomsLayer.setAttribute("id", "rooms-layer");
-    svg.appendChild(roomsLayer);
+//    // Warstwa pokoi: kopia elementów z pliku SVG (bez <image>)
+//    const roomsLayer = document.createElementNS(NS, "g");
+//    roomsLayer.setAttribute("id", "rooms-layer");
+//    svg.appendChild(roomsLayer);
 
     Array.from(srcSvg.children).forEach(node => {
       if (node.tagName?.toLowerCase() === "image") return;
@@ -490,10 +510,11 @@ fetch(`/static/maps/${file}`)
       });
     });
 
-    updateFloorSelectOptions(file);
-    setCurrentBuildingBadge(getBuildingFromFilename(file)); // ← pokaż nazwę budynku
-    highlightSelectedRooms?.();
-    initSVGRoomTooltips?.();
+        updateFloorSelectOptions(file);
+        setCurrentBuildingBadge(getBuildingFromFilename(file));
+        highlightSelectedRooms?.();
+        initSVGRoomTooltips?.();
+        enableZoomAndPan(svg);
   })
   .catch(err => console.error("Błąd ładowania mapy:", err));
 
@@ -566,6 +587,90 @@ function getBuildingFromFilename(file) {
   if (f === "campus.png") return null;
   return "Budynek: " + f.replace(/_.*/, "");
 }
+
+function enableZoomAndPan(svg) {
+  const viewport = svg.querySelector("#viewport");
+  if (!viewport) return;
+
+  let scale = 1;
+  let panX = 0;
+  let panY = 0;
+
+  const PAN_SPEED = 2.5;
+  const MIN_SCALE = 0.9;
+  const MAX_SCALE = 6;
+
+  let isPanning = false;
+  let startX = 0;
+  let startY = 0;
+
+  function updateTransform() {
+    viewport.setAttribute(
+      "transform",
+      `translate(${panX} ${panY}) scale(${scale})`
+    );
+  }
+
+  // ---------- ZOOM POD KURSOREM (SVG COORDS) ----------
+  svg.addEventListener("wheel", e => {
+    e.preventDefault();
+
+    const zoomFactor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+    const newScale = Math.min(
+      MAX_SCALE,
+      Math.max(MIN_SCALE, scale * zoomFactor)
+    );
+
+    // Punkt kursora → układ SVG
+    const pt = svg.createSVGPoint();
+    pt.x = e.clientX;
+    pt.y = e.clientY;
+
+    const cursorSVG = pt.matrixTransform(
+      svg.getScreenCTM().inverse()
+    );
+
+    // Zachowaj punkt pod kursorem
+    panX -= (cursorSVG.x * newScale - cursorSVG.x * scale);
+    panY -= (cursorSVG.y * newScale - cursorSVG.y * scale);
+
+    scale = newScale;
+    updateTransform();
+  }, { passive: false });
+
+  // ---------- PAN  ----------
+    svg.addEventListener("mousedown", e => {
+      if (e.button !== 0) return;
+
+      e.preventDefault(); // ← KLUCZOWE
+      document.body.classList.add("no-select");
+
+      isPanning = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      svg.style.cursor = "grabbing";
+    });
+
+  window.addEventListener("mousemove", e => {
+    if (!isPanning) return;
+
+    panX += (e.clientX - startX) * PAN_SPEED;
+    panY += (e.clientY - startY) * PAN_SPEED;
+
+    startX = e.clientX;
+    startY = e.clientY;
+
+    updateTransform();
+  });
+
+    window.addEventListener("mouseup", () => {
+      isPanning = false;
+      document.body.classList.remove("no-select");
+      svg.style.cursor = "default";
+    });
+}
+
+
 
 function setCurrentBuildingBadge(code) {
   const el = document.getElementById("current-building");

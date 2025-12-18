@@ -482,3 +482,16 @@ html[data-theme="dark"] .building-badge{
   background:#1f1f1f;
   color:#eee;
 }
+
+/* blokada zaznaczania tekstu przy przeciąganiu mapy */
+#svg-map-container,
+#svg-map-container * {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.no-select {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
