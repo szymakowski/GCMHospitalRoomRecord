@@ -4,11 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Konfiguracja pięter ---
   const FLOOR_OPTIONS = {
     "campus.png": ["powierzchnia", "podziemia"],
-    "ssw_floor1.svg": ["1 piętro", "2 piętro", "3 piętro"],
-    "c1_1.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "5 piętro", "7 piętro", "8 piętro"],
-    "c2_1.svg": ["Parter", "1 piętro"],
-    "c3_1.svg": ["Parter", "1 piętro"]
-  };
+    "c1_0.svg": ["1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_1.svg": ["Parter", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_2.svg": ["Parter", "1 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_3.svg": ["Parter", "1 piętro", "2 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_4.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "5 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_5.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "6 piętro", "7 piętro", "8 piętro"],
+    "c1_6.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "7 piętro", "8 piętro"],
+    "c1_7.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "8 piętro"],
+    "c1_8.svg": ["Parter", "1 piętro", "2 piętro", "3 piętro", "4 piętro", "5 piętro", "6 piętro", "7 piętro"],
+    "c2_0.svg": ["1 piętro"],
+    "c2_1.svg": ["Parter"],
+    "c3_0.svg": ["1 piętro"],
+    "c3_1.svg": ["Parter"]
+      };
   // Do przechowywania stanów pięter i budynków
   let currentBuilding = null;   // np. "c1" albo "b4"
   let currentBaseFile = null;   // np. "c1_1.svg"
@@ -381,25 +390,29 @@ function removeCampusBuildingTooltips() {
         <g id="viewport">
           <image href="/static/img/campus.png" x="0" y="0" width="6104" height="2000"/>
 
-          <polygon class="zone" id="Budynek C1" data-file="c1_1.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
-          <polygon class="zone" id="Budynek C2" data-file="c2_1.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
-          <polygon class="zone" id="Budynek C3" data-file="c3_1.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
-          <polygon class="zone" id="DYREKCJA" data-file="dyr_floor1.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
-          <polygon class="zone" id="ZIOLOWA" data-file="ziolowa_floor.svg" points="5004,390 5306,221 5390,249 5089,418"/>
-          <polygon class="zone" id="SZARY" data-file="szary_floor1.svg" points="738,1396 814,1356 1178,1482 1103,1523"/>
-          <polygon class="zone" id="BIALY" data-file="bialy_floor1.svg" points="1168,1260 1249,1214 1326,1240 1246,1286"/>
-          <polygon class="zone" id="JNIEBIESKI" data-file="bialy_floor1.svg" points="1405,1689 1571,1596 1706,1641 1537,1735"/>
-          <polygon class="zone" id="CNIEBIESKI" data-file="bialy_floor1.svg" points="1373,1276 1454,1231 1789,1346 1709,1393"/>
-          <polygon class="zone" id="CEGLA" data-file="bialy_floor1.svg" points="1774,1567 1821,1540 1924,1574 1873,1602"/>
-          <polygon class="zone" id="ZIELONY" data-file="bialy_floor1.svg" points="1730,1143 1777,1119 1929,1171 1885,1198"/>
-          <polygon class="zone" id="FIOLETOWY" data-file="bialy_floor1.svg" points="2070,1075 2118,1047 2253,1092 2205,1122"/>
-          <polygon class="zone" id="POMARANCZOWY" data-file="bialy_floor1.svg" points="2049,877 2164,813 2213,830 2205,835 2289,863 2185,923"/>
-          <polygon class="zone" id="ROZOWY" data-file="bialy_floor1.svg" points="2282,958 2389,899 2525,945 2421,1006"/>
-          <polygon class="zone" id="ZOLTY" data-file="bialy_floor1.svg" points="2329,807 2411,762 2452,767 2457,748 2586,791 2890,628 3022,675 2646,886 2653,889 2633,901"/>
-          <polygon class="zone" id="MBRAZOWY" data-file="bialy_floor1.svg" points="3013,618 3048,597 3116,621 3081,642"/>
-          <polygon class="zone" id="DBRAZOWY" data-file="bialy_floor1.svg" points="3110,753 3176,717 3430,804 3365,842"/>
-          <polygon class="zone" id="FIOLETOWY2" data-file="bialy_floor1.svg" points="2766,940 2879,878 2962,906 2949,914 2949,946 2965,951 2964,956 2949,965 2949,995 2941,1000"/>
-          <polygon class="zone" id="Budynek B" data-file="ssw_floor1.svg" points="3500,373 3686,270 3706,275 3746,255 3805,274 3805,307 3839,318 3842,299 4294,49 4392,81 4389,467 4888,648 4460,873 4168,775 4437,628 4389,616 4391,648 3938,901 3839,868 3837,820 3803,833 3802,852 3561,772 3518,796 3500,794 3500,373"/>
+          <polygon class="zone" id="C1" data-file="c1_0.svg" points="2950,914 3072,847 3525,1003 3522,1348 3402,1415 3450,1433 3381,1474 2948,1333 2950,914"/>
+          <polygon class="zone" id="C2" data-file="c2_0.svg" points="2768,1636 3173,1409 3379,1473 3453,1434 3402,1416 3461,1383 3599,1430 3055,1735 2768,1636"/>
+          <polygon class="zone" id="C3" data-file="c3_0.svg" points="3526,1207 3659,1134 3951,1233 3602,1429 3461,1383 3522,1350 3526,1207"/>
+          <polygon class="zone" id="A" data-file="a_0.svg" points="3461,830 3564,774 3820,860 3820,985 3718,1042 3461,962"/>
+          <polygon class="zone" id="??" data-file="todo.svg" points="5004,390 5306,221 5390,249 5089,418"/>
+          <polygon class="zone" id="K" data-file="k_0.svg" points="738,1396 814,1356 1178,1482 1103,1523"/>
+          <polygon class="zone" id="L" data-file="l_0.svg" points="1168,1260 1249,1214 1326,1240 1246,1286"/>
+          <polygon class="zone" id="M" data-file="m_0.svg" points="1405,1689 1571,1596 1706,1641 1537,1735"/>
+          <polygon class="zone" id="J" data-file="j_0.svg" points="1373,1276 1454,1231 1789,1346 1709,1393"/>
+          <polygon class="zone" id="??" data-file="todo.svg" points="1774,1567 1821,1540 1924,1574 1873,1602"/>
+          <polygon class="zone" id="I" data-file="i_0.svg" points="1730,1143 1777,1119 1929,1171 1885,1198"/>
+          <polygon class="zone" id="H" data-file="h_0.svg" points="2070,1075 2118,1047 2253,1092 2205,1122"/>
+          <polygon class="zone" id="G" data-file="g_0.svg" points="2049,877 2164,813 2213,830 2205,835 2289,863 2185,923"/>
+          <polygon class="zone" id="F" data-file="f_0.svg" points="2282,958 2389,899 2525,945 2421,1006"/>
+          <polygon class="zone" id="E" data-file="e_0.svg" points="2329,807 2411,762 2452,767 2457,748 2586,791 2890,628 3022,675 2646,886 2653,889 2633,901"/>
+          <polygon class="zone" id="??" data-file="todo.svg" points="3013,618 3048,597 3116,621 3081,642"/>
+          <polygon class="zone" id="??" data-file="todo.svg" points="3110,753 3176,717 3430,804 3365,842"/>
+          <polygon class="zone" id="D" data-file="d_0.svg" points="2766,940 2879,878 2962,906 2949,914 2949,946 2965,951 2964,956 2949,965 2949,995 2941,1000"/>
+          <polygon class="zone" id="B1" data-file="b1_0.svg" points="3842,301 4295,48 4390,80 4389,648 3939,900 3841,868 3841,301"/>
+          <polygon class="zone" id="B2" data-file="b2_0.svg" points="4172,777 4527,582 4614,616 4613,688 4407,798 4451,813 4748,646 4837,674 4837,747 4460,953 4168,850 4171,776"/>
+          <polygon class="zone" id="B3" data-file="b3_0.svg" points="4392,471 4888,646 4890,717 4841,749 4842,676 4747,646 4661,697 4617,687 4616,612 4525,582 4438,629 4390,616 4392,471"/>
+          <polygon class="zone" id="B4" data-file="b4_0.svg" points="3732,239 4145,23 4283,47 3852,286 3732,239"/>
+          <polygon class="zone" id="Budynek B5" data-file="b5_0.svg" points="3687,270 3711,272 3746,254 3803,274 3804,308 3839,320 3839,818 3802,840 3800,854 3563,774 3519,798 3500,795 3500,372"/>
            </g>
         </svg>
       `;

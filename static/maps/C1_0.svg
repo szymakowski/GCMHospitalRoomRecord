@@ -1,0 +1,409 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2364 5042"
+    width="2364"
+    height="5042">
+
+  <!-- Definicje filtrów, gradientów i stylów -->
+  <defs>
+    <!-- Radialny gradient tła głównego (budynek) -->
+    <radialGradient id="bgBuildRad" cx="0.5" cy="0.5" r="0.65">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f2f2"/>
+    </radialGradient>
+
+    <!-- Gradient korytarzy (subtelny) -->
+    <linearGradient id="corridorGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0E0E0"/>
+      <stop offset="100%" stop-color="#B3B3B3"/>
+    </linearGradient>
+
+    <!-- Gradient pokoi (szarosc) -->
+    <linearGradient id="roomGradGrey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="20%" stop-color="#D3D3D3"/>
+      <stop offset="100%" stop-color="#A9A9A9"/>
+    </linearGradient>
+
+    <!-- Cień (Drop Shadow) z większym rozmyciem -->
+    <filter id="shadow" x="-20%" y="-20%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Dodatkowe style globalne -->
+  <style>
+    /* Styl etykiet – dodajemy cień tekstu, by był czytelniejszy na jasnym tle */
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      fill: #333;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+    }
+
+    text {
+      font-size: 60px;
+      font-family: Arial, sans-serif;
+
+      fill: black;
+    }
+  </style>
+
+<!-- Budynek C1-->
+<!-- Pokój C1 1.01 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_01" class="room"
+      d="M1656,107 H2225 V348 H1656Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_01" x="1850" y="247">C1.1.01</text>
+
+<!-- Pokój C1 1.02 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_02" class="room"
+      d="M1655,354 H2225 V592 H2051 V632 H1768 V584 H1663 V517 H1851 V503 H1655Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_02" x="1850" y="500">C1.1.02</text>
+
+<!-- Pokój C1 1.03 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_03" class="room"
+      d="M1852,642 H2223 V872 H1852Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_03" x="1950" y="770">C1.1.03</text>
+
+<!-- Pokój C1 1.04 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_04" class="room"
+      d="M1661,645 H1838 V869 H1661Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_04" x="1642" y="770">C1.1.04</text>
+
+<!-- Pokój C1 1.05 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_05" class="room"
+      d="M1653,1196 H1771 V1138 H2227 V1409 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_05" x="1850" y="1300">C1.1.05</text>
+
+<!-- Pokój C1 1.06 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_06" class="room"
+      d="M1653,1420 H2227 V1654 H1779 V1633 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_06" x="1850" y="1570">C1.1.06</text>
+
+<!-- Pokój C1 1.07 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_07" class="room"
+      d="M1653,1752 H1813 V1727 H2227 V1964 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_07" x="1850" y="1870">C1.1.07</text>
+
+<!-- Pokój C1 1.08 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_08" class="room"
+      d="M1653,1977 H2227 V2202 H2163 V2222 H1815 V2195 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_08" x="1850" y="2130">C1.1.08</text>
+
+<!-- Pokój C1 1.09 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_09" class="room"
+      d="M1653,2286 H1805 V2260 H2227 V2500 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_09" x="1850" y="2410">C1.1.09</text>
+
+<!-- Pokój C1 1.10 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_10" class="room"
+      d="M1653,2514 H2227 V2740 H2161 V2755 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_10" x="1850" y="2650">C1.1.10</text>
+
+<!-- Pokój C1 1.11 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_11" class="room"
+      d="M1653,2803 H1903 V2788 H2227 V3029 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_11" x="1850" y="2950">C1.1.11</text>
+
+<!-- Pokój C1 1.12 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_12" class="room"
+      d="M1653,3044 H2227 V3279 H1829 V3251 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_12" x="1850" y="3200">C1.1.12</text>
+
+<!-- Pokój C1 1.13 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_13" class="room"
+      d="M1653,3337 H1815 V3351 H2227 V3587 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_13" x="1850" y="3490">C1.1.13</text>
+
+<!-- Pokój C1 1.14 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_14" class="room"
+      d="M1653,3605 H2227 V3851 H1871 V3821 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_14" x="1850" y="3750">C1.1.14</text>
+
+<!-- Pokój C1 1.15 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_15" class="room"
+      d="M1653,3895 H1853 V3868 H2227 V4119 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_15" x="1850" y="4020">C1.1.15</text>
+
+<!-- Pokój C1 1.16 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_16" class="room"
+      d="M1653,4134 H2227 V4383 H1786 V4360 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_15" x="1850" y="4280">C1.1.16</text>
+
+<!-- Pokój C1 1.17 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_17" class="room"
+      d="M1653,4424 H1787 V4398 H2227 V4647 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_17" x="1850" y="4550">C1.1.17</text>
+
+<!-- Pokój C1 1.18 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_18" class="room"
+      d="M1653,4658 H2227 V4905 H1812 V4887 H1706 V4863 H1653Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_18" x="1850" y="4800">C1.1.18</text>
+
+<!-- Pokój C1 1.191 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_191" class="room"
+      d="M1196,3644 H1286 V3660 H1304 V3664 H1380 V3674 H1413 V3823 H1304 V3764 H1343 V3755 H1304 V3709 H1286 V3811 H1196Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_191" x="1200" y="3740">C1.1.19.1</text>
+
+<!-- Pokój C1 1.192 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_192" class="room"
+      d="M1194,3376 H1408 V3550 H1380 V3627 H1194Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_192" x="1200" y="3500">C1.1.19.2</text>
+
+<!-- Pokój C1 1.201 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_201" class="room"
+      d="M1196,3085 H1415 V3261 H1301 V3197 H1349 V3188 H1301 V3143 H1285 V3249 H1196Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_201" x="1200" y="3180">C1.1.20.1</text>
+
+<!-- Pokój C1 1.202 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_202" class="room"
+      d="M1188,3004 H1415 V3068 H1188Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_202" x="1200" y="3056">C1.1.20.2</text>
+
+<!-- Pokój C1 1.203 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_203" class="room"
+      d="M1198,2806 H1285 V2926 H1303 V2806 H1416 V2981 H1287 V2991 H1198Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_203" x="1200" y="2920">C1.1.20.3</text>
+
+<!-- Pokój C1 1.211 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_211" class="room"
+      d="M946,2516 H1416 V2659 H1369 V2742 H993 V2658 H946Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_211" x="1060" y="2660">C1.1.21.1</text>
+
+<!-- Pokój C1 1.212 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_212" class="room"
+      d="M976,2279 H1415 V2506 H945 V2392 H976Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_212" x="1060" y="2410">C1.1.21.2</text>
+
+<!-- Pokój C1 1.22 Medyczne Laboratorium Diagnostyczne - sala seminaryjna -->
+<path id="room_c1_1_22" class="room"
+      d="M969,1735 H1393 V2163 H969Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_22" x="1070" y="1960">C1.1.22</text>
+
+<!-- Pokój C1 1.23 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_23" class="room"
+      d="M1023,1463 H1245 V1630 H1023Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_23" x="1030" y="1546">C1.1.23</text>
+
+<!-- Pokój C1 1.24 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_24" class="room"
+      d="M1261,1454 H1371 V1505 H1399 V1610 H1371 V1657 H1261Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_24" x="1255" y="1576">C1.1.24</text>
+
+<!-- Pokój C1 1.251 Medyczne Laboratorium Diagnostyczne - magazyn -->
+<path id="room_c1_1_251" class="room"
+      d="M947,2807 H1060 V2927 H1078 V2807 H1165 V2986 H947Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_251" x="930" y="2860">C1.1.25.1</text>
+
+<!-- Pokój C1 1.252 Medyczne Laboratorium Diagnostyczne -->
+<path id="room_c1_1_252" class="room"
+      d="M978,3003 H1167 V3258 H946 V3077 H978Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_251" x="930" y="3120">C1.1.25.1</text>
+
+<!-- Pokój C1 1.261 Bank Krwi -->
+<path id="room_c1_1_261" class="room"
+      d="M946,3372 H1057 V3488 H1075 V3381 H1166 V3546 H946Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_261" x="930" y="3450">C1.1.26.1</text>
+
+<!-- Pokój C1 1.262 Bank Krwi -->
+<path id="room_c1_1_262" class="room"
+      d="M946,3564 H1174 V3632 H946Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_262" x="930" y="3620">C1.1.26.2</text>
+
+<!-- Pokój C1 1.263 Bank Krwi -->
+<path id="room_c1_1_263" class="room"
+      d="M946,3646 H1061 V3757 H1081 V3644 H1165 V3825 H1018 V3806 H1059 H946Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_263" x="930" y="3780">C1.1.26.3</text>
+
+<!-- Pokój C1 1.271 Bank Krwi -->
+<path id="room_c1_1_271" class="room"
+      d="M453,4673 H599 V4673 H705 V4886 H453Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_271" x="450" y="4790">C1.1.27.1</text>
+
+<!-- Pokój C1 1.272 Bank Krwi -->
+<path id="room_c1_1_272" class="room"
+      d="M135,4670 H436 V4913 H135Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_272" x="150" y="4790">C1.1.27.2</text>
+
+<!-- Pokój C1 1.28 Bank Krwi -->
+<path id="room_c1_1_28" class="room"
+      d="M137,4423 H589 V4486 H604 V4430 H704 V4625 H603 V4585 H587 V4657 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_28" x="320" y="4560">C1.1.28</text>
+
+<!-- Pokój C1 1.29 Bank Krwi -->
+<path id="room_c1_1_29" class="room"
+      d="M137,4132 H707 V4357 H563 V4411 H187 V4367 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_29" x="320" y="4270">C1.1.29</text>
+
+<!-- Pokój C1 1.30 Bank Krwi -->
+<path id="room_c1_1_30" class="room"
+      d="M137,3886 H186 V3869 H552 V3892 H707 V4114 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_30" x="320" y="4000">C1.1.30</text>
+
+<!-- Pokój C1 1.31 Bank Krwi -->
+<path id="room_c1_1_31" class="room"
+      d="M137,3605 H707 V3825 H548 V3851 H187 V3835 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_31" x="320" y="3750">C1.1.31</text>
+
+<!-- Pokój C1 1.32 Bank Krwi -->
+<path id="room_c1_1_32" class="room"
+      d="M137,3354 H561 V3382 H706 V3584 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_32" x="320" y="3490">C1.1.32</text>
+
+<!-- Pokój C1 1.33 Medyczne Laboratorium diagnostyczne - kierownik -->
+<path id="room_c1_1_33" class="room"
+      d="M137,3039 H707 V3248 H522 V3277 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_33" x="320" y="3180">C1.1.33</text>
+
+<!-- Pokój C1 1.34 Medyczne Laboratorium diagnostyczne - kierownik -->
+<path id="room_c1_1_34" class="room"
+      d="M137,2799 H199 V2779 H547 V2805 H707 V3025 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_34" x="320" y="2930">C1.1.34</text>
+
+<!-- Pokój C1 1.35 prof. dr hab.n.med. i n. o zdr. Kozakiewicz Krystyna III Oddział Kardiologii -->
+<path id="room_c1_1_35" class="room"
+      d="M137,2515 H707 V2738 H545 V2765 H192 V2746 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_35" x="320" y="2650">C1.1.35</text>
+
+<!-- Pokój C1 1.36 dr n.med. Wilczek Jacek Oddział Elektrokardiologii, Przychodnia Kardiologiczna -->
+<path id="room_c1_1_36" class="room"
+      d="M137,2270 H193 V2248 H544 V2278 H707 V2502 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_36" x="320" y="2400">C1.1.36</text>
+
+<!-- Pokój C1 1.37 Pracownia Nieinwazyjnej Diagnostyki Kardiologicznej -->
+<path id="room_c1_1_37" class="room"
+      d="M137,1991 H707 V2202 H546 V2229 H192 V2209 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_37" x="320" y="2130">C1.1.37</text>
+
+<!-- Pokój C1 1.38 Pracownie naukowe -->
+<path id="room_c1_1_38" class="room"
+      d="M137,1730 H559 V1810 H572 V1759 H707 V1970 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_38" x="320" y="1880">C1.1.38</text>
+
+<!-- Pokój C1 1.39 Pracownie naukowe -->
+<path id="room_c1_1_39" class="room"
+      d="M137,1429 H707 V1625 H549 V1660 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_39" x="320" y="1560">C1.1.39</text>
+
+<!-- Pokój C1 1.40 Pracownie naukowe -->
+<path id="room_c1_1_40" class="room"
+      d="M137,1185 H187 V1138 H552 V1196 H707 V1406 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_40" x="320" y="1300">C1.1.40</text>
+
+<!-- Pokój C1 1.42 Pracownie naukowe -->
+<path id="room_c1_1_42" class="room"
+      d="M137,651 H193 V630 H593 V657 H707 V880 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_41" x="320" y="780">C1.1.41</text>
+
+<!-- Pokój C1 1.43 Dział Controllingu -->
+<path id="room_c1_1_43" class="room"
+      d="M137,371 H707 V593 H593 V616 H193 V595 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_42" x="320" y="500">C1.1.42</text>
+
+<!-- Pokój C1 1.44 Zakład Patomorfologii Pracownia Histopatologii -->
+<path id="room_c1_1_44" class="room"
+      d="M137,116 H194 V106 H581 V139 H707 V352 H137Z"
+      fill="none"
+      stroke="#bbb" stroke-width="1"/>
+<text id="label_c1_1_43" x="320" y="270">C1.1.43</text>
+</svg>
