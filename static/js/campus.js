@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Do przechowywania stanów pięter i budynków
   let currentBuilding = null;   // np. "c1" albo "b4"
   let currentBaseFile = null;   // np. "c1_1.svg"
+  let currentMapFile = "campus.png";
 
   // Start: kampus
   loadSVGMap("campus.png");
@@ -358,7 +359,7 @@ function removeCampusBuildingTooltips() {
 
   // --- Ładowanie mapy: JEDNO SVG zawiera PNG i wektory 1:1 ---
   function loadSVGMap(file) {
-    removeCampusBuildingTooltips();
+    const previousMap = currentMapFile;
 
     const container = document.getElementById("svg-map-container");
 
@@ -621,14 +622,19 @@ fetch(`/static/maps/${file}`)
       });
     });
 
-
+        removeCampusBuildingTooltips();
         updateFloorSelectOptions(file);
         setCurrentBuildingBadge(getBuildingFromFilename(file));
         highlightSelectedRooms?.();
         initSVGRoomTooltips?.();
         enableZoomAndPan(svg);
   })
-  .catch(err => console.error("Błąd ładowania mapy:", err));
+    .catch(err => {
+      console.error("Błąd ładowania mapy:", err);
+
+      // przywróć poprzedni widok (nic nie zmieniaj wizualnie)
+      currentMapFile = previousMap;
+    });
 
   }
 
